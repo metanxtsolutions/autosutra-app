@@ -2,6 +2,7 @@ import { siteConfig } from "@/data/site-config";
 import { targetCities } from "@/data/locations";
 import type { Faq } from "@/data/faq";
 import type { Service } from "@/data/services";
+import type { Resource } from "@/data/resources";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -65,6 +66,31 @@ export function serviceSchema(service: Service) {
     },
     areaServed,
     url: `${siteConfig.url}/services/${service.slug}`,
+  };
+}
+
+const RESOURCES_PUBLISHED_DATE = "2026-07-08";
+
+export function articleSchema(resource: Resource) {
+  return {
+    "@context": "https://schema.org",
+    "@type": resource.category === "Blog" ? "BlogPosting" : "Article",
+    headline: resource.title,
+    description: resource.excerpt,
+    datePublished: RESOURCES_PUBLISHED_DATE,
+    dateModified: RESOURCES_PUBLISHED_DATE,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    url: `${siteConfig.url}/resources/${resource.slug}`,
+    mainEntityOfPage: `${siteConfig.url}/resources/${resource.slug}`,
   };
 }
 

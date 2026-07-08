@@ -23,8 +23,8 @@ export default function ResourcesPage() {
             Guides and insights for dealer growth
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
-            Practical, dealer-tested playbooks on leads, marketing, SEO, and
-            CRM. Our library is being published in the coming weeks, so
+            Practical playbooks on leads, marketing, local SEO, and CRM for
+            dealerships in India. New guides are added regularly, so
             subscribe below to get each one first.
           </p>
         </div>

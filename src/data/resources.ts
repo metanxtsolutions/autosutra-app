@@ -1,6 +1,5 @@
-// Planned content topics, honestly framed as upcoming. No articles are
-// published yet. Wire each up to a real MDX post/guide as content ships.
 export type Resource = {
+  slug: string;
   title: string;
   category: "Guide" | "Blog" | "Download";
   excerpt: string;
@@ -9,6 +8,7 @@ export type Resource = {
 
 export const resources: Resource[] = [
   {
+    slug: "dealers-guide-to-verified-buyer-leads",
     title: "The Dealer's Guide to Verified Buyer Leads",
     category: "Guide",
     excerpt:
@@ -16,6 +16,7 @@ export const resources: Resource[] = [
     readTime: "8 min read",
   },
   {
+    slug: "google-ads-benchmarks-for-indian-dealerships",
     title: "Google Ads Benchmarks for Indian Dealerships",
     category: "Guide",
     excerpt:
@@ -23,6 +24,7 @@ export const resources: Resource[] = [
     readTime: "6 min read",
   },
   {
+    slug: "why-whatsapp-is-the-highest-converting-channel",
     title: "Why WhatsApp Is the Highest-Converting Channel for Dealers",
     category: "Blog",
     excerpt:
@@ -30,6 +32,7 @@ export const resources: Resource[] = [
     readTime: "5 min read",
   },
   {
+    slug: "local-seo-checklist-for-multi-location-dealerships",
     title: "Local SEO Checklist for Multi-Location Dealerships",
     category: "Guide",
     excerpt:
@@ -37,6 +40,7 @@ export const resources: Resource[] = [
     readTime: "7 min read",
   },
   {
+    slug: "ev-dealership-launch-playbook",
     title: "EV Dealership Launch Playbook",
     category: "Download",
     excerpt:
@@ -44,6 +48,7 @@ export const resources: Resource[] = [
     readTime: "Template",
   },
   {
+    slug: "dealer-crm-comparison-worksheet",
     title: "Dealer CRM Comparison Worksheet",
     category: "Download",
     excerpt:
@@ -51,6 +56,7 @@ export const resources: Resource[] = [
     readTime: "Template",
   },
   {
+    slug: "how-used-car-dealers-can-cut-cost-per-lead",
     title: "How Used Car Dealers Can Cut Cost-Per-Lead",
     category: "Blog",
     excerpt:
@@ -58,6 +64,7 @@ export const resources: Resource[] = [
     readTime: "6 min read",
   },
   {
+    slug: "reading-a-dealer-performance-report",
     title: "Reading a Dealer Performance Report",
     category: "Guide",
     excerpt:

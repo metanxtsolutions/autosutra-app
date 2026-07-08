@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site-config";
 import { services } from "@/data/services";
 import { caseStudyTeasers } from "@/data/case-studies";
+import { resources } from "@/data/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -39,5 +40,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes];
+  const resourceRoutes: MetadataRoute.Sitemap = resources.map((resource) => ({
+    url: `${siteConfig.url}/resources/${resource.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...caseStudyRoutes,
+    ...resourceRoutes,
+  ];
 }
