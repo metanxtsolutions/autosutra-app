@@ -65,7 +65,7 @@ export function PricingTable() {
               tier.featured ? "text-white/40" : "text-muted-foreground/70",
             )}
           >
-            Annual billing available — contact us for a custom quote.
+            Annual billing available. Contact us for a custom quote.
           </p>
 
           <Link

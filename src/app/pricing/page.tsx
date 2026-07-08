@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, MessageCircle } from "lucide-react";
+import { Check, MessageCircle, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { PricingTable } from "@/components/pricing/pricing-table";
@@ -10,7 +10,7 @@ import { siteConfig } from "@/data/site-config";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent monthly pricing for AutoSutra's dealer growth plans — Starter, Growth, and Enterprise. Verified buyer leads, ad campaigns, CRM, and SaaS tools.",
+    "Transparent monthly pricing for AutoSutra's dealer growth plans: Starter, Growth, and Enterprise. Verified buyer leads, ad campaigns, CRM, and SaaS tools.",
 };
 
 const comparisonRows = [
@@ -30,7 +30,7 @@ function Cell({ value }: { value: string | boolean }) {
     return value ? (
       <Check className="mx-auto size-4 text-brand" />
     ) : (
-      <span className="mx-auto block text-muted-foreground/40">—</span>
+      <Minus className="mx-auto size-4 text-muted-foreground/40" />
     );
   }
   return <span className="text-sm text-foreground/80">{value}</span>;
@@ -48,7 +48,7 @@ export default function PricingPage() {
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
           Transparent monthly pricing across Starter, Growth, and Enterprise.
-          No hidden fees, no long-term lock-in — upgrade as your pipeline
+          No hidden fees, no long-term lock-in. Upgrade as your pipeline
           grows.
         </p>
       </section>

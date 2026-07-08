@@ -20,7 +20,7 @@ import { timeline } from "@/data/timeline";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AutoSutra's story, mission, vision, values, and journey — India's dealer growth platform built by people who understand the automotive sales floor.",
+    "AutoSutra's story, mission, vision, values, and journey. India's dealer growth platform built by people who understand the automotive sales floor.",
 };
 
 const values = [
@@ -32,7 +32,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Transparency",
-    body: "Every lead, every rupee, every result — visible in your dashboard.",
+    body: "Every lead, every rupee, every result, visible in your dashboard.",
   },
   {
     icon: TrendingUp,
@@ -52,7 +52,7 @@ const values = [
   {
     icon: Users,
     title: "Customer Success",
-    body: "A dedicated growth partner, not a ticket queue — from onboarding to scale.",
+    body: "A dedicated growth partner, not a ticket queue, from onboarding to scale.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function AboutPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             India&apos;s fastest growing automobile marketing and solutions
-            agency — built to make every rupee of dealer ad spend
+            agency, built to make every rupee of dealer ad spend
             accountable to a real buyer.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               and &ldquo;impressions.&rdquo;
             </p>
             <p>
-              We built AutoSutra to close that gap — combining phone-verified
+              We built AutoSutra to close that gap by combining phone-verified
               lead generation, performance marketing built for automotive
               buying cycles, and dealer-grade data intelligence into a single
               growth partner. Today we work across car, bike, EV, and

@@ -1,4 +1,4 @@
-// Illustrative example copy written in AutoSutra's voice — no real client
+// Illustrative example copy written in AutoSutra's voice. No real client
 // quotes were supplied yet. Replace with verified client testimonials before
 // launch (name, dealership, city, and a real quote/rating per entry).
 export type Testimonial = {

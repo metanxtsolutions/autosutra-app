@@ -11,7 +11,7 @@ export function NewsletterForm() {
       className="mt-4 flex gap-2"
       onSubmit={(event) => {
         event.preventDefault();
-        toast.success("Thanks for subscribing — you're on the list.");
+        toast.success("Thanks for subscribing. You're on the list.");
         event.currentTarget.reset();
       }}
     >

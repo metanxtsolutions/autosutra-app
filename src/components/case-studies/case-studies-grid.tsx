@@ -87,7 +87,7 @@ export function CaseStudiesGrid() {
 
       {filtered.length === 0 && (
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          No case studies in this category yet — check back soon.
+          No case studies in this category yet. Check back soon.
         </p>
       )}
     </div>

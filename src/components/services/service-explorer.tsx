@@ -67,7 +67,7 @@ export function ServiceExplorer() {
         <Input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search services — e.g. 'WhatsApp' or 'leads'"
+          placeholder="Search services, e.g. WhatsApp or leads"
           className="h-12 rounded-full pl-11"
         />
       </div>

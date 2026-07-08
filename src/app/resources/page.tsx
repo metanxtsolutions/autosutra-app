@@ -5,7 +5,7 @@ import { NewsletterForm } from "@/components/layout/newsletter-form";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Dealer growth guides, blog posts, and downloads from AutoSutra — practical playbooks for verified leads, ad campaigns, SEO, and CRM.",
+    "Dealer growth guides, blog posts, and downloads from AutoSutra. Practical playbooks for verified leads, ad campaigns, SEO, and CRM.",
 };
 
 export default function ResourcesPage() {
@@ -23,7 +23,7 @@ export default function ResourcesPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             Practical, dealer-tested playbooks on leads, marketing, SEO, and
-            CRM. Our library is being published in the coming weeks —
+            CRM. Our library is being published in the coming weeks, so
             subscribe below to get each one first.
           </p>
         </div>

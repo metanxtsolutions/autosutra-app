@@ -1,4 +1,4 @@
-// Illustrative example case studies in AutoSutra's voice — no real client
+// Illustrative example case studies in AutoSutra's voice. No real client
 // results were supplied yet. Replace with verified, client-approved case
 // studies (real dealership name, metrics, and permission to publish) before
 // launch, and expand each into a full /case-studies/[slug] page.

@@ -23,7 +23,7 @@ export const industries: Industry[] = [
     slug: "bike-dealerships",
     name: "Bike Dealerships",
     description:
-      "Two-wheeler dealers competing on speed of response — we help you reach buyers first and follow up faster.",
+      "Two-wheeler dealers competing on speed of response. We help you reach buyers first and follow up faster.",
     points: [
       "WhatsApp-first lead journeys for quick decisions",
       "Local SEO for 'near me' two-wheeler searches",

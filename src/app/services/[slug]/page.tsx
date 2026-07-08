@@ -34,7 +34,7 @@ export default async function ServiceDetailPage({
     <ComingSoon
       eyebrow="Service"
       title={service.name}
-      description={`${service.summary} A full page with pricing, process, and results for this service is on the way — talk to our team for details today.`}
+      description={`${service.summary} A full page with pricing, process, and results for this service is on the way. Talk to our team for details today.`}
     />
   );
 }

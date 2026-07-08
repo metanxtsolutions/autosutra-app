@@ -17,19 +17,19 @@ export const timeline: Milestone[] = [
     label: "Chapter 02",
     title: "First dealer partners",
     description:
-      "Early dealership partners helped shape the verified-lead model — phone-verified buyers matched to inventory, not generic form-fill leads.",
+      "Early dealership partners helped shape the verified-lead model: phone-verified buyers matched to inventory, not generic form-fill leads.",
   },
   {
     label: "Chapter 03",
     title: "Building the platform",
     description:
-      "As demand grew, we built dealer-facing tools — CRM, WhatsApp automation, and reporting — so growth didn't depend on manual spreadsheets.",
+      "As demand grew, we built dealer-facing tools, including CRM, WhatsApp automation, and reporting, so growth didn't depend on manual spreadsheets.",
   },
   {
     label: "Chapter 04",
     title: "Expanding across categories",
     description:
-      "From car dealerships to bikes, EVs, used cars, and OEM networks — the model expanded to serve every corner of the automotive retail market.",
+      "From car dealerships to bikes, EVs, used cars, and OEM networks, the model expanded to serve every corner of the automotive retail market.",
   },
   {
     label: "Today",

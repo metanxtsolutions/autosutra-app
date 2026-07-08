@@ -18,7 +18,7 @@ const pillars = [
   {
     icon: Compass,
     title: "Approach",
-    body: "Every campaign is built around your inventory, your city, and your sales targets — not a one-size-fits-all playbook.",
+    body: "Every campaign is built around your inventory, your city, and your sales targets, not a one-size-fits-all playbook.",
   },
 ];
 
@@ -43,7 +43,7 @@ export function About() {
             marketing without a reliable way to measure what actually turned
             into sales. We combine verified lead generation, performance
             marketing, and dealer-grade data intelligence into one growth
-            partner — so every rupee of ad spend is accountable to a real
+            partner, so every rupee of ad spend is accountable to a real
             buyer, not a click.
           </p>
           <p className="mt-4 text-lg text-muted-foreground">

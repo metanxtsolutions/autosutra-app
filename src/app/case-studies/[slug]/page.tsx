@@ -34,7 +34,7 @@ export default async function CaseStudyDetailPage({
     <ComingSoon
       eyebrow={study.dealership}
       title={study.headline}
-      description="The full breakdown — problem, solution, execution, and results — is being finalized with client approval. Talk to our team for the details behind this result."
+      description="The full breakdown of the problem, solution, execution, and results is being finalized with client approval. Talk to our team for the details behind this result."
     />
   );
 }

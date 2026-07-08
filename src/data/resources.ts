@@ -1,4 +1,4 @@
-// Planned content topics, honestly framed as upcoming — no articles are
+// Planned content topics, honestly framed as upcoming. No articles are
 // published yet. Wire each up to a real MDX post/guide as content ships.
 export type Resource = {
   title: string;
@@ -54,7 +54,7 @@ export const resources: Resource[] = [
     title: "How Used Car Dealers Can Cut Cost-Per-Lead",
     category: "Blog",
     excerpt:
-      "Practical levers — creative, targeting, and follow-up speed — that move cost-per-lead without cutting corners on quality.",
+      "Practical levers, from creative to targeting and follow-up speed, that move cost-per-lead without cutting corners on quality.",
     readTime: "6 min read",
   },
   {

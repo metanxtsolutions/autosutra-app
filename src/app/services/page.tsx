@@ -17,19 +17,19 @@ import { solutions } from "@/data/solutions";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore all 12 AutoSutra services — verified buyer leads, performance marketing, content, CRM, and SaaS tools. Search, filter, and build your own growth stack.",
+    "Explore all 12 AutoSutra services: verified buyer leads, performance marketing, content, CRM, and SaaS tools. Search, filter, and build your own growth stack.",
 };
 
 const serviceFaqs = [
   {
     question: "Can I combine services from different categories?",
     answer:
-      "Yes — most dealer partners run a mix, like Verified Buyer Leads with Google Ads and WhatsApp Marketing. Use the stack builder above to put together a combination and we'll quote it as one plan.",
+      "Yes. Most dealer partners run a mix, like Verified Buyer Leads with Google Ads and WhatsApp Marketing. Use the stack builder above to put together a combination and we'll quote it as one plan.",
   },
   {
     question: "How is service quality measured?",
     answer:
-      "Every service reports against a concrete metric — verified leads delivered, cost-per-lead, footfall, response time, or leads tracked in CRM — visible in your dashboard, not just a monthly summary deck.",
+      "Every service reports against a concrete metric, such as verified leads delivered, cost-per-lead, footfall, response time, or leads tracked in CRM, visible in your dashboard and not just a monthly summary deck.",
   },
   {
     question: "Can I add or remove services later?",
@@ -39,12 +39,12 @@ const serviceFaqs = [
   {
     question: "Do you offer custom service bundles for large dealer networks?",
     answer:
-      "For OEM and multi-city dealer networks, we build custom bundles and pricing outside the standard plans — talk to our team about your network's scale.",
+      "For OEM and multi-city dealer networks, we build custom bundles and pricing outside the standard plans. Talk to our team about your network's scale.",
   },
   {
     question: "How fast can a new service go live?",
     answer:
-      "Most services — leads, ad campaigns, WhatsApp automation — go live within 7-10 business days of onboarding. Content and CRM setup may take slightly longer depending on scope.",
+      "Most services, including leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding. Content and CRM setup may take slightly longer depending on scope.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             Search or filter by outcome, open any service for the full
-            breakdown, and build your own stack — we&apos;ll turn it into a
+            breakdown, and build your own stack. We&apos;ll turn it into a
             quote.
           </p>
         </div>

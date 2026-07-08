@@ -53,7 +53,7 @@ export function Hero() {
         >
           AutoSutra connects car, bike, EV, and used-car dealerships with
           verified buyer leads, performance marketing, and dealer data
-          intelligence — engineered for measurable growth, not vanity
+          intelligence, engineered for measurable growth, not vanity
           metrics.
         </motion.p>
 

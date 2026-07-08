@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "autosutra-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3210"],
+      "port": 3210
+    },
+    {
+      "name": "autosutra-start",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--", "-p", "4210"],
+      "port": 4210
+    }
+  ]
+}

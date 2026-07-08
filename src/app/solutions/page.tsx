@@ -11,7 +11,7 @@ import { StatBand } from "@/components/shared/stat-band";
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "AutoSutra's growth solutions — Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology — built for dealer outcomes.",
+    "AutoSutra's growth solutions: Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology, built for dealer outcomes.",
 };
 
 const approach = [
@@ -23,7 +23,7 @@ const approach = [
   {
     step: "Deploy",
     description:
-      "The right mix of solutions goes live — leads, campaigns, content, and technology — matched to your goals.",
+      "The right mix of solutions goes live, spanning leads, campaigns, content, and technology, matched to your goals.",
   },
   {
     step: "Optimize",
@@ -47,7 +47,7 @@ export default function SolutionsPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             Instead of buying individual services, AutoSutra dealers plug
-            into five outcome-driven solutions — each combining the exact
+            into five outcome-driven solutions, each combining the exact
             services needed to move a specific number.
           </p>
         </div>

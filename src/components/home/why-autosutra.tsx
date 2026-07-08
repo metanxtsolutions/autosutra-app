@@ -20,7 +20,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Transparency",
-    body: "Every lead, every rupee, every result — visible in your dashboard, no black boxes.",
+    body: "Every lead, every rupee, every result, visible in your dashboard, no black boxes.",
   },
   {
     icon: TrendingUp,
@@ -30,7 +30,7 @@ const values = [
   {
     icon: Handshake,
     title: "Trust",
-    body: "Verified leads and honest reporting — even when the number isn't the one you wanted.",
+    body: "Verified leads and honest reporting, even when the number isn't the one you wanted.",
   },
   {
     icon: Cpu,
@@ -40,7 +40,7 @@ const values = [
   {
     icon: Users,
     title: "Customer Success",
-    body: "A dedicated growth partner, not a ticket queue — from onboarding to scale.",
+    body: "A dedicated growth partner, not a ticket queue, from onboarding to scale.",
   },
 ];
 

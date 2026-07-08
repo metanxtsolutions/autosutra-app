@@ -22,7 +22,7 @@ export const solutions: Solution[] = [
     name: "Performance Marketing",
     outcome: "Turn ad spend into showroom footfall",
     description:
-      "Search, social, and local campaigns engineered for cost-per-lead — not vanity impressions — across every channel your buyers actually use.",
+      "Search, social, and local campaigns engineered for cost-per-lead, not vanity impressions, across every channel your buyers actually use.",
     serviceSlugs: ["google-ads", "meta-ads", "local-seo", "digital-marketing"],
     icon: "megaphone",
   },
@@ -49,7 +49,7 @@ export const solutions: Solution[] = [
     name: "Growth Technology",
     outcome: "See your entire funnel in one dashboard",
     description:
-      "AutoSutra's SaaS platform brings leads, campaigns, and analytics together — so you always know what's working and what to scale.",
+      "AutoSutra's SaaS platform brings leads, campaigns, and analytics together, so you always know what's working and what to scale.",
     serviceSlugs: ["saas-platform"],
     icon: "cloud",
   },

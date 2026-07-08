@@ -31,7 +31,7 @@ export const services: Service[] = [
     popular: true,
     benefits: [
       "Every lead phone-verified for intent, budget, and location",
-      "Matched to your exact inventory — make, model, variant, city",
+      "Matched to your exact inventory: make, model, variant, city",
       "Delivered straight into WhatsApp and your CRM in real time",
     ],
     howItWorks: [
@@ -48,7 +48,7 @@ export const services: Service[] = [
       "Full-funnel campaigns across search, social, and display, built specifically for automotive buying cycles.",
     idealFor: "Dealers who need one team owning the whole funnel",
     benefits: [
-      "One strategy across search, social, and display — no channel silos",
+      "One strategy across search, social, and display, with no channel silos",
       "Creative and targeting tuned to how automotive buyers actually shop",
       "Monthly reporting tied to leads and footfall, not just impressions",
     ],
@@ -155,11 +155,11 @@ export const services: Service[] = [
     slug: "content-creation",
     name: "Content Creation",
     summary:
-      "Scroll-stopping automotive content — reels, carousels, and copy — built for every platform.",
+      "Scroll-stopping automotive content, from reels to carousels and copy, built for every platform.",
     idealFor: "Dealers who need a consistent content engine",
     benefits: [
       "A monthly content calendar built around your inventory and offers",
-      "Platform-native formats — reels, carousels, and static posts",
+      "Platform-native formats: reels, carousels, and static posts",
       "Copy written in your dealership's voice, not generic templates",
     ],
     howItWorks: [
@@ -227,7 +227,7 @@ export const services: Service[] = [
     slug: "saas-platform",
     name: "SaaS Platform",
     summary:
-      "AutoSutra's dealer growth platform — leads, campaigns, and analytics in a single dashboard.",
+      "AutoSutra's dealer growth platform, bringing leads, campaigns, and analytics into a single dashboard.",
     idealFor: "Dealers who want one dashboard for everything",
     benefits: [
       "Leads, campaigns, and CRM data in a single live dashboard",

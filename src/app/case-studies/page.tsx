@@ -8,7 +8,7 @@ import { CaseStudiesGrid } from "@/components/case-studies/case-studies-grid";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real dealership growth stories across car, bike, EV, used car, and OEM programs — see the results AutoSutra delivers.",
+    "Real dealership growth stories across car, bike, EV, used car, and OEM programs. See the results AutoSutra delivers.",
 };
 
 export default function CaseStudiesPage() {

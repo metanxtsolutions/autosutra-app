@@ -22,12 +22,12 @@ export async function submitContactForm(
     };
   }
 
-  // No email/CRM delivery is wired up yet — needs an API key (e.g. Resend)
+  // No email/CRM delivery is wired up yet. Needs an API key (e.g. Resend)
   // or CRM webhook from AutoSutra before launch. Logged server-side for now.
   console.log("New AutoSutra lead:", parsed.data);
 
   return {
     success: true,
-    message: "Thanks — our team will reach out within 24 hours.",
+    message: "Thanks. Our team will reach out within 24 hours.",
   };
 }

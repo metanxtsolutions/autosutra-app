@@ -9,7 +9,7 @@ import { industries } from "@/data/industries";
 export const metadata: Metadata = {
   title: "Industries",
   description:
-    "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands — with tailored growth playbooks for each.",
+    "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands, with tailored growth playbooks for each.",
 };
 
 export default function IndustriesPage() {
@@ -80,7 +80,7 @@ export default function IndustriesPage() {
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Generic marketing agencies run the same playbook for every
             client. AutoSutra builds campaigns, lead criteria, and reporting
-            around how your specific industry actually buys — so every
+            around how your specific industry actually buys, so every
             recommendation is grounded in your category, not a template.
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function IndustriesPage() {
               Don&apos;t see your exact category?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
-              We work with automotive businesses beyond this list — tell us
+              We work with automotive businesses beyond this list. Tell us
               about yours.
             </p>
             <div className="mt-8 flex justify-center">

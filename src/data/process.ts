@@ -15,7 +15,7 @@ export const processSteps: ProcessStep[] = [
     step: "02",
     title: "Plan",
     description:
-      "A growth roadmap built around your inventory, region, and sales targets — not a generic template.",
+      "A growth roadmap built around your inventory, region, and sales targets, not a generic template.",
   },
   {
     step: "03",
