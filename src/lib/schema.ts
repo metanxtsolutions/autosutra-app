@@ -20,9 +20,10 @@ export function organizationSchema() {
     telephone: siteConfig.contact.phoneDisplay,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "AQ Block, Sector V, Bidhannagar",
+      streetAddress: "SDF Building, GP Block, Sector V, Bidhannagar",
       addressLocality: "Kolkata",
       addressRegion: "West Bengal",
+      postalCode: "700091",
       addressCountry: "IN",
     },
     areaServed,

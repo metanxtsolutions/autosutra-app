@@ -15,7 +15,8 @@ export const siteConfig = {
     phoneDisplay: "+91 6291 043 537",
     phoneHref: "+916291043537",
     whatsappHref: "https://wa.me/916291043537",
-    addressLine: "AQ Block, Sector V, Bidhannagar, Kolkata, West Bengal",
+    addressLine:
+      "SDF Building, GP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091",
     addressNote: "India",
   },
   socials: {
