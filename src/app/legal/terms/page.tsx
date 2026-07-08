@@ -1,19 +1,25 @@
-import { ComingSoon } from "@/components/shared/coming-soon";
+import { LegalDocument } from "@/components/legal/legal-document";
+import {
+  LEGAL_LAST_UPDATED,
+  termsIntro,
+  termsSections,
+} from "@/data/legal-content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Terms of Service",
   description:
-    "The terms governing use of AutoSutra's services. Our full terms of service are being finalized.",
+    "The terms governing use of AutoSutra's website and the dealer growth services we provide to dealerships, OEMs, and automotive brands across India.",
   path: "/legal/terms",
 });
 
 export default function TermsPage() {
   return (
-    <ComingSoon
-      eyebrow="Legal"
+    <LegalDocument
       title="Terms of Service"
-      description="Our full terms of service are being finalized. For any questions, contact us directly."
+      lastUpdated={LEGAL_LAST_UPDATED}
+      intro={termsIntro}
+      sections={termsSections}
     />
   );
 }
