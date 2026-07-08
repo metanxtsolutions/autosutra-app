@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
 import { submitContactForm } from "@/actions/contact";
+import { trackEvent } from "@/lib/analytics";
 import {
   contactSchema,
   type ContactFormValues,
@@ -54,6 +55,7 @@ export function ContactForm() {
       const result = await submitContactForm(values);
       if (result.success) {
         toast.success(result.message);
+        trackEvent("generate_lead", { service: values.service });
         reset();
       } else {
         toast.error(result.message);

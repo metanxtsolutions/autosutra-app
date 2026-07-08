@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/data/site-config";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 
 export function ContactCta() {
   return (
@@ -29,10 +29,8 @@ export function ContactCta() {
               Book Consultation
               <ArrowRight className="size-4" />
             </Link>
-            <a
-              href={siteConfig.contact.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              location="home_contact_cta"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "gap-2 rounded-full border-white/20 bg-white/5 px-8 text-white hover:bg-white/10 hover:text-white",
@@ -40,7 +38,7 @@ export function ContactCta() {
             >
               <MessageCircle className="size-4" />
               Chat on WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </div>

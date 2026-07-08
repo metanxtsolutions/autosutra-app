@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { siteConfig } from "@/data/site-config";
 import { pageMetadata } from "@/lib/seo";
 
@@ -29,13 +30,10 @@ const contactCards = [
     value: siteConfig.contact.email,
     href: `mailto:${siteConfig.contact.email}`,
   },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "Chat with our team",
-    href: siteConfig.contact.whatsappHref,
-  },
 ];
+
+const contactCardClassName =
+  "flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-shadow hover:shadow-lg";
 
 export default function ContactPage() {
   return (
@@ -59,13 +57,7 @@ export default function ContactPage() {
             <a
               key={card.label}
               href={card.href}
-              target={card.href.startsWith("http") ? "_blank" : undefined}
-              rel={
-                card.href.startsWith("http")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-              className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-shadow hover:shadow-lg"
+              className={contactCardClassName}
             >
               <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-brand">
                 <card.icon className="size-5" />
@@ -80,6 +72,19 @@ export default function ContactPage() {
               </div>
             </a>
           ))}
+          <WhatsAppLink location="contact_page_card" className={contactCardClassName}>
+            <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-brand">
+              <MessageCircle className="size-5" />
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                WhatsApp
+              </p>
+              <p className="mt-1 font-heading font-semibold text-ink">
+                Chat with our team
+              </p>
+            </div>
+          </WhatsAppLink>
         </div>
       </section>
 
@@ -126,15 +131,13 @@ export default function ContactPage() {
                 Our team typically responds on WhatsApp within minutes during
                 business hours.
               </p>
-              <a
-                href={siteConfig.contact.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                location="contact_page_sidebar"
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand/90"
               >
                 <MessageCircle className="size-4" />
                 Chat on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

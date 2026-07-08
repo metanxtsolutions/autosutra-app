@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { ArticleBody } from "@/components/resources/article-body";
 import { JsonLd } from "@/components/shared/json-ld";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { resources } from "@/data/resources";
 import { resourceArticles } from "@/data/resource-articles";
 import { services } from "@/data/services";
-import { siteConfig } from "@/data/site-config";
 
 export function generateStaticParams() {
   return resources.map((resource) => ({ slug: resource.slug }));
@@ -134,17 +134,15 @@ export default async function ResourceDetailPage({
                 Book Consultation
                 <ArrowRight className="size-4" />
               </Link>
-              <a
-                href={siteConfig.contact.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                location="resource_article"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "rounded-full border-white/20 bg-white/5 px-8 text-white hover:bg-white/10 hover:text-white",
                 )}
               >
                 Chat on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

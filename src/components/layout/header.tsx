@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { mainNav, siteConfig } from "@/data/site-config";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -135,14 +136,12 @@ export function Header() {
               >
                 Book a Demo
               </Link>
-              <a
-                href={siteConfig.contact.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                location="mobile_nav"
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full rounded-full")}
               >
                 WhatsApp Us
-              </a>
+              </WhatsAppLink>
             </div>
           </SheetContent>
         </Sheet>

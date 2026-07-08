@@ -7,7 +7,7 @@ import { Faq } from "@/components/home/faq";
 import { JsonLd } from "@/components/shared/json-ld";
 import { faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/data/site-config";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { faqs } from "@/data/faq";
 
 export const metadata = pageMetadata({
@@ -139,10 +139,8 @@ export default function PricingPage() {
             >
               Book Consultation
             </Link>
-            <a
-              href={siteConfig.contact.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              location="pricing_page"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "gap-2 rounded-full",
@@ -150,7 +148,7 @@ export default function PricingPage() {
             >
               <MessageCircle className="size-4" />
               WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </section>

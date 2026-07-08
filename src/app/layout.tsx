@@ -8,6 +8,7 @@ import { BackToTop } from "@/components/layout/back-to-top";
 import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { JsonLd } from "@/components/shared/json-ld";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { organizationSchema } from "@/lib/schema";
 import { siteConfig } from "@/data/site-config";
 
@@ -67,6 +68,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+  }),
 };
 
 export default function RootLayout({
@@ -80,6 +86,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} bg-background text-foreground font-sans`}
       >
         <JsonLd data={organizationSchema()} />
+        <GoogleAnalytics />
         <SmoothScrollProvider>
           <Header />
           <main className="pb-20 lg:pb-0">{children}</main>
