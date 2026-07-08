@@ -21,9 +21,9 @@ export const siteConfig = {
   },
   socials: {
     linkedin: "https://www.linkedin.com/company/autosutra",
-    instagram: "https://www.instagram.com/autosutra",
-    facebook: "https://www.facebook.com/autosutra",
-    youtube: "https://www.youtube.com/@autosutra",
+    instagram: "https://www.instagram.com/autosutra.in",
+    facebook: "https://www.facebook.com/AutoSutra.in",
+    twitter: "https://x.com/AutoSutraIndia",
   },
 } as const;
 

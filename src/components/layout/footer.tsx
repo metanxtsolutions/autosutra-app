@@ -5,7 +5,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  YoutubeIcon,
+  XIcon,
 } from "@/components/icons/social-icons";
 import { footerNav, siteConfig } from "@/data/site-config";
 import { services } from "@/data/services";
@@ -16,7 +16,7 @@ const socialLinks = [
   { href: siteConfig.socials.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
   { href: siteConfig.socials.instagram, icon: InstagramIcon, label: "Instagram" },
   { href: siteConfig.socials.facebook, icon: FacebookIcon, label: "Facebook" },
-  { href: siteConfig.socials.youtube, icon: YoutubeIcon, label: "YouTube" },
+  { href: siteConfig.socials.twitter, icon: XIcon, label: "X" },
 ];
 
 export function Footer() {
