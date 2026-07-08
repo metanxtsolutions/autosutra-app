@@ -13,6 +13,11 @@ export const metadata = pageMetadata({
   description:
     "AutoSutra's growth solutions for India: Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology, built for dealer outcomes.",
   path: "/solutions",
+  keywords: [
+    "dealer growth solutions India",
+    "automotive lead generation solutions",
+    "car dealership performance marketing",
+  ],
 });
 
 const approach = [

@@ -21,6 +21,11 @@ export const metadata = pageMetadata({
   description:
     "Explore all 12 AutoSutra services: verified buyer leads, performance marketing, content, CRM, and SaaS tools for dealerships across India. Search, filter, and build your own growth stack.",
   path: "/services",
+  keywords: [
+    "car dealership marketing services India",
+    "dealer digital marketing services",
+    "automotive CRM software India",
+  ],
 });
 
 const serviceFaqs = [

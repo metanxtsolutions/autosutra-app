@@ -22,6 +22,11 @@ export const metadata = pageMetadata({
   description:
     "AutoSutra's story, mission, vision, values, and journey. India's dealer growth platform built by people who understand the automotive sales floor.",
   path: "/about",
+  keywords: [
+    "automobile marketing agency India",
+    "dealer growth platform India",
+    "AutoSutra company",
+  ],
 });
 
 const values = [
@@ -103,6 +108,11 @@ export default function AboutPage() {
               growth partner. Today we work across car, bike, EV, and
               used-car dealerships, plus OEM partners, helping them turn
               digital demand into showroom footfall they can measure.
+            </p>
+            <p>
+              We&apos;re based in Kolkata and work with dealer partners
+              across India, including Delhi NCR, Mumbai, Bangalore, Pune,
+              Chennai, Hyderabad, and Ahmedabad.
             </p>
           </div>
         </div>

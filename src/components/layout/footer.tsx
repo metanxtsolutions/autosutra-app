@@ -9,6 +9,7 @@ import {
 } from "@/components/icons/social-icons";
 import { footerNav, siteConfig } from "@/data/site-config";
 import { services } from "@/data/services";
+import { targetCities } from "@/data/locations";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
 
 const socialLinks = [
@@ -40,6 +41,10 @@ export function Footer() {
               <MapPin className="mt-0.5 size-4 shrink-0" />
               <span>{siteConfig.contact.addressLine}</span>
             </div>
+            <p className="mt-3 max-w-xs text-xs text-ink-foreground/40">
+              Serving dealers across {targetCities.slice(0, -1).join(", ")},
+              and {targetCities[targetCities.length - 1]}.
+            </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((social) => (
                 <a

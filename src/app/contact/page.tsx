@@ -9,6 +9,11 @@ export const metadata = pageMetadata({
   description:
     "Book a free consultation with AutoSutra, India's dealer growth agency. Reach us by phone, email, or WhatsApp from our Kolkata office, or send your dealership details.",
   path: "/contact",
+  keywords: [
+    "contact car dealership marketing agency India",
+    "book dealer growth consultation",
+    "AutoSutra Kolkata office",
+  ],
 });
 
 const contactCards = [

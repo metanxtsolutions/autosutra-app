@@ -1,6 +1,12 @@
 import { siteConfig } from "@/data/site-config";
+import { targetCities } from "@/data/locations";
 import type { Faq } from "@/data/faq";
 import type { Service } from "@/data/services";
+
+const areaServed = [
+  { "@type": "Country", name: "India" },
+  ...targetCities.map((city) => ({ "@type": "City", name: city })),
+];
 
 export function organizationSchema() {
   return {
@@ -18,10 +24,7 @@ export function organizationSchema() {
       addressRegion: "West Bengal",
       addressCountry: "IN",
     },
-    areaServed: {
-      "@type": "Country",
-      name: "India",
-    },
+    areaServed,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: siteConfig.contact.phoneDisplay,
@@ -60,10 +63,7 @@ export function serviceSchema(service: Service) {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    areaServed: {
-      "@type": "Country",
-      name: "India",
-    },
+    areaServed,
     url: `${siteConfig.url}/services/${service.slug}`,
   };
 }

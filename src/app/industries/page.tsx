@@ -11,6 +11,12 @@ export const metadata = pageMetadata({
   description:
     "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands across India, with tailored growth playbooks for each.",
   path: "/industries",
+  keywords: [
+    "car dealership marketing India",
+    "bike dealership marketing India",
+    "EV dealer marketing India",
+    "used car dealer marketing India",
+  ],
 });
 
 export default function IndustriesPage() {
@@ -83,6 +89,11 @@ export default function IndustriesPage() {
             client. AutoSutra builds campaigns, lead criteria, and reporting
             around how your specific industry actually buys, so every
             recommendation is grounded in your category, not a template.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
+            We work with dealers in Delhi NCR, Mumbai, Bangalore, Pune,
+            Chennai, Hyderabad, Kolkata, and Ahmedabad, and campaigns are
+            localized to how each market actually buys.
           </p>
         </div>
       </section>

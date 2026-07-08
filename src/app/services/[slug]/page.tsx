@@ -22,6 +22,12 @@ export async function generateMetadata({
     title: service.name,
     description: `${service.summary} Serving dealerships across India.`,
     path: `/services/${service.slug}`,
+    keywords: [
+      `${service.name} for car dealerships India`,
+      `${service.name} agency India`,
+      `${service.name} Mumbai`,
+      `${service.name} Delhi`,
+    ],
   });
 }
 

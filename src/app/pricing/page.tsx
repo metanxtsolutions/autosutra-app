@@ -15,6 +15,11 @@ export const metadata = pageMetadata({
   description:
     "Transparent monthly pricing in INR for AutoSutra's dealer growth plans: Starter, Growth, and Enterprise. Verified buyer leads, ad campaigns, CRM, and SaaS tools for India.",
   path: "/pricing",
+  keywords: [
+    "car dealership marketing pricing India",
+    "dealer lead generation cost India",
+    "verified buyer leads pricing",
+  ],
 });
 
 const comparisonRows = [
