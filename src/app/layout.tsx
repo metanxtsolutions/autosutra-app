@@ -7,6 +7,8 @@ import { StickyMobileCta } from "@/components/layout/sticky-mobile-cta";
 import { BackToTop } from "@/components/layout/back-to-top";
 import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { JsonLd } from "@/components/shared/json-ld";
+import { organizationSchema } from "@/lib/schema";
 import { siteConfig } from "@/data/site-config";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,13 +32,25 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "automobile marketing agency India",
-    "car dealership leads",
+    "car dealership leads India",
     "verified buyer leads",
-    "dealer digital marketing",
-    "automotive Google Ads",
-    "EV dealer marketing",
+    "dealer digital marketing India",
+    "automotive Google Ads agency",
+    "EV dealer marketing India",
+    "car dealership digital marketing Mumbai",
+    "car dealership digital marketing Delhi",
+    "car dealership digital marketing Bangalore",
+    "used car dealer leads India",
+    "bike dealership marketing India",
+    "dealer CRM software India",
   ],
   authors: [{ name: siteConfig.name }],
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      "en-IN": siteConfig.url,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -65,21 +79,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} bg-background text-foreground font-sans`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: siteConfig.name,
-              url: siteConfig.url,
-              description: siteConfig.description,
-              email: siteConfig.contact.email,
-              telephone: siteConfig.contact.phoneDisplay,
-              sameAs: Object.values(siteConfig.socials),
-            }),
-          }}
-        />
+        <JsonLd data={organizationSchema()} />
         <SmoothScrollProvider>
           <Header />
           <main className="pb-20 lg:pb-0">{children}</main>

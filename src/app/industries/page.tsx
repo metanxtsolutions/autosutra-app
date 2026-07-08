@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { industryIconMap } from "@/lib/icon-map";
 import { industries } from "@/data/industries";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Industries",
   description:
-    "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands, with tailored growth playbooks for each.",
-};
+    "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands across India, with tailored growth playbooks for each.",
+  path: "/industries",
+});
 
 export default function IndustriesPage() {
   return (

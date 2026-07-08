@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -7,12 +6,14 @@ import { solutionIconMap } from "@/lib/icon-map";
 import { solutions } from "@/data/solutions";
 import { services } from "@/data/services";
 import { StatBand } from "@/components/shared/stat-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Solutions",
   description:
-    "AutoSutra's growth solutions: Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology, built for dealer outcomes.",
-};
+    "AutoSutra's growth solutions for India: Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology, built for dealer outcomes.",
+  path: "/solutions",
+});
 
 const approach = [
   {

@@ -10,10 +10,14 @@ import { Testimonials } from "@/components/home/testimonials";
 import { PricingTeaser } from "@/components/home/pricing-teaser";
 import { Faq } from "@/components/home/faq";
 import { ContactCta } from "@/components/home/contact-cta";
+import { JsonLd } from "@/components/shared/json-ld";
+import { faqPageSchema } from "@/lib/schema";
+import { faqs } from "@/data/faq";
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqPageSchema(faqs)} />
       <Hero />
       <Stats />
       <TrustedByMarquee />

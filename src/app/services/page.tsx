@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -11,14 +10,18 @@ import {
 } from "@/components/ui/accordion";
 import { ServiceExplorer } from "@/components/services/service-explorer";
 import { StatBand } from "@/components/shared/stat-band";
+import { JsonLd } from "@/components/shared/json-ld";
+import { faqPageSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 import { services } from "@/data/services";
 import { solutions } from "@/data/solutions";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Explore all 12 AutoSutra services: verified buyer leads, performance marketing, content, CRM, and SaaS tools. Search, filter, and build your own growth stack.",
-};
+    "Explore all 12 AutoSutra services: verified buyer leads, performance marketing, content, CRM, and SaaS tools for dealerships across India. Search, filter, and build your own growth stack.",
+  path: "/services",
+});
 
 const serviceFaqs = [
   {
@@ -51,6 +54,7 @@ const serviceFaqs = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={faqPageSchema(serviceFaqs)} />
       <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8 lg:pb-32">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="pointer-events-none absolute -top-32 left-1/2 size-96 -translate-x-1/2 rounded-full bg-brand/25 blur-[120px]" />

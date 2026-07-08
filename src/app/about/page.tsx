@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -16,12 +15,14 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { StatBand } from "@/components/shared/stat-band";
 import { timeline } from "@/data/timeline";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
     "AutoSutra's story, mission, vision, values, and journey. India's dealer growth platform built by people who understand the automotive sales floor.",
-};
+  path: "/about",
+});
 
 const values = [
   {

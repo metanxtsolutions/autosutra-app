@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { ResourcesGrid } from "@/components/resources/resources-grid";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Resources",
   description:
-    "Dealer growth guides, blog posts, and downloads from AutoSutra. Practical playbooks for verified leads, ad campaigns, SEO, and CRM.",
-};
+    "Dealer growth guides, blog posts, and downloads from AutoSutra. Practical playbooks for verified leads, ad campaigns, SEO, and CRM for the Indian automotive market.",
+  path: "/resources",
+});
 
 export default function ResourcesPage() {
   return (

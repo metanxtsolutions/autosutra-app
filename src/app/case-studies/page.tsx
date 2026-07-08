@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { CaseStudiesGrid } from "@/components/case-studies/case-studies-grid";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Case Studies",
   description:
-    "Real dealership growth stories across car, bike, EV, used car, and OEM programs. See the results AutoSutra delivers.",
-};
+    "Real dealership growth stories across car, bike, EV, used car, and OEM programs in India. See the results AutoSutra delivers.",
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

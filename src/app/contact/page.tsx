@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { siteConfig } from "@/data/site-config";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Book a free consultation with AutoSutra. Reach us by phone, email, or WhatsApp, or send your dealership details and we'll respond within 24 hours.",
-};
+    "Book a free consultation with AutoSutra, India's dealer growth agency. Reach us by phone, email, or WhatsApp from our Kolkata office, or send your dealership details.",
+  path: "/contact",
+});
 
 const contactCards = [
   {
