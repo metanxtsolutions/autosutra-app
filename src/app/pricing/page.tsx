@@ -5,10 +5,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { PricingTable } from "@/components/pricing/pricing-table";
 import { Faq } from "@/components/home/faq";
 import { JsonLd } from "@/components/shared/json-ld";
-import { faqPageSchema } from "@/lib/schema";
+import { faqPageSchema, pricingSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { faqs } from "@/data/faq";
+import { pricingTiers } from "@/data/pricing";
 
 export const metadata = pageMetadata({
   title: "Pricing",
@@ -49,6 +50,7 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={faqPageSchema(faqs)} />
+      <JsonLd data={pricingSchema(pricingTiers)} />
       <section className="bg-ink px-6 pt-40 pb-24 text-center text-ink-foreground lg:px-8">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
           Pricing

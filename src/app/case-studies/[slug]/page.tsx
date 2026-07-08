@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!study) return {};
   return pageMetadata({
     title: study.headline,
-    description: `${study.dealership}: ${study.category}. ${study.headline} — an AutoSutra case study for ${study.industry.toLowerCase()} in India.`,
+    description: `${study.dealership}: ${study.category}. ${study.headline}, an AutoSutra case study for ${study.industry.toLowerCase()} in India.`,
     path: `/case-studies/${study.slug}`,
   });
 }

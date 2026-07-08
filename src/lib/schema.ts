@@ -3,6 +3,7 @@ import { targetCities } from "@/data/locations";
 import type { Faq } from "@/data/faq";
 import type { Service } from "@/data/services";
 import type { Resource } from "@/data/resources";
+import type { PricingTier } from "@/data/pricing";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -92,6 +93,39 @@ export function articleSchema(resource: Resource) {
     },
     url: `${siteConfig.url}/resources/${resource.slug}`,
     mainEntityOfPage: `${siteConfig.url}/resources/${resource.slug}`,
+  };
+}
+
+export function pricingSchema(tiers: PricingTier[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: `${siteConfig.name} pricing plans`,
+    itemListElement: tiers.map((tier) => ({
+      "@type": "Offer",
+      name: tier.name,
+      description: tier.description,
+      price: tier.price,
+      priceCurrency: "INR",
+      url: `${siteConfig.url}/pricing`,
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: tier.price,
+        priceCurrency: "INR",
+        billingIncrement: 1,
+        unitCode: "MON",
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: `${tier.name} plan`,
+        description: tier.description,
+        provider: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+      },
+    })),
   };
 }
 
