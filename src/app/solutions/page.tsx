@@ -81,7 +81,12 @@ export default function SolutionsPage() {
                     </span>
                   </div>
                   <h2 className="mt-5 font-heading text-2xl font-semibold text-ink sm:text-3xl">
-                    {solution.name}
+                    <Link
+                      href={`/solutions/${solution.slug}`}
+                      className="transition-colors hover:text-brand"
+                    >
+                      {solution.name}
+                    </Link>
                   </h2>
                   <p className="mt-2 text-sm font-medium text-brand">
                     {solution.outcome}
@@ -89,6 +94,13 @@ export default function SolutionsPage() {
                   <p className="mt-4 text-muted-foreground">
                     {solution.description}
                   </p>
+                  <Link
+                    href={`/solutions/${solution.slug}`}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+                  >
+                    View details
+                    <ArrowRight className="size-3.5" />
+                  </Link>
                 </div>
                 <div className="flex flex-col justify-center gap-3 lg:col-span-2">
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">

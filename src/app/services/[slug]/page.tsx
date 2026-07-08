@@ -279,7 +279,7 @@ export default async function ServiceDetailPage({
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
               Tell us about your dealership and we&apos;ll map out how{" "}
-              {service.name.toLowerCase()} fits into your plan.
+              {service.name} fits into your plan.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

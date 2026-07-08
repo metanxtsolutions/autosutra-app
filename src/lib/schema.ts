@@ -129,6 +129,34 @@ export function pricingSchema(tiers: PricingTier[]) {
   };
 }
 
+export function combinationServiceSchema({
+  name,
+  description,
+  path,
+  areaServedName,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaServedName?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: areaServedName
+      ? { "@type": "City", name: areaServedName }
+      : areaServed,
+    url: `${siteConfig.url}${path}`,
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

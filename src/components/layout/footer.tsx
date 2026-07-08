@@ -9,7 +9,7 @@ import {
 } from "@/components/icons/social-icons";
 import { footerNav, siteConfig } from "@/data/site-config";
 import { services } from "@/data/services";
-import { targetCities } from "@/data/locations";
+import { cityProfiles } from "@/data/city-content";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
 
 const socialLinks = [
@@ -42,8 +42,23 @@ export function Footer() {
               <span>{siteConfig.contact.addressLine}</span>
             </div>
             <p className="mt-3 max-w-xs text-xs text-ink-foreground/40">
-              Serving dealers across {targetCities.slice(0, -1).join(", ")},
-              and {targetCities[targetCities.length - 1]}.
+              Serving dealers across{" "}
+              {cityProfiles.map((city, index) => (
+                <span key={city.slug}>
+                  <Link
+                    href={`/city/${city.slug}`}
+                    className="underline decoration-white/20 underline-offset-2 hover:text-ink-foreground hover:decoration-white/40"
+                  >
+                    {city.name}
+                  </Link>
+                  {index < cityProfiles.length - 2
+                    ? ", "
+                    : index === cityProfiles.length - 2
+                      ? ", and "
+                      : ""}
+                </span>
+              ))}
+              .
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((social) => (
@@ -76,6 +91,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/city"
+                  className="text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+                >
+                  Cities
+                </Link>
+              </li>
             </ul>
           </div>
 

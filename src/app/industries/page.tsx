@@ -45,8 +45,9 @@ export default function IndustriesPage() {
           {industries.map((industry) => {
             const Icon = industryIconMap[industry.icon];
             return (
-              <div
+              <Link
                 key={industry.slug}
+                href={`/industries/${industry.slug}`}
                 className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-shadow hover:shadow-lg"
               >
                 <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-brand">
@@ -69,7 +70,11 @@ export default function IndustriesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                  View details
+                  <ArrowRight className="size-3.5" />
+                </span>
+              </Link>
             );
           })}
         </div>
