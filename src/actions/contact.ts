@@ -64,13 +64,21 @@ export async function submitContactForm(
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "AutoSutra Website <onboarding@resend.dev>",
       to: siteConfig.contact.email,
       replyTo: parsed.data.email,
       subject: `New lead: ${parsed.data.dealership} (${parsed.data.service})`,
       html: leadEmailHtml(parsed.data),
     });
+
+    // The Resend SDK returns API-level failures (unverified recipient,
+    // invalid domain, etc.) as this `error` field rather than throwing,
+    // so they must be checked explicitly or they fail silently.
+    if (error) {
+      console.error("Resend API returned an error sending lead email:", error);
+      console.log("New AutoSutra lead (email send failed):", parsed.data);
+    }
   } catch (error) {
     console.error("Failed to send lead email:", error);
     console.log("New AutoSutra lead (email send failed):", parsed.data);
