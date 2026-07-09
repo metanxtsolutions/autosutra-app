@@ -65,7 +65,7 @@ export function Hero() {
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
           <Link
-            href="/contact"
+            href="/book-a-demo"
             className={cn(
               buttonVariants({ size: "lg" }),
               "group h-13 gap-2 rounded-full bg-brand px-8 text-base hover:bg-brand/90",

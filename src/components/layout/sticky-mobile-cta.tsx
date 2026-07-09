@@ -19,7 +19,7 @@ export function StickyMobileCta() {
         <MessageCircle className="size-4" /> WhatsApp
       </WhatsAppLink>
       <Link
-        href="/contact"
+        href="/book-a-demo"
         className={cn(
           buttonVariants({ variant: "default", size: "lg" }),
           "flex-1 gap-2 rounded-full",

@@ -82,7 +82,7 @@ export default async function IndustryDetailPage({
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/book-a-demo"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "gap-2 rounded-full bg-brand px-8 hover:bg-brand/90",
@@ -177,7 +177,7 @@ export default async function IndustryDetailPage({
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/contact"
+                href="/book-a-demo"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "gap-2 rounded-full bg-brand px-8 hover:bg-brand/90",

@@ -114,7 +114,7 @@ export default function PricingPage() {
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Need a custom package for a multi-city dealer network or OEM
           program?{" "}
-          <Link href="/contact" className="font-medium text-brand underline">
+          <Link href="/book-a-demo" className="font-medium text-brand underline">
             Talk to our team
           </Link>
           .
@@ -136,7 +136,7 @@ export default function PricingPage() {
           </div>
           <div className="flex shrink-0 gap-3">
             <Link
-              href="/contact"
+              href="/book-a-demo"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full")}
             >
               Book Consultation

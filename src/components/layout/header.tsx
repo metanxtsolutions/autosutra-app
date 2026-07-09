@@ -86,7 +86,7 @@ export function Header() {
             {siteConfig.contact.phoneDisplay}
           </Link>
           <Link
-            href="/contact"
+            href="/book-a-demo"
             className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-5")}
           >
             Book a Demo
@@ -131,7 +131,7 @@ export function Header() {
             </nav>
             <div className="mt-auto flex flex-col gap-3 p-4">
               <Link
-                href="/contact"
+                href="/book-a-demo"
                 className={cn(buttonVariants({ variant: "default", size: "lg" }), "w-full rounded-full")}
               >
                 Book a Demo
