@@ -65,7 +65,7 @@ export default async function SolutionCityPage({
       answer: `Yes. ${solution.name} is available for ${city.name} dealerships, combining ${includedServices.map((s) => s.name).join(", ")}. ${city.buyerBehavior}`,
     },
     {
-      question: `How fast can a ${city.name} dealership get started?`,
+      question: `How fast can ${city.name} dealerships get started?`,
       answer: `Most services within ${solution.name} go live within 7 to 10 business days of onboarding for ${city.name} dealerships.`,
     },
   ];

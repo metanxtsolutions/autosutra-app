@@ -66,7 +66,7 @@ export default async function ServiceCityPage({
       answer: `${service.idealFor}. This is especially relevant in ${city.name}: ${city.highlights[0]}.`,
     },
     {
-      question: `How fast can a ${city.name} dealership get started with ${service.name}?`,
+      question: `How fast can ${city.name} dealerships get started with ${service.name}?`,
       answer: `Most services, including ${service.name}, go live within 7 to 10 business days of onboarding for ${city.name} dealerships.`,
     },
   ];
