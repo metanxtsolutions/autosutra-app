@@ -65,10 +65,10 @@ export default async function IndustryServicePage({
     },
     {
       question: `Who is this best suited for?`,
-      answer: `${service.idealFor}. ${industry.description}`,
+      answer: `${service.idealFor}. About ${industry.name}: ${industry.description}`,
     },
     {
-      question: `How fast can a ${industry.name} business get started?`,
+      question: `How fast can ${industry.name} get started?`,
       answer: `Most services, including ${service.name}, go live within 7 to 10 business days of onboarding.`,
     },
   ];
@@ -271,8 +271,8 @@ export default async function IndustryServicePage({
               Ready for {service.name}?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
-              Tell us about your {industry.name} business and we&apos;ll map
-              out a plan.
+              Tell us about your dealership and we&apos;ll map out a plan for{" "}
+              {industry.name}.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

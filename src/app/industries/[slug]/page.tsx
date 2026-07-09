@@ -169,7 +169,7 @@ export default async function IndustryDetailPage({
           <div className="pointer-events-none absolute -top-24 left-1/2 size-96 -translate-x-1/2 rounded-full bg-brand/30 blur-[110px]" />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-balance font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
-              Ready to grow your {industry.name} business?
+              Ready to grow with AutoSutra?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
               Tell us about your dealership and we&apos;ll map a plan built
