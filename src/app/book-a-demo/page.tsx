@@ -90,7 +90,7 @@ export default function BookADemoPage() {
         </div>
       </section>
 
-      <section className="mx-auto -mt-12 max-w-6xl px-6 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
