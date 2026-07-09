@@ -1,20 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Download, Newspaper } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { ResourceCoverImage } from "@/components/resources/resource-cover-image";
 import { resources, type Resource } from "@/data/resources";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
 const filters = ["All", "Guide", "Blog", "Download"] as const;
-
-const categoryIcon: Record<Resource["category"], typeof BookOpen> = {
-  Guide: BookOpen,
-  Blog: Newspaper,
-  Download: Download,
-};
 
 const categoryCta: Record<Resource["category"], string> = {
   Guide: "Read guide",
@@ -22,17 +18,54 @@ const categoryCta: Record<Resource["category"], string> = {
   Download: "View worksheet",
 };
 
-export function ResourcesGrid() {
+export function ResourcesGrid({
+  items = resources,
+  hideFilters = false,
+}: {
+  items?: Resource[];
+  hideFilters?: boolean;
+}) {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const [query, setQuery] = useState("");
 
-  const filtered =
-    active === "All"
-      ? resources
-      : resources.filter((resource) => resource.category === active);
+  const filtered = useMemo(() => {
+    const byCategory =
+      hideFilters || active === "All"
+        ? items
+        : items.filter((r) => r.category === active);
+
+    const q = query.trim().toLowerCase();
+    if (!q) return byCategory;
+
+    return byCategory.filter((resource) =>
+      [
+        resource.title,
+        resource.excerpt,
+        resource.primaryKeyword,
+        ...resource.tags,
+        ...resource.secondaryKeywords,
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(q),
+    );
+  }, [items, active, query, hideFilters]);
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="relative mx-auto max-w-md">
+        <Search className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
+        <Input
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search guides, articles, downloads..."
+          aria-label="Search resources"
+          className="h-12 rounded-full pl-11"
+        />
+      </div>
+
+      {!hideFilters && (
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
         {filters.map((filter) => (
           <button
             key={filter}
@@ -49,47 +82,52 @@ export function ResourcesGrid() {
           </button>
         ))}
       </div>
+      )}
 
-      <motion.div
-        key={active}
-        initial="hidden"
-        animate="show"
-        variants={staggerContainer(0.06)}
-        className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {filtered.map((resource) => {
-          const Icon = categoryIcon[resource.category];
-          return (
+      {filtered.length === 0 ? (
+        <p className="mt-16 text-center text-sm text-muted-foreground">
+          No resources match &ldquo;{query}&rdquo;. Try a different search
+          term.
+        </p>
+      ) : (
+        <motion.div
+          key={`${active}-${query}`}
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer(0.06)}
+          className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {filtered.map((resource) => (
             <motion.div key={resource.slug} variants={fadeUp}>
               <Link
                 href={`/resources/${resource.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-brand">
-                    <Icon className="size-5" />
+                <ResourceCoverImage
+                  resource={resource}
+                  className="aspect-[16/9] w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-heading text-lg font-semibold text-ink">
+                    {resource.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">
+                    {resource.excerpt}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand">
+                    {categoryCta[resource.category]}
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
+                    <span>{resource.category}</span>
+                    <span>{resource.readTime}</span>
                   </div>
-                  <ArrowRight className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-                <h3 className="mt-5 font-heading text-lg font-semibold text-ink">
-                  {resource.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">
-                  {resource.excerpt}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand">
-                  {categoryCta[resource.category]}
-                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-                </span>
-                <div className="mt-5 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
-                  <span>{resource.category}</span>
-                  <span>{resource.readTime}</span>
                 </div>
               </Link>
             </motion.div>
-          );
-        })}
-      </motion.div>
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 }

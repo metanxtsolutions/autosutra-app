@@ -71,16 +71,15 @@ export function serviceSchema(service: Service) {
   };
 }
 
-const RESOURCES_PUBLISHED_DATE = "2026-07-08";
-
 export function articleSchema(resource: Resource) {
   return {
     "@context": "https://schema.org",
     "@type": resource.category === "Blog" ? "BlogPosting" : "Article",
     headline: resource.title,
     description: resource.excerpt,
-    datePublished: RESOURCES_PUBLISHED_DATE,
-    dateModified: RESOURCES_PUBLISHED_DATE,
+    keywords: [resource.primaryKeyword, ...resource.secondaryKeywords].join(", "),
+    datePublished: resource.publishedDate,
+    dateModified: resource.updatedDate,
     author: {
       "@type": "Organization",
       name: siteConfig.name,

@@ -1,8 +1,8 @@
-import { renderOgImage, ogImageSize, ogImageContentType } from "@/lib/og-image";
+import { renderResourceCover, resourceCoverSize, resourceCoverContentType } from "@/lib/resource-cover";
 import { resources } from "@/data/resources";
 
-export const size = ogImageSize;
-export const contentType = ogImageContentType;
+export const size = resourceCoverSize;
+export const contentType = resourceCoverContentType;
 
 export function generateStaticParams() {
   return resources.map((resource) => ({ slug: resource.slug }));
@@ -15,8 +15,9 @@ export default async function Image({
 }) {
   const { slug } = await params;
   const resource = resources.find((item) => item.slug === slug);
-  return renderOgImage({
-    eyebrow: resource?.category ?? "Resource",
+  return renderResourceCover({
     title: resource?.title ?? "AutoSutra",
+    category: resource?.category ?? "Resource",
+    cluster: resource?.coverCluster ?? "leads",
   });
 }

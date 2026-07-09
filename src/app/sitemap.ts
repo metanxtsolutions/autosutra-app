@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/case-studies", priority: 0.7, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/resources", priority: 0.6, changeFrequency: "weekly" as const },
+    { path: "/resources/sitemap", priority: 0.3, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/book-a-demo", priority: 0.9, changeFrequency: "monthly" as const },
   ].map(({ path, priority, changeFrequency }) => ({
@@ -70,9 +71,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const resourceRoutes: MetadataRoute.Sitemap = resources.map((resource) => ({
     url: `${siteConfig.url}/resources/${resource.slug}`,
-    lastModified: now,
+    lastModified: new Date(resource.updatedDate),
     changeFrequency: "monthly",
     priority: 0.6,
+  }));
+
+  const resourceCategories = Array.from(
+    new Set(resources.map((resource) => resource.category)),
+  );
+  const resourceCategoryRoutes: MetadataRoute.Sitemap = resourceCategories.map(
+    (category) => ({
+      url: `${siteConfig.url}/resources/category/${category.toLowerCase()}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.5,
+    }),
+  );
+
+  const resourceTags = Array.from(
+    new Set(resources.flatMap((resource) => resource.tags)),
+  );
+  const resourceTagRoutes: MetadataRoute.Sitemap = resourceTags.map((tag) => ({
+    url: `${siteConfig.url}/resources/tag/${tag}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
   }));
 
   const serviceCityRoutes: MetadataRoute.Sitemap = services.flatMap(
@@ -113,6 +136,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cityRoutes,
     ...caseStudyRoutes,
     ...resourceRoutes,
+    ...resourceCategoryRoutes,
+    ...resourceTagRoutes,
     ...serviceCityRoutes,
     ...solutionCityRoutes,
     ...industryServiceRoutes,

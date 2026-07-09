@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Tag as TagIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { ArticleBody } from "@/components/resources/article-body";
+import { ArticleFaqs } from "@/components/resources/article-faqs";
+import { ArticleNav } from "@/components/resources/article-nav";
+import { ReadingProgressBar } from "@/components/resources/reading-progress-bar";
+import { RelatedArticles } from "@/components/resources/related-articles";
+import { ResourceCoverImage } from "@/components/resources/resource-cover-image";
+import { ShareButtons } from "@/components/resources/share-buttons";
+import { TableOfContents } from "@/components/resources/table-of-contents";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/data/site-config";
 import { resources } from "@/data/resources";
 import { resourceArticles } from "@/data/resource-articles";
 import { services } from "@/data/services";
@@ -29,10 +38,7 @@ export async function generateMetadata({
     title: resource.title,
     description: resource.excerpt,
     path: `/resources/${resource.slug}`,
-    keywords: [
-      `${resource.title} India`,
-      "car dealership marketing guide India",
-    ],
+    keywords: [resource.primaryKeyword, ...resource.secondaryKeywords],
   });
 }
 
@@ -42,7 +48,8 @@ export default async function ResourceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const resource = resources.find((item) => item.slug === slug);
+  const index = resources.findIndex((item) => item.slug === slug);
+  const resource = resources[index];
   const article = resourceArticles[slug];
   if (!resource || !article) notFound();
 
@@ -50,9 +57,26 @@ export default async function ResourceDetailPage({
     article.relatedServiceSlugs.includes(service.slug),
   );
 
+  const relatedByTag = resources
+    .filter(
+      (item) =>
+        item.slug !== resource.slug &&
+        item.tags.some((tag) => resource.tags.includes(tag)),
+    )
+    .slice(0, 3);
+
+  const prev = index > 0 ? resources[index - 1] : null;
+  const next = index < resources.length - 1 ? resources[index + 1] : null;
+
+  const contentId = "article-content";
+  const headings = article.sections.map((section) => section.heading);
+  const articleUrl = `${siteConfig.url}/resources/${resource.slug}`;
+
   return (
     <>
+      <ReadingProgressBar targetId={contentId} />
       <JsonLd data={articleSchema(resource)} />
+      <JsonLd data={faqPageSchema(article.faqs)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -71,19 +95,90 @@ export default async function ResourceDetailPage({
           <h1 className="mx-auto mt-4 max-w-3xl text-balance font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
             {resource.title}
           </h1>
-          <div className="mx-auto mt-6 flex items-center justify-center gap-2 text-sm text-white/50">
-            <Clock className="size-4" />
-            {resource.readTime}
+          <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/50">
+            <span className="flex items-center gap-2">
+              <Clock className="size-4" />
+              {resource.readTime}
+            </span>
+            <span>
+              Updated{" "}
+              {new Date(resource.updatedDate).toLocaleDateString("en-IN", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <ArticleBody article={article} />
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Resources", path: "/resources" },
+          { name: resource.title, path: `/resources/${resource.slug}` },
+        ]}
+      />
+
+      <section className="mx-auto max-w-7xl px-6 pt-10 pb-4 lg:px-8">
+        <ResourceCoverImage
+          resource={resource}
+          priority
+          sizes="(min-width: 1024px) 900px, 100vw"
+          className="aspect-[16/9] w-full rounded-3xl object-cover"
+        />
       </section>
 
-      {relatedServices.length > 0 && (
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1fr_260px]">
+          <div id={contentId}>
+            <ArticleBody article={article} />
+
+            <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center gap-2">
+              {resource.tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/resources/tag/${tag}`}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground/70 transition-colors hover:border-brand/40 hover:text-brand"
+                >
+                  <TagIcon className="size-3" />
+                  {tag.replace(/-/g, " ")}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-8 flex max-w-3xl items-center justify-between border-y border-border py-5">
+              <span className="text-sm font-medium text-foreground/70">
+                Share this guide
+              </span>
+              <ShareButtons title={resource.title} url={articleUrl} />
+            </div>
+
+            <div className="mx-auto mt-12 max-w-3xl">
+              <ArticleFaqs faqs={article.faqs} />
+            </div>
+
+            <div className="mx-auto max-w-3xl">
+              <ArticleNav prev={prev} next={next} />
+            </div>
+          </div>
+
+          <aside className="hidden lg:block">
+            <TableOfContents headings={headings} />
+          </aside>
+        </div>
+      </section>
+
+      {relatedByTag.length > 0 && (
         <section className="bg-muted/40 py-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <RelatedArticles resources={relatedByTag} />
+          </div>
+        </section>
+      )}
+
+      {relatedServices.length > 0 && (
+        <section className="py-20">
           <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <h2 className="text-center font-heading text-2xl font-semibold text-ink">
               Related services

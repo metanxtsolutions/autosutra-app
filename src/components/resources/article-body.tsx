@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import type { ResourceArticle } from "@/data/resource-articles";
+import { slugifyHeading } from "@/lib/slugify";
 
 export function ArticleBody({ article }: { article: ResourceArticle }) {
   return (
@@ -8,7 +9,7 @@ export function ArticleBody({ article }: { article: ResourceArticle }) {
 
       <div className="mt-10 space-y-10">
         {article.sections.map((section) => (
-          <div key={section.heading}>
+          <div key={section.heading} id={slugifyHeading(section.heading)} className="scroll-mt-28">
             <h2 className="font-heading text-2xl font-semibold text-ink">
               {section.heading}
             </h2>
