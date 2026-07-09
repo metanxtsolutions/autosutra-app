@@ -9,6 +9,11 @@ export const siteConfig = {
   tagline: "India's Fastest Growing Automobile Marketing & Solutions Agency",
   description:
     "AutoSutra helps car, bike, EV and used-car dealerships, OEMs, and automotive brands grow with verified buyer leads, performance marketing, dealer data intelligence, and CRM/SaaS solutions built for the automotive industry.",
+  // Kept under 160 characters for meta description / SERP snippet display.
+  // The longer `description` above is used for structured data, where
+  // length isn't penalized.
+  metaDescription:
+    "AutoSutra helps car, bike, EV, and used-car dealerships across India grow with verified buyer leads, performance marketing, and CRM/SaaS solutions.",
   url: "https://www.autosutra.in",
   contact: {
     email: "info@autosutra.in",

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: siteConfig.metaDescription,
   keywords: [
     "automobile marketing agency India",
     "car dealership leads India",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteConfig.url,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
-    description: siteConfig.description,
+    description: siteConfig.metaDescription,
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
-    description: siteConfig.description,
+    description: siteConfig.metaDescription,
   },
   icons: {
     icon: "/favicon.ico",
