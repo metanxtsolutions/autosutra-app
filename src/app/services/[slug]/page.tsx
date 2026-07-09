@@ -13,6 +13,7 @@ import { services } from "@/data/services";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
 import { resourceArticles } from "@/data/resource-articles";
+import { cityProfiles } from "@/data/city-content";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -163,6 +164,23 @@ export default async function ServiceDetailPage({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+        <h2 className="text-center font-heading text-2xl font-semibold text-ink">
+          Available in your city
+        </h2>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {cityProfiles.map((city) => (
+            <Link
+              key={city.slug}
+              href={`/services/${service.slug}/${city.slug}`}
+              className="rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
+            >
+              {city.name}
+            </Link>
+          ))}
         </div>
       </section>
 
