@@ -86,7 +86,7 @@ export function ShareButtons({
   }
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex flex-wrap items-center gap-2", className)}>
       {links.map(({ name, href, Icon }) => (
         <a
           key={name}

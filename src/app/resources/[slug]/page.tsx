@@ -147,7 +147,7 @@ export default async function ResourceDetailPage({
               ))}
             </div>
 
-            <div className="mx-auto mt-8 flex max-w-3xl items-center justify-between border-y border-border py-5">
+            <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-between gap-3 border-y border-border py-5">
               <span className="text-sm font-medium text-foreground/70">
                 Share this guide
               </span>
