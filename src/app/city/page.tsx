@@ -2,17 +2,19 @@ import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cityProfiles } from "@/data/city-content";
 import { districtProfiles } from "@/data/wb-districts";
+import { apDistrictProfiles } from "@/data/ap-districts";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Cities We Serve",
   description:
-    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal.",
+    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal and Andhra Pradesh.",
   path: "/city",
   keywords: [
     "car dealership marketing agency India cities",
     "dealer growth marketing India",
     "dealership marketing West Bengal districts",
+    "dealership marketing Andhra Pradesh districts",
   ],
 });
 
@@ -78,6 +80,30 @@ export default function CityIndexPage() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {districtProfiles.map((district) => (
+              <Link
+                key={district.slug}
+                href={`/city/${district.slug}`}
+                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
+              >
+                {district.name}
+                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <h2 className="font-heading text-2xl font-semibold text-ink">
+            Andhra Pradesh districts
+          </h2>
+          <p className="mt-2 max-w-2xl text-muted-foreground">
+            We also serve dealerships across every district of Andhra
+            Pradesh, from Visakhapatnam to YSR Kadapa.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {apDistrictProfiles.map((district) => (
               <Link
                 key={district.slug}
                 href={`/city/${district.slug}`}

@@ -23,6 +23,7 @@ import {
 import { pageMetadata } from "@/lib/seo";
 import { cityProfiles, type CityFaq } from "@/data/city-content";
 import { districtProfiles } from "@/data/wb-districts";
+import { apDistrictProfiles } from "@/data/ap-districts";
 import { services } from "@/data/services";
 
 type LocationKind = "metro" | "district";
@@ -45,6 +46,10 @@ function allLocations(): LocationView[] {
   return [
     ...cityProfiles.map((city) => ({ ...city, kind: "metro" as const })),
     ...districtProfiles.map((district) => ({
+      ...district,
+      kind: "district" as const,
+    })),
+    ...apDistrictProfiles.map((district) => ({
       ...district,
       kind: "district" as const,
     })),
@@ -99,7 +104,7 @@ export default async function CityPage({
           )
           .filter((item): item is LocationView => Boolean(item)),
         ...cityProfiles
-          .filter((city) => city.slug === "kolkata")
+          .filter((city) => city.region === location.region)
           .map((city) => ({ ...city, kind: "metro" as const })),
       ]
     : cityProfiles
@@ -107,7 +112,7 @@ export default async function CityPage({
         .map((city) => ({ ...city, kind: "metro" as const }));
 
   const otherLocationsHeading = isDistrict
-    ? "AutoSutra in nearby West Bengal districts"
+    ? `AutoSutra in nearby ${location.region} districts`
     : "AutoSutra in other cities";
 
   return (
