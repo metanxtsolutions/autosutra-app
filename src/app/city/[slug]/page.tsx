@@ -18,13 +18,41 @@ import {
   breadcrumbSchema,
   combinationServiceSchema,
   faqPageSchema,
+  localBusinessSchema,
 } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
-import { cityProfiles } from "@/data/city-content";
+import { cityProfiles, type CityFaq } from "@/data/city-content";
+import { districtProfiles } from "@/data/wb-districts";
 import { services } from "@/data/services";
 
+type LocationKind = "metro" | "district";
+
+type LocationView = {
+  slug: string;
+  name: string;
+  region: string;
+  kind: LocationKind;
+  isHQ?: boolean;
+  marketContext: string;
+  buyerBehavior: string;
+  highlights: string[];
+  faqs: CityFaq[];
+  keywords?: string[];
+  nearbySlugs?: string[];
+};
+
+function allLocations(): LocationView[] {
+  return [
+    ...cityProfiles.map((city) => ({ ...city, kind: "metro" as const })),
+    ...districtProfiles.map((district) => ({
+      ...district,
+      kind: "district" as const,
+    })),
+  ];
+}
+
 export function generateStaticParams() {
-  return cityProfiles.map((city) => ({ slug: city.slug }));
+  return allLocations().map((location) => ({ slug: location.slug }));
 }
 
 export async function generateMetadata({
@@ -33,18 +61,19 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const city = cityProfiles.find((item) => item.slug === slug);
-  if (!city) return {};
+  const location = allLocations().find((item) => item.slug === slug);
+  if (!location) return {};
   return pageMetadata({
-    title: `Car & Bike Dealership Marketing in ${city.name}`,
-    description: `Verified buyer leads, performance marketing, and dealer growth services for ${city.name} car, bike, EV, and used-car dealerships. ${city.marketContext}`,
-    path: `/city/${city.slug}`,
-    keywords: [
-      `car dealership marketing ${city.name}`,
-      `dealer leads ${city.name}`,
-      `automotive marketing agency ${city.name}`,
-      `dealership digital marketing ${city.name}`,
-    ],
+    title: `Car & Bike Dealership Marketing in ${location.name}`,
+    description: `Verified buyer leads, performance marketing, and dealer growth services for ${location.name} car, bike, EV, and used-car dealerships. ${location.marketContext}`,
+    path: `/city/${location.slug}`,
+    keywords:
+      location.keywords ?? [
+        `car dealership marketing ${location.name}`,
+        `dealer leads ${location.name}`,
+        `automotive marketing agency ${location.name}`,
+        `dealership digital marketing ${location.name}`,
+      ],
   });
 }
 
@@ -54,28 +83,58 @@ export default async function CityPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const city = cityProfiles.find((item) => item.slug === slug);
-  if (!city) notFound();
+  const locations = allLocations();
+  const location = locations.find((item) => item.slug === slug);
+  if (!location) notFound();
 
-  const otherCities = cityProfiles.filter((item) => item.slug !== city.slug);
+  const isDistrict = location.kind === "district";
+
+  const otherLocations = isDistrict
+    ? [
+        ...(location.nearbySlugs ?? [])
+          .map((nearbySlug) =>
+            locations.find(
+              (item) => item.slug === nearbySlug && item.kind === "district",
+            ),
+          )
+          .filter((item): item is LocationView => Boolean(item)),
+        ...cityProfiles
+          .filter((city) => city.slug === "kolkata")
+          .map((city) => ({ ...city, kind: "metro" as const })),
+      ]
+    : cityProfiles
+        .filter((city) => city.slug !== location.slug)
+        .map((city) => ({ ...city, kind: "metro" as const }));
+
+  const otherLocationsHeading = isDistrict
+    ? "AutoSutra in nearby West Bengal districts"
+    : "AutoSutra in other cities";
 
   return (
     <>
       <JsonLd
         data={combinationServiceSchema({
-          name: `Dealer Growth Marketing in ${city.name}`,
-          description: city.marketContext,
-          path: `/city/${city.slug}`,
-          areaServedName: city.name,
+          name: `Dealer Growth Marketing in ${location.name}`,
+          description: location.marketContext,
+          path: `/city/${location.slug}`,
+          areaServedName: location.name,
+        })}
+      />
+      <JsonLd
+        data={localBusinessSchema({
+          name: `AutoSutra Dealership Marketing in ${location.name}`,
+          description: location.marketContext,
+          path: `/city/${location.slug}`,
+          areaServedName: `${location.name}, ${location.region}`,
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: city.name, path: `/city/${city.slug}` },
+          { name: location.name, path: `/city/${location.slug}` },
         ])}
       />
-      <JsonLd data={faqPageSchema(city.faqs)} />
+      <JsonLd data={faqPageSchema(location.faqs)} />
 
       <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8 lg:pb-32">
         <div className="absolute inset-0 bg-grid opacity-30" />
@@ -83,14 +142,14 @@ export default async function CityPage({
         <div className="relative mx-auto max-w-3xl">
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
             <MapPin className="size-3.5" />
-            {city.region}
-            {city.isHQ && " · Headquarters"}
+            {location.region}
+            {location.isHQ && " · Headquarters"}
           </span>
           <h1 className="mx-auto mt-4 max-w-2xl text-balance font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
-            Grow Your Dealership in {city.name}
+            Grow Your Dealership in {location.name}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
-            {city.marketContext}
+            {location.marketContext}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -120,17 +179,17 @@ export default async function CityPage({
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
-          { name: city.name, path: `/city/${city.slug}` },
+          { name: location.name, path: `/city/${location.slug}` },
         ]}
       />
 
       <section className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
         <h2 className="font-heading text-3xl font-semibold text-ink sm:text-4xl">
-          Why {city.name} dealerships choose AutoSutra
+          Why {location.name} dealerships choose AutoSutra
         </h2>
-        <p className="mt-4 text-foreground/80">{city.buyerBehavior}</p>
+        <p className="mt-4 text-foreground/80">{location.buyerBehavior}</p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-          {city.highlights.map((highlight) => (
+          {location.highlights.map((highlight) => (
             <li
               key={highlight}
               className="rounded-2xl border border-border bg-card p-5 shadow-sm"
@@ -145,18 +204,21 @@ export default async function CityPage({
       <section className="bg-muted/40 py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
-            Our services in {city.name}
+            Our services in {location.name}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-            All 12 services, delivered locally for {city.name} dealerships.
+            All 12 services, delivered for {location.name} dealerships.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
               const Icon = serviceIconMap[service.icon];
+              const href = isDistrict
+                ? `/services/${service.slug}`
+                : `/services/${service.slug}/${location.slug}`;
               return (
                 <Link
                   key={service.slug}
-                  href={`/services/${service.slug}/${city.slug}`}
+                  href={href}
                   className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
                 >
                   <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-brand">
@@ -164,7 +226,7 @@ export default async function CityPage({
                   </div>
                   <div>
                     <h3 className="font-heading text-sm font-semibold text-ink">
-                      {service.name} in {city.name}
+                      {service.name} in {location.name}
                     </h3>
                     <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
                       Learn more
@@ -183,7 +245,7 @@ export default async function CityPage({
           Frequently asked questions
         </h2>
         <Accordion className="mt-10">
-          {city.faqs.map((faq) => (
+          {location.faqs.map((faq) => (
             <AccordionItem key={faq.question} value={faq.question}>
               <AccordionTrigger className="text-left font-heading text-base font-semibold text-ink">
                 {faq.question}
@@ -196,12 +258,37 @@ export default async function CityPage({
         </Accordion>
       </section>
 
+      <section className="mx-auto max-w-4xl px-6 pb-4 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card p-8">
+          <h2 className="text-center font-heading text-lg font-semibold text-ink">
+            Explore more
+          </h2>
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            {[
+              { label: "Services", href: "/services" },
+              { label: "Solutions", href: "/solutions" },
+              { label: "Pricing", href: "/pricing" },
+              { label: "Resources", href: "/resources" },
+              { label: "Contact Us", href: "/contact" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-full border border-border px-4 py-1.5 text-sm text-foreground/70 transition-colors hover:border-brand/40 hover:text-brand"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <h2 className="text-center font-heading text-2xl font-semibold text-ink">
-          AutoSutra in other cities
+          {otherLocationsHeading}
         </h2>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {otherCities.map((other) => (
+          {otherLocations.map((other) => (
             <Link
               key={other.slug}
               href={`/city/${other.slug}`}
@@ -219,11 +306,11 @@ export default async function CityPage({
           <div className="pointer-events-none absolute -top-24 left-1/2 size-96 -translate-x-1/2 rounded-full bg-brand/30 blur-[110px]" />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-balance font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
-              Ready to grow your {city.name} dealership?
+              Ready to grow your {location.name} dealership?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
               Tell us about your dealership and we&apos;ll map out a growth
-              plan built around {city.name}&apos;s market.
+              plan built around {location.name}&apos;s market.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

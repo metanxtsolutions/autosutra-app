@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cityProfiles } from "@/data/city-content";
+import { districtProfiles } from "@/data/wb-districts";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Cities We Serve",
   description:
-    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, and Ahmedabad.",
+    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal.",
   path: "/city",
   keywords: [
     "car dealership marketing agency India cities",
     "dealer growth marketing India",
+    "dealership marketing West Bengal districts",
   ],
 });
 
@@ -35,7 +37,10 @@ export default function CityIndexPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <h2 className="font-heading text-2xl font-semibold text-ink">
+          Major cities
+        </h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cityProfiles.map((city) => (
             <Link
               key={city.slug}
@@ -46,9 +51,9 @@ export default function CityIndexPage() {
                 <div className="flex size-10 items-center justify-center rounded-xl bg-accent text-brand">
                   <MapPin className="size-4" />
                 </div>
-                <h2 className="mt-4 font-heading text-lg font-semibold text-ink">
+                <h3 className="mt-4 font-heading text-lg font-semibold text-ink">
                   {city.name}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {city.region}
                 </p>
@@ -59,6 +64,30 @@ export default function CityIndexPage() {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-muted/40 py-24">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <h2 className="font-heading text-2xl font-semibold text-ink">
+            West Bengal districts
+          </h2>
+          <p className="mt-2 max-w-2xl text-muted-foreground">
+            Beyond our Kolkata headquarters, we serve dealerships across
+            every district of West Bengal.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {districtProfiles.map((district) => (
+              <Link
+                key={district.slug}
+                href={`/city/${district.slug}`}
+                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
+              >
+                {district.name}
+                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

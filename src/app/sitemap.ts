@@ -6,6 +6,7 @@ import { industries } from "@/data/industries";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
 import { cityProfiles } from "@/data/city-content";
+import { districtProfiles } from "@/data/wb-districts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -59,6 +60,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
+
+  const districtRoutes: MetadataRoute.Sitemap = districtProfiles.map(
+    (district) => ({
+      url: `${siteConfig.url}/city/${district.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }),
+  );
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
@@ -134,6 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionRoutes,
     ...industryRoutes,
     ...cityRoutes,
+    ...districtRoutes,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,

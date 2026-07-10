@@ -156,6 +156,46 @@ export function combinationServiceSchema({
   };
 }
 
+// Represents AutoSutra as a ProfessionalService (a LocalBusiness subtype)
+// serving the named area, using our real HQ address rather than a
+// fabricated branch office, since we don't have physical locations in
+// every city or district this schema is used for.
+export function localBusinessSchema({
+  name,
+  description,
+  path,
+  areaServedName,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaServedName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name,
+    description,
+    url: `${siteConfig.url}${path}`,
+    telephone: siteConfig.contact.phoneDisplay,
+    email: siteConfig.contact.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "SDF Building, GP Block, Sector V, Bidhannagar",
+      addressLocality: "Kolkata",
+      addressRegion: "West Bengal",
+      postalCode: "700091",
+      addressCountry: "IN",
+    },
+    areaServed: { "@type": "AdministrativeArea", name: areaServedName },
+    parentOrganization: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
