@@ -26,6 +26,7 @@ import { districtProfiles } from "@/data/wb-districts";
 import { apDistrictProfiles } from "@/data/ap-districts";
 import { arDistrictProfiles } from "@/data/ar-districts";
 import { assamDistrictProfiles, assamStateProfile } from "@/data/assam-districts";
+import { biharDistrictProfiles, biharStateProfile } from "@/data/bihar-districts";
 import { services } from "@/data/services";
 
 type LocationKind = "metro" | "district";
@@ -64,6 +65,11 @@ function allLocations(): LocationView[] {
       kind: "district" as const,
     })),
     { ...assamStateProfile, kind: "district" as const },
+    ...biharDistrictProfiles.map((district) => ({
+      ...district,
+      kind: "district" as const,
+    })),
+    { ...biharStateProfile, kind: "district" as const },
   ];
 }
 

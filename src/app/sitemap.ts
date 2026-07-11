@@ -10,6 +10,7 @@ import { districtProfiles } from "@/data/wb-districts";
 import { apDistrictProfiles } from "@/data/ap-districts";
 import { arDistrictProfiles } from "@/data/ar-districts";
 import { assamDistrictProfiles, assamStateProfile } from "@/data/assam-districts";
+import { biharDistrictProfiles, biharStateProfile } from "@/data/bihar-districts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -109,6 +110,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const biharDistrictRoutes: MetadataRoute.Sitemap = biharDistrictProfiles.map(
+    (district) => ({
+      url: `${siteConfig.url}/city/${district.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }),
+  );
+
+  const biharStateRoute: MetadataRoute.Sitemap = [
+    {
+      url: `${siteConfig.url}/city/${biharStateProfile.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
@@ -188,6 +207,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...arDistrictRoutes,
     ...assamDistrictRoutes,
     ...assamStateRoute,
+    ...biharDistrictRoutes,
+    ...biharStateRoute,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,
