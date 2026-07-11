@@ -9,6 +9,7 @@ import { cityProfiles } from "@/data/city-content";
 import { districtProfiles } from "@/data/wb-districts";
 import { apDistrictProfiles } from "@/data/ap-districts";
 import { arDistrictProfiles } from "@/data/ar-districts";
+import { assamDistrictProfiles, assamStateProfile } from "@/data/assam-districts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -90,6 +91,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const assamDistrictRoutes: MetadataRoute.Sitemap = assamDistrictProfiles.map(
+    (district) => ({
+      url: `${siteConfig.url}/city/${district.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }),
+  );
+
+  const assamStateRoute: MetadataRoute.Sitemap = [
+    {
+      url: `${siteConfig.url}/city/${assamStateProfile.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
@@ -167,6 +186,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...districtRoutes,
     ...apDistrictRoutes,
     ...arDistrictRoutes,
+    ...assamDistrictRoutes,
+    ...assamStateRoute,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,

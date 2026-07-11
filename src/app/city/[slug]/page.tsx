@@ -25,6 +25,7 @@ import { cityProfiles, type CityFaq } from "@/data/city-content";
 import { districtProfiles } from "@/data/wb-districts";
 import { apDistrictProfiles } from "@/data/ap-districts";
 import { arDistrictProfiles } from "@/data/ar-districts";
+import { assamDistrictProfiles, assamStateProfile } from "@/data/assam-districts";
 import { services } from "@/data/services";
 
 type LocationKind = "metro" | "district";
@@ -58,6 +59,11 @@ function allLocations(): LocationView[] {
       ...district,
       kind: "district" as const,
     })),
+    ...assamDistrictProfiles.map((district) => ({
+      ...district,
+      kind: "district" as const,
+    })),
+    { ...assamStateProfile, kind: "district" as const },
   ];
 }
 
