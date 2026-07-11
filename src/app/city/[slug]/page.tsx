@@ -24,6 +24,7 @@ import { pageMetadata } from "@/lib/seo";
 import { cityProfiles, type CityFaq } from "@/data/city-content";
 import { districtProfiles } from "@/data/wb-districts";
 import { apDistrictProfiles } from "@/data/ap-districts";
+import { arDistrictProfiles } from "@/data/ar-districts";
 import { services } from "@/data/services";
 
 type LocationKind = "metro" | "district";
@@ -50,6 +51,10 @@ function allLocations(): LocationView[] {
       kind: "district" as const,
     })),
     ...apDistrictProfiles.map((district) => ({
+      ...district,
+      kind: "district" as const,
+    })),
+    ...arDistrictProfiles.map((district) => ({
       ...district,
       kind: "district" as const,
     })),
