@@ -6,11 +6,7 @@ import { industries } from "@/data/industries";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
 import { cityProfiles } from "@/data/city-content";
-import { districtProfiles } from "@/data/wb-districts";
-import { apDistrictProfiles } from "@/data/ap-districts";
-import { arDistrictProfiles } from "@/data/ar-districts";
-import { assamDistrictProfiles, assamStateProfile } from "@/data/assam-districts";
-import { biharDistrictProfiles, biharStateProfile } from "@/data/bihar-districts";
+import { states } from "@/data/states";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -65,68 +61,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const districtRoutes: MetadataRoute.Sitemap = districtProfiles.map(
-    (district) => ({
-      url: `${siteConfig.url}/city/${district.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
-
-  const apDistrictRoutes: MetadataRoute.Sitemap = apDistrictProfiles.map(
-    (district) => ({
-      url: `${siteConfig.url}/city/${district.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
-
-  const arDistrictRoutes: MetadataRoute.Sitemap = arDistrictProfiles.map(
-    (district) => ({
-      url: `${siteConfig.url}/city/${district.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
-
-  const assamDistrictRoutes: MetadataRoute.Sitemap = assamDistrictProfiles.map(
-    (district) => ({
-      url: `${siteConfig.url}/city/${district.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
-
-  const assamStateRoute: MetadataRoute.Sitemap = [
+  const indiaRoute: MetadataRoute.Sitemap = [
     {
-      url: `${siteConfig.url}/city/${assamStateProfile.slug}`,
+      url: `${siteConfig.url}/india`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
   ];
 
-  const biharDistrictRoutes: MetadataRoute.Sitemap = biharDistrictProfiles.map(
-    (district) => ({
-      url: `${siteConfig.url}/city/${district.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
+  const stateRoutes: MetadataRoute.Sitemap = states.map((state) => ({
+    url: `${siteConfig.url}/india/${state.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
-  const biharStateRoute: MetadataRoute.Sitemap = [
-    {
-      url: `${siteConfig.url}/city/${biharStateProfile.slug}`,
+  const districtRoutes: MetadataRoute.Sitemap = states.flatMap((state) =>
+    state.districts.map((district) => ({
+      url: `${siteConfig.url}/india/${state.slug}/${district.slug}`,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  );
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
@@ -202,13 +160,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionRoutes,
     ...industryRoutes,
     ...cityRoutes,
+    ...indiaRoute,
+    ...stateRoutes,
     ...districtRoutes,
-    ...apDistrictRoutes,
-    ...arDistrictRoutes,
-    ...assamDistrictRoutes,
-    ...assamStateRoute,
-    ...biharDistrictRoutes,
-    ...biharStateRoute,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,

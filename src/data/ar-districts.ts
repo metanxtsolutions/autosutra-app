@@ -1410,3 +1410,85 @@ export const arDistrictProfiles: DistrictProfile[] = [
     nearbySlugs: ["tirap"],
   },
 ];
+
+// Arunachal Pradesh state hub profile, rendered as the parent of all 28
+// districts under the new /india/arunachal-pradesh hierarchy.
+export const arStateProfile: DistrictProfile = {
+  slug: "arunachal-pradesh",
+  name: "Arunachal Pradesh",
+  region: "Arunachal Pradesh",
+  majorTowns: "Itanagar, Naharlagun, Pasighat, Tawang, Along",
+  marketContext:
+    "Arunachal Pradesh is India's easternmost frontier state, a mountainous Himalayan territory bordering China, Myanmar, and Bhutan, home to more distinct tribal communities than any other Northeast state. Many of its 28 districts were only carved out in the last decade, and dealership presence genuinely varies by district: Itanagar Capital Region functions as the state's real commercial center, while remote districts like Dibang Valley and Anjaw remain sparsely populated with roads and connectivity still developing. Agriculture, forestry, and growing hydropower development anchor the state's economy outside the capital region.",
+  buyerBehavior:
+    "Buyer behavior is shaped heavily by terrain and remoteness: Itanagar Capital Region buyers behave like any competitive urban market, while buyers in mountainous, low-connectivity districts prioritize vehicle durability and service reach above all else, and respond far better to consistent local presence than broad advertising. AutoSutra builds district-specific campaigns rather than one statewide message, because an Itanagar strategy has little relevance in Dibang Valley or Anjaw.",
+  highlights: [
+    "Coverage across all 28 Arunachal Pradesh districts, from Itanagar Capital Region to the state's most remote frontier districts",
+    "District-specific strategy rather than one generic statewide campaign, honest about genuinely small markets where that's the reality",
+    "Deep familiarity with Arunachal Pradesh's terrain-driven buyer patterns across its many recently formed districts",
+  ],
+  faqs: [
+    {
+      question: "Does AutoSutra serve dealerships across all of Arunachal Pradesh, or only Itanagar?",
+      answer:
+        "We work with dealerships across all 28 Arunachal Pradesh districts, from Itanagar Capital Region to remote districts like Tawang, Dibang Valley, and Anjaw.",
+    },
+    {
+      question: "How is a statewide Arunachal Pradesh strategy different from a single-district campaign?",
+      answer:
+        "It isn't a single campaign at all. Each Arunachal Pradesh district gets its own local SEO, keywords, and content built around that district's actual economy and buyer behavior, then this page ties them together as a single entry point.",
+    },
+    {
+      question: "Does AutoSutra have an office in Arunachal Pradesh?",
+      answer:
+        "AutoSutra is headquartered in Kolkata and serves Arunachal Pradesh as part of our pan-India dealer growth marketing, without a physical branch office in the state.",
+    },
+    {
+      question: "How do I find the page for my specific Arunachal Pradesh district?",
+      answer:
+        "Every Arunachal Pradesh district listed on this page links directly to its own dedicated page with district-specific content, FAQs, and services.",
+    },
+  ],
+  keywords: [
+    "Automotive CRM in Arunachal Pradesh",
+    "Car Dealer CRM in Arunachal Pradesh",
+    "Dealership Management Software in Arunachal Pradesh",
+    "Dealer Management System in Arunachal Pradesh",
+    "Automotive Software in Arunachal Pradesh",
+    "Automotive Marketing in Arunachal Pradesh",
+    "Automotive Digital Marketing in Arunachal Pradesh",
+    "WhatsApp Marketing for Car Dealers in Arunachal Pradesh",
+    "Local SEO for Car Dealerships in Arunachal Pradesh",
+    "car dealership marketing agency Arunachal Pradesh",
+  ],
+  nearbySlugs: [
+    "itanagar",
+    "papum-pare",
+    "tawang",
+    "west-kameng",
+    "bichom",
+    "east-kameng",
+    "pakke-kessang",
+    "kurung-kumey",
+    "kra-daadi",
+    "keyi-panyor",
+    "lower-subansiri",
+    "kamle",
+    "upper-subansiri",
+    "leparada",
+    "west-siang",
+    "shi-yomi",
+    "siang",
+    "lower-siang",
+    "east-siang",
+    "upper-siang",
+    "dibang-valley",
+    "lower-dibang-valley",
+    "lohit",
+    "anjaw",
+    "namsai",
+    "changlang",
+    "tirap",
+    "longding",
+  ],
+};

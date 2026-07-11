@@ -1257,3 +1257,82 @@ export const apDistrictProfiles: DistrictProfile[] = [
     nearbySlugs: ["annamayya", "kurnool", "nandyal"],
   },
 ];
+
+// Andhra Pradesh state hub profile, rendered as the parent of all 25
+// districts under the new /india/andhra-pradesh hierarchy.
+export const apStateProfile: DistrictProfile = {
+  slug: "andhra-pradesh",
+  name: "Andhra Pradesh",
+  region: "Andhra Pradesh",
+  majorTowns: "Visakhapatnam, Vijayawada, Guntur, Tirupati, Nellore",
+  marketContext:
+    "Andhra Pradesh has built a distinct economic identity since its 2014 bifurcation from Telangana, with Visakhapatnam as its largest city and port and the Amaravati region developing as the new capital area. The state splits into two genuinely different economic belts: coastal Andhra, built on the fertile Godavari-Krishna delta and a major aquaculture industry, and Rayalaseema, a drier interior region with a more agrarian and drought-adapted economy. Pilgrimage tourism around Tirupati adds a further distinct layer to the state's dealership demand.",
+  buyerBehavior:
+    "Buyer behavior differs sharply between the two belts: coastal Andhra districts like Krishna, Guntur, and East Godavari see steadier income from delta agriculture and aquaculture exports, while Rayalaseema districts such as Anantapur and Kurnool see more seasonal, rainfall-dependent purchasing patterns. AutoSutra builds district-specific campaigns rather than one statewide message, because a Visakhapatnam strategy rarely works unchanged in Anantapur or Kadapa.",
+  highlights: [
+    "Coverage across all 25 Andhra Pradesh districts, from the coastal delta belt to the Rayalaseema interior",
+    "District-specific strategy rather than one generic statewide campaign",
+    "Deep familiarity with Andhra Pradesh's distinct coastal, Rayalaseema, and pilgrimage-economy market patterns",
+  ],
+  faqs: [
+    {
+      question: "Does AutoSutra serve dealerships across all of Andhra Pradesh, or only Visakhapatnam?",
+      answer:
+        "We work with dealerships across all 25 Andhra Pradesh districts, from Visakhapatnam and Vijayawada to Anantapur, Tirupati, and YSR Kadapa.",
+    },
+    {
+      question: "How is a statewide Andhra Pradesh strategy different from a single-district campaign?",
+      answer:
+        "It isn't a single campaign at all. Each Andhra Pradesh district gets its own local SEO, keywords, and content built around that district's actual economy and buyer behavior, then this page ties them together as a single entry point.",
+    },
+    {
+      question: "Does AutoSutra have an office in Andhra Pradesh?",
+      answer:
+        "AutoSutra is headquartered in Kolkata and serves Andhra Pradesh as part of our pan-India dealer growth marketing, without a physical branch office in the state.",
+    },
+    {
+      question: "How do I find the page for my specific Andhra Pradesh district?",
+      answer:
+        "Every Andhra Pradesh district listed on this page links directly to its own dedicated page with district-specific content, FAQs, and services.",
+    },
+  ],
+  keywords: [
+    "Automotive CRM in Andhra Pradesh",
+    "Car Dealer CRM in Andhra Pradesh",
+    "Dealership Management Software in Andhra Pradesh",
+    "Dealer Management System in Andhra Pradesh",
+    "Automotive Software in Andhra Pradesh",
+    "Automotive Marketing in Andhra Pradesh",
+    "Automotive Digital Marketing in Andhra Pradesh",
+    "WhatsApp Marketing for Car Dealers in Andhra Pradesh",
+    "Local SEO for Car Dealerships in Andhra Pradesh",
+    "car dealership marketing agency Andhra Pradesh",
+  ],
+  nearbySlugs: [
+    "anakapalli",
+    "anantapur",
+    "annamayya",
+    "bapatla",
+    "chittoor",
+    "konaseema",
+    "east-godavari",
+    "eluru",
+    "guntur",
+    "kakinada",
+    "krishna",
+    "kurnool",
+    "nandyal",
+    "ntr",
+    "palnadu",
+    "parvathipuram-manyam",
+    "prakasam",
+    "nellore",
+    "sri-sathya-sai",
+    "srikakulam",
+    "tirupati",
+    "visakhapatnam",
+    "vizianagaram",
+    "west-godavari",
+    "ysr-kadapa",
+  ],
+};

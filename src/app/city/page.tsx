@@ -1,26 +1,18 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cityProfiles } from "@/data/city-content";
-import { districtProfiles } from "@/data/wb-districts";
-import { apDistrictProfiles } from "@/data/ap-districts";
-import { arDistrictProfiles } from "@/data/ar-districts";
-import { assamDistrictProfiles } from "@/data/assam-districts";
-import { biharDistrictProfiles } from "@/data/bihar-districts";
+import { states } from "@/data/states";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Cities We Serve",
   description:
-    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, and Bihar.",
+    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, and Bihar, browsable by state at /india.",
   path: "/city",
   keywords: [
     "car dealership marketing agency India cities",
     "dealer growth marketing India",
-    "dealership marketing West Bengal districts",
-    "dealership marketing Andhra Pradesh districts",
-    "dealership marketing Arunachal Pradesh districts",
-    "dealership marketing Assam districts",
-    "dealership marketing Bihar districts",
+    "dealership marketing by state India",
   ],
 });
 
@@ -78,145 +70,45 @@ export default function CityIndexPage() {
       <section className="bg-muted/40 py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="font-heading text-2xl font-semibold text-ink">
-            West Bengal districts
+            Browse by state
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Beyond our Kolkata headquarters, we serve dealerships across
-            every district of West Bengal.
+            Beyond our major cities, AutoSutra serves dealerships across
+            every district of these states. Each state links to its full
+            district directory.
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {districtProfiles.map((district) => (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {states.map((state) => (
               <Link
-                key={district.slug}
-                href={`/city/${district.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
+                key={state.slug}
+                href={`/india/${state.slug}`}
+                className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-brand/40"
               >
-                {district.name}
-                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div>
+                  <div className="flex size-10 items-center justify-center rounded-xl bg-accent text-brand">
+                    <MapPin className="size-4" />
+                  </div>
+                  <h3 className="mt-4 font-heading text-lg font-semibold text-ink">
+                    {state.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {state.districts.length} districts
+                  </p>
+                </div>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                  View {state.name}
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="font-heading text-2xl font-semibold text-ink">
-            Andhra Pradesh districts
-          </h2>
-          <p className="mt-2 max-w-2xl text-muted-foreground">
-            We also serve dealerships across every district of Andhra
-            Pradesh, from Visakhapatnam to YSR Kadapa.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {apDistrictProfiles.map((district) => (
-              <Link
-                key={district.slug}
-                href={`/city/${district.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
-              >
-                {district.name}
-                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-muted/40 py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <h2 className="font-heading text-2xl font-semibold text-ink">
-            Arunachal Pradesh districts
-          </h2>
-          <p className="mt-2 max-w-2xl text-muted-foreground">
-            We also serve dealerships across every district of Arunachal
-            Pradesh, from the Itanagar Capital Region to the state&apos;s
-            most remote frontier districts.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {arDistrictProfiles.map((district) => (
-              <Link
-                key={district.slug}
-                href={`/city/${district.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
-              >
-                {district.name}
-                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-heading text-2xl font-semibold text-ink">
-                Assam districts
-              </h2>
-              <p className="mt-2 max-w-2xl text-muted-foreground">
-                We also serve dealerships across every district of Assam,
-                from Kamrup Metropolitan and the Barak Valley to the
-                Bodoland Territorial Region.
-              </p>
-            </div>
-            <Link
-              href="/city/assam"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-brand"
-            >
-              View Assam overview
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {assamDistrictProfiles.map((district) => (
-              <Link
-                key={district.slug}
-                href={`/city/${district.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
-              >
-                {district.name}
-                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-muted/40 py-24">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-heading text-2xl font-semibold text-ink">
-                Bihar districts
-              </h2>
-              <p className="mt-2 max-w-2xl text-muted-foreground">
-                We also serve dealerships across every district of Bihar,
-                from Patna and the Ganges plain to the Kosi belt and
-                Champaran districts.
-              </p>
-            </div>
-            <Link
-              href="/city/bihar"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-brand"
-            >
-              View Bihar overview
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {biharDistrictProfiles.map((district) => (
-              <Link
-                key={district.slug}
-                href={`/city/${district.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
-              >
-                {district.name}
-                <ArrowRight className="size-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
-          </div>
+          <Link
+            href="/india"
+            className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+          >
+            View the full India directory
+            <ArrowRight className="size-3.5" />
+          </Link>
         </div>
       </section>
     </>

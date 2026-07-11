@@ -1,5 +1,18 @@
 import type { CityFaq } from "@/data/city-content";
 
+// Reserved for future city-level pages under a district (/india/{state}/{district}/{city}).
+// No district currently populates this field; it exists so a future data-only
+// addition is enough to bring a city page live, without route or type changes.
+export type CityEntry = {
+  slug: string;
+  name: string;
+  marketContext: string;
+  buyerBehavior: string;
+  highlights: string[];
+  faqs: CityFaq[];
+  keywords?: string[];
+};
+
 export type DistrictProfile = {
   slug: string;
   name: string;
@@ -11,6 +24,7 @@ export type DistrictProfile = {
   faqs: CityFaq[];
   keywords: string[];
   nearbySlugs: string[];
+  cities?: CityEntry[];
 };
 
 // Genuine, general characterizations of each West Bengal district's economic
@@ -1121,3 +1135,79 @@ export const districtProfiles: DistrictProfile[] = [
     nearbySlugs: ["alipurduar", "jalpaiguri", "uttar-dinajpur"],
   },
 ];
+
+// West Bengal state hub profile, rendered as the parent of all 22 districts
+// under the new /india/west-bengal hierarchy.
+export const wbStateProfile: DistrictProfile = {
+  slug: "west-bengal",
+  name: "West Bengal",
+  region: "West Bengal",
+  majorTowns: "Kolkata, Howrah, Siliguri, Durgapur, Asansol",
+  marketContext:
+    "West Bengal is eastern India's largest state economy, anchored by Kolkata, AutoSutra's own headquarters city, and spanning a genuinely varied dealership landscape: the Howrah-Hooghly-Durgapur-Asansol industrial belt, the fertile Gangetic delta districts around Nadia and Murshidabad, the tea gardens and hill terrain of Darjeeling and Kalimpong, and the Sundarbans mangrove belt in South 24 Parganas. Jute and tea trade built the state's earlier economy, and Kolkata's IT and services growth in areas like Salt Lake and Rajarhat has added a newer commercial layer on top.",
+  buyerBehavior:
+    "Buyer behavior varies by belt: Kolkata and its industrial twin Howrah see research-driven, comparison-shopping buyers, the Darjeeling hill districts favor durable vehicles suited to steep terrain, and the delta and border districts respond best to consistent local presence over broad advertising. AutoSutra builds district-specific campaigns rather than one statewide message, because a Kolkata strategy rarely works unchanged in Purulia or the Sundarbans.",
+  highlights: [
+    "Coverage across all 22 West Bengal districts, from the Kolkata metro region to the Darjeeling hills and Sundarbans",
+    "District-specific strategy rather than one generic statewide campaign",
+    "Local advantage of being headquartered in Kolkata, not a remote outside agency",
+  ],
+  faqs: [
+    {
+      question: "Does AutoSutra serve dealerships across all of West Bengal, or only Kolkata?",
+      answer:
+        "We work with dealerships across all 22 West Bengal districts, from Kolkata and Howrah to Darjeeling, Purulia, and the Sundarbans region.",
+    },
+    {
+      question: "How is a statewide West Bengal strategy different from a single-district campaign?",
+      answer:
+        "It isn't a single campaign at all. Each West Bengal district gets its own local SEO, keywords, and content built around that district's actual economy and buyer behavior, then this page ties them together as a single entry point.",
+    },
+    {
+      question: "Does AutoSutra have an office in West Bengal?",
+      answer:
+        "Yes. Unlike our other state coverage, AutoSutra is actually headquartered in Kolkata, so West Bengal dealerships work with a genuinely local team, not a remote outside agency.",
+    },
+    {
+      question: "How do I find the page for my specific West Bengal district?",
+      answer:
+        "Every West Bengal district listed on this page links directly to its own dedicated page with district-specific content, FAQs, and services.",
+    },
+  ],
+  keywords: [
+    "Automotive CRM in West Bengal",
+    "Car Dealer CRM in West Bengal",
+    "Dealership Management Software in West Bengal",
+    "Dealer Management System in West Bengal",
+    "Automotive Software in West Bengal",
+    "Automotive Marketing in West Bengal",
+    "Automotive Digital Marketing in West Bengal",
+    "WhatsApp Marketing for Car Dealers in West Bengal",
+    "Local SEO for Car Dealerships in West Bengal",
+    "car dealership marketing agency West Bengal",
+  ],
+  nearbySlugs: [
+    "howrah",
+    "hooghly",
+    "north-24-parganas",
+    "south-24-parganas",
+    "nadia",
+    "murshidabad",
+    "purba-bardhaman",
+    "paschim-bardhaman",
+    "birbhum",
+    "bankura",
+    "purulia",
+    "jhargram",
+    "paschim-medinipur",
+    "purba-medinipur",
+    "malda",
+    "dakshin-dinajpur",
+    "uttar-dinajpur",
+    "darjeeling",
+    "kalimpong",
+    "jalpaiguri",
+    "alipurduar",
+    "cooch-behar",
+  ],
+};
