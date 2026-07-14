@@ -4223,4 +4223,97 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["digital-marketing", "content-creation"],
   },
+
+  "ev-charging-partnerships-dealership-marketing": {
+    intro:
+      "As covered in our guide to how EV dealership marketing differs from petrol and diesel marketing, charging access is often the single doubt standing between an interested EV buyer and a booked test drive. A charging partnership, whether that's an on-site charger, a tie-up with nearby apartment complexes and offices, or a listing on the charging networks buyers already use, turns that doubt into a reason to visit. Most dealerships treat charging infrastructure as a facilities decision. Handled right, it's a marketing asset.",
+    sections: [
+      {
+        heading: "What a charging infrastructure partnership actually looks like",
+        body: [
+          "There isn't one standard partnership model, and most EV dealerships end up combining more than one of these:",
+        ],
+        bullets: [
+          "An on-site charger installed and co-branded with a charge point operator, often at little or no upfront cost to the dealership in exchange for signage and foot traffic",
+          "A referral or discount tie-up with nearby apartment complexes and office parks, so residents and employees who charge there also see the dealership's inventory and offers",
+          "A listing on the charging locator apps EV owners already use to plan routes, which puts the dealership's location in front of drivers who aren't actively shopping yet",
+          "A highway or route charging partnership for outstation buyers, useful for dealerships near a corridor buyers actually drive between cities",
+        ],
+      },
+      {
+        heading: "Why this is a marketing angle, not just a facilities upgrade",
+        body: [
+          "A dealership that can show a buyer exactly where they'll charge, backed by a real partnership rather than a vague promise of 'charging support,' is answering a question competitors usually leave open. It also gives the dealership a reason to be useful to EV owners who haven't bought from them yet, since a charging locator listing or a nearby charger reaches people simply passing through, not just active leads.",
+          "AutoSutra's own EV dealership launch work included giving prospective buyers a clear picture of nearby charging access as part of the pre-visit content, alongside a digital marketing and CRM setup built specifically for the EV buying journey. That combination was one of the levers behind booking over 700 test drives in the showroom's first 90 days. The charging piece wasn't incidental, it was one of the reasons buyers arrived already leaning toward a yes.",
+        ],
+      },
+      {
+        heading: "Turning the partnership into visible content",
+        body: [
+          "Installing or arranging charging access only pays off as a marketing angle if buyers actually see it before they visit. That means treating it as a content topic, not a one-time facilities announcement.",
+        ],
+        bullets: [
+          "Add the charger as a Google Business Profile attribute and post photos of it, since this shows up directly in local search results for EV-related searches",
+          "Send a WhatsApp update to EV-interested leads in your CRM when a new charging partnership goes live, framed around what it solves for them rather than as a general announcement",
+          "Publish a short piece of content mapping the charging options near your dealership, covering partner chargers, nearby public chargers, and realistic charging times",
+          "Ask the charge point operator or apartment complex partner for a joint announcement or local press mention, which extends reach beyond your own audience",
+        ],
+      },
+      {
+        heading: "Choosing the right partner and structuring the deal",
+        body: [
+          "Not every charging partnership is worth pursuing. Before agreeing to one, check the operator's actual uptime reputation in your city, since a charger that's frequently out of service does more damage to trust than having none at all. Confirm the connector types match the EV models you actually sell, and clarify upfront who covers maintenance and electricity costs versus who gets signage and co-marketing rights. A partnership with unclear terms on any of these tends to quietly stop being maintained within a year.",
+        ],
+      },
+      {
+        heading: "Measuring whether the partnership is actually driving footfall",
+        body: [
+          "Track this the same way you'd track any other marketing investment. Note when a test drive booking or showroom visit specifically mentions the charger or charging partnership, since sales staff can capture this in a CRM field in seconds. Watch Google Business Profile direction requests and calls after the charger listing goes live, and compare them to the weeks before. If range and charging concerns are a common reason leads go cold in your pipeline, a working partnership should show up as a measurable drop in that specific objection over time, which is worth tracking directly rather than assuming the partnership is helping.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What counts as a charging infrastructure partnership for a dealership?",
+        answer:
+          "It can be an on-site charger co-branded with a charge point operator, a referral tie-up with nearby apartment complexes or offices, a listing on charging locator apps, or a highway charging partnership for outstation buyers. Most dealerships combine more than one.",
+      },
+      {
+        question: "Does a charging partnership cost the dealership money to set up?",
+        answer:
+          "Not always. Many charge point operators install and maintain a charger at little or no upfront cost in exchange for signage and the foot traffic your dealership brings. Terms vary by operator, so this should be clarified before agreeing.",
+      },
+      {
+        question: "How do I market a charging partnership once it's set up?",
+        answer:
+          "Add it as a Google Business Profile attribute with photos, send a WhatsApp update to EV-interested leads already in your CRM, publish content mapping the charging options near your dealership, and ask the partner for a joint announcement.",
+      },
+      {
+        question: "Do EV buyers actually care about a dealership's charging partnerships?",
+        answer:
+          "Yes. Charging access is frequently the deciding factor between a serious enquiry and a lead that goes cold, since it directly answers one of the biggest open questions an EV buyer has before committing to a purchase.",
+      },
+      {
+        question: "How do I choose the right charging partner?",
+        answer:
+          "Check the operator's actual uptime reputation in your city, confirm connector types match the EV models you sell, and get clear terms on who covers maintenance and electricity costs versus who gets signage and co-marketing rights.",
+      },
+      {
+        question: "How do I measure whether a charging partnership is driving footfall?",
+        answer:
+          "Track test drive bookings or visits that specifically mention the charger, monitor Google Business Profile direction requests and calls after the listing goes live, and watch whether charging-related objections drop in your sales pipeline.",
+      },
+      {
+        question: "Is a charging partnership only worth it for EV-exclusive dealerships?",
+        answer:
+          "No. Multi-brand dealerships selling EVs alongside petrol or diesel models can use a charging partnership the same way, as a specific answer to the doubt that's actually stopping EV-interested buyers from booking a visit.",
+      },
+      {
+        question: "What's the biggest mistake dealerships make with charging partnerships?",
+        answer:
+          "Treating it as a one-time facilities announcement instead of an ongoing content and marketing topic. A charger nobody hears about doesn't move any buyer closer to a decision.",
+      },
+    ],
+    relatedServiceSlugs: ["local-seo", "digital-marketing"],
+  },
 };

@@ -888,4 +888,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-15",
     coverCluster: "leads",
   },
+  {
+    slug: "ev-charging-partnerships-dealership-marketing",
+    title: "Charging Infrastructure Partnerships as a Dealership Marketing Angle",
+    category: "Guide",
+    excerpt:
+      "A dealer-installed or partner charger isn't just a facilities upgrade. Used well, it's a marketing asset that resolves the doubt actually stopping EV buyers from booking a visit.",
+    readTime: "7 min read",
+    tags: ["ev-dealers", "local-seo"],
+    primaryKeyword: "EV charging partnership dealership",
+    secondaryKeywords: [
+      "EV charging infrastructure marketing",
+      "dealership charge point partnership India",
+    ],
+    publishedDate: "2026-07-15",
+    updatedDate: "2026-07-15",
+    coverCluster: "leads",
+  },
 ];
