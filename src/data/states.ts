@@ -8,6 +8,10 @@ import { apDistrictProfiles, apStateProfile } from "./ap-districts";
 import { arDistrictProfiles, arStateProfile } from "./ar-districts";
 import { assamDistrictProfiles, assamStateProfile } from "./assam-districts";
 import { biharDistrictProfiles, biharStateProfile } from "./bihar-districts";
+import {
+  chhattisgarhDistrictProfiles,
+  chhattisgarhStateProfile,
+} from "./chhattisgarh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -49,6 +53,12 @@ export const states: StateEntry[] = [
     name: biharStateProfile.name,
     hubProfile: biharStateProfile,
     districts: biharDistrictProfiles,
+  },
+  {
+    slug: chhattisgarhStateProfile.slug,
+    name: chhattisgarhStateProfile.name,
+    hubProfile: chhattisgarhStateProfile,
+    districts: chhattisgarhDistrictProfiles,
   },
 ];
 
