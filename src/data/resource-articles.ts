@@ -4135,4 +4135,92 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["digital-marketing", "local-seo"],
   },
+
+  "ev-dealership-marketing-vs-petrol-diesel": {
+    intro:
+      "Petrol and diesel dealership marketing in India has decades of playbooks behind it. EV marketing does not, and treating an EV launch like a fuel-model launch with a different creative wrap is why so many EV showroom campaigns bring in clicks but not walk-ins. The buyer is doing different research, asking different questions, and needs a different kind of trust before they book a test drive.",
+    sections: [
+      {
+        heading: "The EV buyer researches for weeks before they ever call",
+        body: [
+          "A petrol or diesel buyer often already knows the model they want and is comparing dealerships on price, stock, and offers. An EV buyer is usually still working through open questions: real-world range, where they'll charge at home or work, and whether resale value even exists yet for a model that's only been on Indian roads for a year or two. That research phase runs longer and happens almost entirely online, well before a showroom visit gets booked.",
+          "This changes what top-of-funnel marketing needs to do. A generic 'book a test drive' ad aimed at a petrol buyer skips past questions the EV buyer still has open, and it shows up in the numbers as decent click-through with a weak walk-in rate, because the ad got attention without resolving the doubt that was actually stopping the visit.",
+        ],
+      },
+      {
+        heading: "Range and running cost need real numbers, not vague claims",
+        body: [
+          "Petrol and diesel dealership content rarely needs to explain running cost math, since most buyers already have an intuitive sense of fuel price per kilometer. EV buyers don't have that same intuition yet, and vague claims like 'save money on fuel' don't close the gap. Content and sales conversations that actually move an EV buyer forward get specific.",
+        ],
+        bullets: [
+          "Real-world range in city traffic with air conditioning running, not just the certified test-cycle figure",
+          "Cost per kilometer compared directly against a petrol or diesel variant in the same segment, with an actual number attached",
+          "Home charging setup cost and a realistic installation timeline, since this is often the buyer's biggest unknown",
+          "Battery warranty terms explained in plain language, since this is one of the most common questions before financing gets discussed",
+        ],
+      },
+      {
+        heading: "Charging access becomes part of the sales pitch, not an afterthought",
+        body: [
+          "For a petrol or diesel buyer, fuel availability is a non-issue anywhere in India. For an EV buyer, knowing where they'll actually charge, at home, near their office, or on a highway route they drive often, is frequently the deciding factor between a serious enquiry and a walked-away lead. Dealership marketing that maps and actively promotes nearby charging access, including partnerships beyond the dealership's own installed chargers, addresses a doubt that generic vehicle-feature marketing never touches.",
+          "In one EV dealership launch AutoSutra ran, giving prospective buyers a clear picture of nearby charging access before their visit, alongside a digital marketing and CRM setup built specifically for the EV buying journey, was one of the levers behind booking over 700 test drives in the showroom's first 90 days. Buyers who had already resolved the charging question arrived readier to commit than those who hadn't. Charging partnerships as their own dedicated marketing angle are worth a closer look on their own, separate from the broader launch strategy.",
+        ],
+      },
+      {
+        heading: "Service marketing needs a different story because there's less to service",
+        body: [
+          "A traditional dealership service department earns steady revenue from oil changes, filters, and the routine wear items an internal combustion engine needs. An EV has none of that, which means the service-department marketing playbook built around frequent maintenance visits doesn't translate directly. Retention marketing for EV owners has to shift toward what actually applies: tyre care, brake fluid and coolant checks on a longer cycle, software and firmware updates, and battery health monitoring. The visit frequency is lower, so each contact point matters more, and it needs to be positioned as genuine care rather than a routine reminder copied from a petrol playbook.",
+        ],
+      },
+      {
+        heading: "Trust has to be built without decades of brand history behind it",
+        body: [
+          "Many EV brands and models sold in India today are only a few years old, so a dealership can't lean on the same long track record an established petrol or diesel brand offers. Buyer confidence has to be built through more specific proof points: the size and responsiveness of the after-sales and spare parts network, actual resale data as it starts to emerge, real customer experiences rather than manufacturer claims, and transparent answers to hard questions like battery degradation over time. This is also why response speed and follow-up quality matter even more for EV dealerships, since a hesitant buyer without years of brand reassurance is more likely to walk if their questions sit unanswered.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How is EV dealership marketing different from petrol or diesel marketing in India?",
+        answer:
+          "EV buyers research for longer before contacting a dealership, and they're working through different open questions, like real-world range, charging access, and resale value, rather than just comparing price and stock like a typical petrol or diesel buyer.",
+      },
+      {
+        question: "Do EV buyers need more content before they visit a showroom?",
+        answer:
+          "Generally yes. Because the research phase runs longer and happens mostly online, EV marketing needs to resolve range, cost, and charging doubts before the buyer ever books a test drive, not just generate initial interest.",
+      },
+      {
+        question: "Should EV dealership ads focus on price or on range and charging?",
+        answer:
+          "Range and charging concerns are usually the bigger blocker to a test drive booking. Price matters, but an ad that resolves range anxiety and shows real charging access tends to convert better than one leading purely on price or offers.",
+      },
+      {
+        question: "How important is charging infrastructure in EV dealership marketing?",
+        answer:
+          "It's often the deciding factor between a serious enquiry and a lead that goes cold. Buyers who can see a clear picture of where they'll actually charge arrive at the showroom readier to commit.",
+      },
+      {
+        question: "Does EV service marketing work the same way as petrol or diesel service marketing?",
+        answer:
+          "No. EVs need far less routine maintenance, so service marketing has to shift toward tyre care, software updates, and battery health rather than the frequent oil-change and filter reminders a petrol service department relies on.",
+      },
+      {
+        question: "How should a new EV brand build trust without years of track record in India?",
+        answer:
+          "Through specific proof points instead of brand history: the size of the after-sales and spare parts network, emerging resale data, real customer experiences, and transparent answers to questions like battery degradation.",
+      },
+      {
+        question: "What content topics actually help EV dealerships convert?",
+        answer:
+          "Real-world range in city driving conditions, direct cost-per-kilometer comparisons against petrol or diesel variants, home charging setup costs and timelines, and plain-language battery warranty terms consistently move EV buyers forward.",
+      },
+      {
+        question: "Is EV dealership marketing more expensive per lead than petrol or diesel?",
+        answer:
+          "It can be, mainly because the funnel is longer and needs more educational content to move a buyer from interest to a booked test drive. That cost is usually offset by lower competition for EV-specific search and content topics compared to saturated petrol and diesel keywords.",
+      },
+    ],
+    relatedServiceSlugs: ["digital-marketing", "content-creation"],
+  },
 };

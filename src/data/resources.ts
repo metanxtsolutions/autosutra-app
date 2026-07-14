@@ -871,4 +871,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-14",
     coverCluster: "leads",
   },
+  {
+    slug: "ev-dealership-marketing-vs-petrol-diesel",
+    title: "EV Dealership Marketing in India: What's Different From Petrol/Diesel",
+    category: "Guide",
+    excerpt:
+      "EV buyers research longer, ask different questions, and need a different trust story than petrol or diesel buyers. Here's what that changes about dealership marketing.",
+    readTime: "8 min read",
+    tags: ["ev-dealers", "dealer-growth"],
+    primaryKeyword: "EV dealership marketing India",
+    secondaryKeywords: [
+      "electric vehicle dealership marketing India",
+      "EV showroom marketing strategy",
+    ],
+    publishedDate: "2026-07-15",
+    updatedDate: "2026-07-15",
+    coverCluster: "leads",
+  },
 ];
