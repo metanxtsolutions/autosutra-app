@@ -4316,4 +4316,89 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["local-seo", "digital-marketing"],
   },
+
+  "range-anxiety-objection-handling-ev-sales-teams": {
+    intro:
+      "By the time a buyer is standing on the showroom floor asking about range, they've usually already read the certified figure online. Repeating that number back to them rarely closes the gap. Range anxiety at this stage is less about the math and more about confidence, whether this specific vehicle will actually work for this specific buyer's actual driving pattern. These are practical scripts for the objections EV sales teams hear most often, built around answering that real concern instead of reciting a spec sheet.",
+    sections: [
+      {
+        heading: "Why range anxiety is a confidence problem, not a math problem",
+        body: [
+          "A buyer who says 'the range isn't enough' has almost never done a careful daily-kilometer calculation. What they're really saying is that they haven't yet pictured this vehicle fitting into their actual week, the school run, the commute, the weekend trip to see family. A salesperson who responds with the certified range figure is answering a question the buyer didn't actually ask. The more useful response starts by understanding their real driving pattern, then maps the vehicle's real-world range against it specifically.",
+        ],
+      },
+      {
+        heading: "The reframe: from certified range to their actual week",
+        body: [
+          "Before addressing any specific objection, get the buyer talking about their real routine. A script that works well:",
+          "\"Before we talk numbers, can you walk me through a typical week? Where do you drive most, and is there a longest trip you'd take without stopping?\" This does two things. It shifts the conversation from an abstract spec to their concrete reality, and it often reveals that their actual driving pattern comfortably fits within range that felt intimidating as a bare number.",
+        ],
+      },
+      {
+        heading: "Scripts for the five objections that come up most often",
+        body: [
+          "\"This won't have enough range for my daily driving.\" Response: \"Based on what you just told me, your daily driving is around [X] kilometers. This model's real-world range in city traffic with AC running is [Y] kilometers, so you'd be charging roughly every [Z] days, not daily. Let's look at where you'd actually plug in during that window.\"",
+          "\"What if I run out of charge somewhere with no charger nearby?\" Response: \"That's a fair concern, and it's exactly why we mapped out the charging options near your regular routes before you came in today. [Reference your dealership's charging partnership here, if you have one.] Beyond that, most EV owners charge overnight at home the same way they charge a phone, so a public charger becomes a backup, not a daily necessity.\"",
+          "\"Charging takes so much longer than filling a tank.\" Response: \"That's true for a full charge from near-empty, and it's a genuinely different habit than fueling. But most owners don't charge from empty to full the way you'd fill a tank. They top up overnight or during the day while the car's already parked, so it adds close to zero extra time to most days.\"",
+          "\"I've heard the battery degrades and resale value drops.\" Response: \"That's worth asking about directly rather than dismissing. Here's the battery warranty in plain terms: [state the actual coverage period and what's covered]. Resale data for this specific model is still building in India since it hasn't been on the road long, and I'd rather tell you that honestly than promise a number we don't have yet.\"",
+          "\"This costs more upfront than the petrol version.\" Response: \"It does upfront. Let's actually run the running-cost math side by side over the time you'd typically keep a vehicle, including what you'd spend on fuel versus charging, so you can see where the numbers cross rather than take my word for it.\"",
+        ],
+      },
+      {
+        heading: "What not to say",
+        body: [
+          "Avoid promising a range figure the vehicle won't reliably hit in real conditions, since a buyer who experiences a gap between promise and reality after purchase becomes a reputation risk, not just a lost referral. Avoid dismissing the resale-value question with vague reassurance when the honest answer is that data is still emerging. And avoid treating the objection as something to push past quickly. A buyer who feels heard on range anxiety before it's resolved trusts the rest of the sales conversation more, not less.",
+        ],
+      },
+      {
+        heading: "When a range-anxious buyer still isn't ready",
+        body: [
+          "Not every objection resolves in one conversation, and that's fine. If a buyer leaves without booking, follow up with something concrete rather than a generic check-in, like a short note on the charging options near their specific area or an answer to a question they raised that you didn't have on hand during the visit. AutoSutra's EV dealership launch work paired this kind of grounded, honest objection handling with clear charging-access content before the visit, which contributed to booking over 700 test drives in the showroom's first 90 days. The pattern held: buyers whose real concerns got a direct answer converted at a noticeably higher rate than those who got a brochure recitation.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is range anxiety in the context of EV sales?",
+        answer:
+          "It's a buyer's uncertainty about whether an EV's range will actually cover their real driving needs, even when the certified range figure would technically be enough. It's usually a confidence problem rather than a genuine math shortfall.",
+      },
+      {
+        question: "How should a salesperson respond when a buyer says the range isn't enough?",
+        answer:
+          "Start by understanding their actual weekly driving pattern before citing any number. Then map the vehicle's real-world range specifically against that pattern, rather than repeating the certified figure they've likely already read.",
+      },
+      {
+        question: "Should sales staff quote the certified range or the real-world range?",
+        answer:
+          "Real-world range, ideally adjusted for city traffic and air conditioning use, since that's what actually matches a buyer's daily experience. Citing only the certified figure can set an expectation the vehicle won't consistently meet.",
+      },
+      {
+        question: "How do you handle the objection about running out of charge with no charger nearby?",
+        answer:
+          "Acknowledge it as a fair concern, then walk through the charging options near the buyer's actual routes, including any dealership charging partnerships, and explain that most owners charge overnight at home rather than relying on public chargers daily.",
+      },
+      {
+        question: "What should a salesperson say about battery degradation and resale value?",
+        answer:
+          "Address it honestly rather than dismissing it. Explain the battery warranty terms in plain language, and be upfront if resale data for that specific model is still emerging rather than promising a number that doesn't exist yet.",
+      },
+      {
+        question: "Is it a mistake to rush past a range-anxiety objection?",
+        answer:
+          "Yes. A buyer who feels genuinely heard on range anxiety tends to trust the rest of the sales conversation more. Rushing past it to move to close usually leaves the underlying doubt unresolved and the buyer unconvinced.",
+      },
+      {
+        question: "What should follow-up look like for a buyer who leaves without deciding?",
+        answer:
+          "Follow up with something specific, like details on charging options near their area or an answer to a question raised during the visit, rather than a generic check-in that doesn't address what actually made them hesitate.",
+      },
+      {
+        question: "Do objection-handling scripts actually improve EV conversion rates?",
+        answer:
+          "Grounded, honest responses to specific concerns tend to convert better than generic reassurance or brochure recitation, since they directly resolve the doubt that was stopping the buyer from committing.",
+      },
+    ],
+    relatedServiceSlugs: ["crm-solutions", "verified-buyer-leads"],
+  },
 };

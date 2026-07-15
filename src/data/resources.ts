@@ -905,4 +905,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-15",
     coverCluster: "leads",
   },
+  {
+    slug: "range-anxiety-objection-handling-ev-sales-teams",
+    title: "Range-Anxiety Objection Handling: Scripts for EV Sales Teams",
+    category: "Guide",
+    excerpt:
+      "Range anxiety on the showroom floor is usually a confidence problem, not a math problem. Practical scripts for the objections EV sales teams hear most often.",
+    readTime: "7 min read",
+    tags: ["ev-dealers", "sales-funnel"],
+    primaryKeyword: "EV sales objection handling",
+    secondaryKeywords: [
+      "range anxiety objection handling script",
+      "EV sales team training India",
+    ],
+    publishedDate: "2026-07-15",
+    updatedDate: "2026-07-15",
+    coverCluster: "leads",
+  },
 ];
