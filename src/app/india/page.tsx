@@ -9,7 +9,7 @@ import { states } from "@/data/states";
 export const metadata = pageMetadata({
   title: "Dealer Growth Marketing Across India",
   description:
-    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across India, organized by state and district: West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, and our major metro cities.",
+    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across India, organized by state and district: West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, and our major metro cities.",
   path: "/india",
   keywords: [
     "car dealership marketing agency India",

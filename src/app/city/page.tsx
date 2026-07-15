@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Cities We Serve",
   description:
-    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, and Chhattisgarh, browsable by state at /india.",
+    "AutoSutra provides dealer growth marketing for car, bike, EV, and used-car dealerships across Delhi NCR, Mumbai, Bangalore, Pune, Chennai, Hyderabad, Kolkata, Ahmedabad, and every district of West Bengal, Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, and Goa, browsable by state at /india.",
   path: "/city",
   keywords: [
     "car dealership marketing agency India cities",
