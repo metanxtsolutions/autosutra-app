@@ -53,6 +53,11 @@ export const mainNav: NavItem[] = [
     description: "Car, bike, EV, used-car and OEM programs",
   },
   {
+    label: "Locations",
+    href: "/india",
+    description: "186 district pages across 6 Indian states",
+  },
+  {
     label: "Services",
     href: "/services",
     description: "Leads, marketing, data, and SaaS, all 12 services",
