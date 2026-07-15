@@ -6,7 +6,7 @@ export type NavItem = {
 
 export const siteConfig = {
   name: "AutoSutra",
-  tagline: "Verified Buyer Leads & Growth Marketing for Dealerships",
+  tagline: "India's Fastest Growing Automobile Marketing & Solutions Agency",
   description:
     "AutoSutra helps car, bike, EV and used-car dealerships, OEMs, and automotive brands grow with verified buyer leads, performance marketing, dealer data intelligence, and CRM/SaaS solutions built for the automotive industry.",
   // Kept under 160 characters for meta description / SERP snippet display.
