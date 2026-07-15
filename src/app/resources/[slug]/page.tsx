@@ -96,6 +96,12 @@ export default async function ResourceDetailPage({
             {resource.title}
           </h1>
           <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/50">
+            <span>
+              By{" "}
+              <span className="text-white/70">
+                {siteConfig.editorialTeam.name}
+              </span>
+            </span>
             <span className="flex items-center gap-2">
               <Clock className="size-4" />
               {resource.readTime}
@@ -109,6 +115,9 @@ export default async function ResourceDetailPage({
               })}
             </span>
           </div>
+          <p className="mx-auto mt-2 max-w-md text-xs text-white/35">
+            {siteConfig.editorialTeam.role}
+          </p>
         </div>
       </section>
 

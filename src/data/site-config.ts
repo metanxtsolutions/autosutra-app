@@ -30,6 +30,14 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/AutoSutra.in",
     twitter: "https://x.com/AutoSutraIndia",
   },
+  // Resources articles are written and reviewed in-house rather than by a
+  // single named individual, so bylines credit the team rather than
+  // inventing an author persona. Update this if named leadership profiles
+  // are published on the About page later.
+  editorialTeam: {
+    name: "AutoSutra Growth Team",
+    role: "Dealer marketing practitioners and performance analysts",
+  },
 } as const;
 
 export const mainNav: NavItem[] = [

@@ -34,4 +34,9 @@ export const faqs: Faq[] = [
     answer:
       "Passenger cars, two-wheelers, electric vehicles, and used vehicles across dealership, multi-brand, and OEM programs.",
   },
+  {
+    question: "How can I check AutoSutra's reviews before signing up?",
+    answer:
+      "Start with our case studies page for named, specific results, then check our LinkedIn, Instagram, and Facebook pages linked in the footer for direct engagement with real dealer partners. We're headquartered in Kolkata at the address listed in our footer and About page, not a virtual-only operation. If you're already a partner with a concern, email info@autosutra.in directly. We would rather resolve it than have it sit unanswered.",
+  },
 ];
