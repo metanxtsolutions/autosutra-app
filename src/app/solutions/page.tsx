@@ -9,9 +9,9 @@ import { StatBand } from "@/components/shared/stat-band";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Solutions",
+  title: "5 Growth Solutions for Dealer Performance",
   description:
-    "AutoSutra's growth solutions for India: Verified Lead Generation, Performance Marketing, Customer Engagement, Content & Creative, and Growth Technology, built for dealer outcomes.",
+    "AutoSutra's 5 growth solutions for Indian dealerships: verified leads, performance marketing, customer engagement, content, and growth technology.",
   path: "/solutions",
   keywords: [
     "dealer growth solutions India",

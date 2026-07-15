@@ -7,9 +7,9 @@ import { industries } from "@/data/industries";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Industries",
+  title: "Car, Bike, EV, and Used-Car Dealer Programs",
   description:
-    "AutoSutra works across car dealerships, bike dealerships, EV dealers, used car dealers, OEMs, and automotive brands across India, with tailored growth playbooks for each.",
+    "AutoSutra builds tailored growth playbooks for car dealerships, bike dealerships, EV dealers, used-car dealers, OEMs, and automotive brands across India.",
   path: "/industries",
   keywords: [
     "car dealership marketing India",

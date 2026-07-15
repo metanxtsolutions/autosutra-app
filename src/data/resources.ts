@@ -788,10 +788,10 @@ export const resources: Resource[] = [
   },
   {
     slug: "review-platforms-beyond-google-for-dealerships",
-    title: "Review Platforms Beyond Google: Where Else Dealership Reputation Gets Built",
+    title: "3 Places Dealership Reviews Happen Beyond Google",
     category: "Guide",
     excerpt:
-      "Google isn't the only place buyers check before visiting. A practical look at the other platforms worth monitoring and asking for reviews on.",
+      "Facebook reviews, automotive forums, and your own social comments shape dealership reputation too. Here's how to monitor all three each month.",
     readTime: "6 min read",
     tags: ["reputation-management", "local-seo"],
     primaryKeyword: "dealership reviews beyond Google",

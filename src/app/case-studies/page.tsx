@@ -6,9 +6,9 @@ import { CaseStudiesGrid } from "@/components/case-studies/case-studies-grid";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Case Studies",
+  title: "Real Dealer Growth Results, Before vs After",
   description:
-    "Real dealership growth stories across car, bike, EV, used car, and OEM programs in India. See the results AutoSutra delivers.",
+    "Real before-and-after growth stories from car, bike, EV, used-car, and OEM dealerships in India, with verified leads, cost-per-lead, and conversion numbers.",
   path: "/case-studies",
 });
 

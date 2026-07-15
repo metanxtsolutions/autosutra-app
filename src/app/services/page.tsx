@@ -17,9 +17,9 @@ import { services } from "@/data/services";
 import { solutions } from "@/data/solutions";
 
 export const metadata = pageMetadata({
-  title: "Services",
+  title: "Leads, Marketing, CRM, and SaaS: All 12 Dealer Services",
   description:
-    "Explore all 12 AutoSutra services: verified buyer leads, performance marketing, content, CRM, and SaaS tools for dealerships across India. Search, filter, and build your own growth stack.",
+    "All 12 AutoSutra services in one place: verified buyer leads, performance marketing, content, CRM, and SaaS tools for dealerships across India.",
   path: "/services",
   keywords: [
     "car dealership marketing services India",
