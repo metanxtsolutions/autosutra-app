@@ -922,4 +922,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-15",
     coverCluster: "leads",
   },
+  {
+    slug: "tier-2-city-dealership-marketing",
+    title: "Marketing a Dealership in a Tier-2 Town: What Actually Works Differently",
+    category: "Guide",
+    excerpt:
+      "Metro playbooks don't just underperform in a Tier-2 town, they can actively mislead. What changes about buyer behavior, channel mix, and local SEO once you're outside a metro core.",
+    readTime: "8 min read",
+    tags: ["dealer-growth", "local-seo"],
+    primaryKeyword: "tier 2 city dealership marketing",
+    secondaryKeywords: [
+      "tier 2 town dealership marketing India",
+      "regional dealership marketing strategy",
+    ],
+    publishedDate: "2026-07-16",
+    updatedDate: "2026-07-16",
+    coverCluster: "local",
+  },
 ];
