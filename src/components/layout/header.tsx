@@ -42,8 +42,12 @@ export function Header() {
           : "bg-transparent border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link href="/" className="flex items-center" aria-label="AutoSutra">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-6 lg:px-8">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center"
+          aria-label="AutoSutra"
+        >
           <Image
             src="/brand/autosutra-lockup.png"
             alt="AutoSutra"
@@ -54,7 +58,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex">
           {mainNav.slice(1).map((item) => (
             <Link
               key={item.href}
@@ -73,7 +77,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <Link
             href="/contact"
             className={cn(
@@ -97,7 +101,7 @@ export function Header() {
           <SheetTrigger
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
-              "lg:hidden",
+              "xl:hidden",
               scrolled
                 ? "text-foreground hover:bg-muted"
                 : "text-white hover:bg-white/10",
