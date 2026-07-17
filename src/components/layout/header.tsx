@@ -78,8 +78,8 @@ export function Header() {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
-          <Link
-            href="/contact"
+          <a
+            href={`tel:${siteConfig.contact.phoneHref}`}
             className={cn(
               buttonVariants({ variant: "ghost", size: "sm" }),
               scrolled
@@ -88,7 +88,7 @@ export function Header() {
             )}
           >
             {siteConfig.contact.phoneDisplay}
-          </Link>
+          </a>
           <Link
             href="/book-a-demo"
             className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-5")}
