@@ -1,6 +1,8 @@
 import { Suspense } from "react";
-import { Check, Star } from "lucide-react";
-import { ContactForm } from "@/components/contact/contact-form";
+import { Check, Clock3, Handshake, ShieldCheck, Star, Zap } from "lucide-react";
+import { BookDemoForm } from "@/components/book-a-demo/book-demo-form";
+import { QuickContact } from "@/components/book-a-demo/quick-contact";
+import { StickyDemoCta } from "@/components/book-a-demo/sticky-demo-cta";
 import { JsonLd } from "@/components/shared/json-ld";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
@@ -18,11 +20,18 @@ export const metadata = pageMetadata({
   ],
 });
 
+const trustBadges = [
+  { icon: ShieldCheck, label: "Trusted by dealerships across India" },
+  { icon: Clock3, label: "Free 30-minute strategy session" },
+  { icon: Handshake, label: "No commitment required" },
+  { icon: Zap, label: "Response within 30 minutes" },
+];
+
 const whatToExpect = [
   "A focused walkthrough of verified leads, campaigns, and reporting for your dealership",
   "A custom growth plan built around your city, brands, and current lead volume",
   "No pressure and no obligation to sign anything",
-  "A response from our team within 24 hours",
+  "A response from our team within 30 minutes",
 ];
 
 const process = [
@@ -72,26 +81,33 @@ export default function BookADemoPage() {
       />
       <JsonLd data={faqPageSchema(demoFaqs)} />
 
-      <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8">
+      <section className="relative overflow-hidden bg-ink px-6 pt-24 pb-8 text-center text-ink-foreground lg:px-8">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="pointer-events-none absolute -top-32 left-1/2 size-96 -translate-x-1/2 rounded-full bg-brand/25 blur-[120px]" />
-        <div className="relative">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
-            Book a Demo
-          </span>
-          <h1 className="mx-auto mt-4 max-w-2xl text-balance font-heading text-5xl font-semibold tracking-tight sm:text-6xl">
-            See AutoSutra in action
+        <div className="relative mx-auto max-w-3xl">
+          <h1 className="text-balance font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+            Book Your Free Dealership Growth Demo
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
-            Book a free walkthrough and we&apos;ll show you exactly how
-            verified leads, campaigns, and reporting would work for your
-            dealership. No commitment required.
+          <p className="mx-auto mt-3 max-w-2xl text-balance text-sm text-white/65 sm:text-base">
+            See how AutoSutra helps dealerships generate more qualified
+            leads, improve marketing ROI, and increase vehicle sales.
           </p>
+          <ul className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {trustBadges.map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                className="flex items-center gap-1.5 text-xs font-medium text-white/70"
+              >
+                <Icon className="size-3.5 text-brand-accent" />
+                {label}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-5">
+      <section className="mx-auto max-w-6xl px-6 py-10 lg:px-8 lg:py-14">
+        <div className="grid gap-6 lg:grid-cols-5 lg:gap-8">
           <div className="lg:col-span-2">
             <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
               <h2 className="font-heading text-xl font-semibold text-ink">
@@ -106,9 +122,22 @@ export default function BookADemoPage() {
                 ))}
               </ul>
             </div>
+          </div>
 
-            {testimonial && (
-              <div className="mt-6 rounded-3xl bg-ink p-8 text-ink-foreground">
+          <div className="space-y-4 lg:col-span-3 lg:row-span-2">
+            <QuickContact />
+            <Suspense
+              fallback={
+                <div className="h-[420px] animate-pulse rounded-3xl border border-border bg-muted/40" />
+              }
+            >
+              <BookDemoForm />
+            </Suspense>
+          </div>
+
+          {testimonial && (
+            <div className="lg:col-span-2">
+              <div className="rounded-3xl bg-ink p-8 text-ink-foreground">
                 <div className="flex gap-1 text-brand-accent">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} className="size-4 fill-current" />
@@ -120,18 +149,8 @@ export default function BookADemoPage() {
                 <p className="mt-4 text-sm font-medium">{testimonial.name}</p>
                 <p className="text-xs text-white/50">{testimonial.role}</p>
               </div>
-            )}
-          </div>
-
-          <div className="lg:col-span-3">
-            <Suspense
-              fallback={
-                <div className="h-[600px] animate-pulse rounded-3xl border border-border bg-muted/40" />
-              }
-            >
-              <ContactForm />
-            </Suspense>
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -176,6 +195,8 @@ export default function BookADemoPage() {
           </div>
         </div>
       </section>
+
+      <StickyDemoCta />
     </>
   );
 }
