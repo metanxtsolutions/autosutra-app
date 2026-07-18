@@ -28,6 +28,13 @@ const nextConfig: NextConfig = {
       { source: "/wp-json/:path*", destination: "/", permanent: true },
       { source: "/wp-login.php", destination: "/", permanent: true },
       { source: "/xmlrpc.php", destination: "/", permanent: true },
+      // Still indexed by Google as of the July 2026 SEO audit, both 404 today.
+      // Google's indexed URLs have a trailing slash; Next's own trailing-slash
+      // normalization runs before these rules, so that variant resolves in
+      // two permanent-redirect hops (both 308) rather than one. Still a
+      // correct, crawlable resolution to the live page.
+      { source: "/service-one", destination: "/services", permanent: true },
+      { source: "/pricing-plan", destination: "/pricing", permanent: true },
     ];
 
     return [
