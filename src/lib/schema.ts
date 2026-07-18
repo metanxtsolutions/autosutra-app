@@ -4,6 +4,7 @@ import type { Faq } from "@/data/faq";
 import type { Service } from "@/data/services";
 import type { Resource } from "@/data/resources";
 import type { PricingTier } from "@/data/pricing";
+import type { CaseStudyTeaser } from "@/data/case-studies";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -92,6 +93,30 @@ export function articleSchema(resource: Resource) {
     },
     url: `${siteConfig.url}/resources/${resource.slug}`,
     mainEntityOfPage: `${siteConfig.url}/resources/${resource.slug}`,
+  };
+}
+
+export function caseStudySchema(study: CaseStudyTeaser) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.headline,
+    description: `${study.dealership}: ${study.category}. ${study.headline}.`,
+    about: study.dealership,
+    datePublished: study.publishedDate,
+    dateModified: study.updatedDate,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    url: `${siteConfig.url}/case-studies/${study.slug}`,
+    mainEntityOfPage: `${siteConfig.url}/case-studies/${study.slug}`,
   };
 }
 

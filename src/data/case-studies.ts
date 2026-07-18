@@ -14,6 +14,11 @@ export type CaseStudyTeaser = {
   category: string;
   headline: string;
   metric: { value: string; label: string };
+  // ISO date strings (YYYY-MM-DD), same convention as src/data/resources.ts,
+  // so case studies carry the same author/date structured-data signal as
+  // blog posts instead of being the one content template without one.
+  publishedDate: string;
+  updatedDate: string;
 };
 
 export const caseStudyTeasers: CaseStudyTeaser[] = [
@@ -24,6 +29,8 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "Verified Buyer Leads + Google Ads",
     headline: "Doubling qualified showroom footfall in one quarter",
     metric: { value: "2.1x", label: "Increase in qualified footfall" },
+    publishedDate: "2026-05-12",
+    updatedDate: "2026-05-12",
   },
   {
     slug: "used-car-dealer-cost-per-lead",
@@ -32,6 +39,8 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "Meta Ads + WhatsApp Marketing",
     headline: "Cutting cost-per-lead while scaling monthly volume",
     metric: { value: "-42%", label: "Lower cost per verified lead" },
+    publishedDate: "2026-05-26",
+    updatedDate: "2026-05-26",
   },
   {
     slug: "ev-dealership-digital-launch",
@@ -40,6 +49,8 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "Digital Marketing + CRM Solutions",
     headline: "Taking a new EV showroom from zero to booked-out test drives",
     metric: { value: "700+", label: "Test drives booked in 90 days" },
+    publishedDate: "2026-06-09",
+    updatedDate: "2026-06-09",
   },
   {
     slug: "bike-dealership-local-seo",
@@ -48,6 +59,8 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "Local SEO + Content Creation",
     headline: "Winning the 'near me' search across every showroom",
     metric: { value: "3.4x", label: "Increase in Google Business calls" },
+    publishedDate: "2026-06-23",
+    updatedDate: "2026-06-23",
   },
   {
     slug: "oem-network-rollout",
@@ -56,6 +69,8 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "SaaS Platform + Dealer Data Services",
     headline: "Standardizing lead quality across 40+ dealer outlets",
     metric: { value: "40+", label: "Dealer outlets onboarded" },
+    publishedDate: "2026-07-02",
+    updatedDate: "2026-07-02",
   },
   {
     slug: "used-car-chain-crm-rollout",
@@ -64,5 +79,7 @@ export const caseStudyTeasers: CaseStudyTeaser[] = [
     category: "CRM Solutions + Digital Marketing",
     headline: "Replacing spreadsheets with a single source of truth",
     metric: { value: "5x", label: "Faster lead response time" },
+    publishedDate: "2026-07-10",
+    updatedDate: "2026-07-10",
   },
 ];

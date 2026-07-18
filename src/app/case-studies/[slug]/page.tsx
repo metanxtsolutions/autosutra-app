@@ -7,8 +7,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, caseStudySchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/data/site-config";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { caseStudyContent } from "@/data/case-study-content";
 import { services } from "@/data/services";
@@ -54,6 +55,7 @@ export default async function CaseStudyDetailPage({
 
   return (
     <>
+      <JsonLd data={caseStudySchema(study)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -74,7 +76,24 @@ export default async function CaseStudyDetailPage({
           </h1>
           <p className="mt-6 text-lg text-white/60">{study.dealership}</p>
 
-          <div className="mx-auto mt-10 inline-flex flex-col items-center rounded-2xl border border-white/15 bg-white/5 px-10 py-6">
+          <div className="mx-auto mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/50">
+            <span>
+              Reviewed by{" "}
+              <span className="text-white/70">
+                {siteConfig.editorialTeam.name}
+              </span>
+            </span>
+            <span>
+              Published{" "}
+              {new Date(study.publishedDate).toLocaleDateString("en-IN", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </span>
+          </div>
+
+          <div className="mx-auto mt-8 inline-flex flex-col items-center rounded-2xl border border-white/15 bg-white/5 px-10 py-6">
             <span className="font-heading text-5xl font-semibold text-brand-accent">
               {study.metric.value}
             </span>
