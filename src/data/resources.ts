@@ -935,8 +935,25 @@ export const resources: Resource[] = [
       "tier 2 town dealership marketing India",
       "regional dealership marketing strategy",
     ],
-    publishedDate: "2026-07-16",
-    updatedDate: "2026-07-16",
+    publishedDate: "2026-07-18",
+    updatedDate: "2026-07-18",
+    coverCluster: "local",
+  },
+  {
+    slug: "coastal-andhra-vs-rayalaseema-buyer-behavior",
+    title: "Reading Buyer Behavior by Region: Coastal Andhra vs. Rayalaseema, Explained",
+    category: "Guide",
+    excerpt:
+      "Coastal Andhra and Rayalaseema sit in the same state but behave like two different markets. How to read the actual signals in your own dealer data instead of running one Andhra Pradesh playbook everywhere.",
+    readTime: "8 min read",
+    tags: ["dealer-growth", "analytics"],
+    primaryKeyword: "regional buyer behavior automotive India",
+    secondaryKeywords: [
+      "coastal Andhra vs Rayalaseema dealership marketing",
+      "Andhra Pradesh buyer behavior by region",
+    ],
+    publishedDate: "2026-07-18",
+    updatedDate: "2026-07-18",
     coverCluster: "local",
   },
 ];

@@ -4509,4 +4509,110 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["local-seo", "digital-marketing"],
   },
+
+  "coastal-andhra-vs-rayalaseema-buyer-behavior": {
+    intro:
+      "Andhra Pradesh looks like one market on a state-level dashboard. On the ground it's closer to two. Coastal Andhra, built on the Godavari and Krishna deltas and a string of trading towns, and Rayalaseema, the drier plateau to the south and west, don't just have different geography, they run on different income cycles, different vehicle needs, and different reasons to trust a dealership. A campaign built for a Guntur showroom and copied onto a Kurnool one isn't a smaller version of the same plan, it's answering the wrong questions for that buyer. This is how to actually read the difference in your own funnel, not just in the abstract.",
+    sections: [
+      {
+        heading: "Two economies, not two accents",
+        body: [
+          "Coastal Andhra runs on delta agriculture and old trading and port towns. East Godavari's economy blends a strong rice-growing delta with Rajahmundry's established urban commercial base on the Godavari river. Krishna district, since Vijayawada's separation into the new NTR district in 2022, now centers on Machilipatnam, a historic port town with a coastal trading history. Guntur adds a genuinely commercial layer on top of agriculture, home to one of Asia's largest chilli trading markets and a major tobacco belt, which produces a buyer base that's used to negotiating.",
+          "Rayalaseema is a different economic story. Anantapur sits on a drought-prone plateau that's become a major national hub for solar and wind investment alongside long-established groundnut farming. Kurnool anchors a granite quarrying industry on top of cotton and groundnut agriculture. Chittoor, further south, has unusual industrial momentum for a Rayalaseema district thanks to the Sri City special economic zone sitting between the Bangalore and Chennai corridors. These aren't just poorer or richer versions of coastal Andhra, they're structurally different economies, and that difference shows up directly in how people buy vehicles.",
+        ],
+      },
+      {
+        heading: "What coastal Andhra buyer behavior actually looks like",
+        body: [
+          "The signals that show up in coastal delta and trading districts tend to cluster around a few patterns worth watching for in your own lead and sales data.",
+        ],
+        bullets: [
+          "Purchase timing that tracks harvest and crop-sale cycles in the more rural delta towns, with buying activity picking up after paddy harvest income comes in",
+          "A commercially confident, price-aware negotiating style in trading hubs like Guntur, where buyers expect a clear, competitive offer rather than a soft opening number",
+          "A broader vehicle segment mix in established urban cores like Rajahmundry and post-reorganization Machilipatnam, where premium and mid-segment demand sits alongside entry-level",
+          "Real weight given to established local dealer relationships in the smaller delta towns outside the main commercial centers, even where digital research also happens",
+        ],
+      },
+      {
+        heading: "What Rayalaseema buyer behavior actually looks like",
+        body: [
+          "Rayalaseema's signals cluster differently, and mixing the two up is where a lot of regional campaigns quietly underperform.",
+        ],
+        bullets: [
+          "Steadier, less harvest-tied demand in districts touched by industrial or energy investment, like the solar and wind-driven workforce in parts of Anantapur or the Sri City SEZ workforce in Chittoor",
+          "Meaningful commercial and load-carrying vehicle demand layered on top of personal vehicle demand in quarrying and industrial districts like Kurnool, which a purely personal-vehicle campaign misses entirely",
+          "Value-focused, straightforward messaging outperforming premium positioning in the more agricultural stretches of the region, where the buyer base still centers heavily on entry-segment and two-wheeler purchases",
+          "Pocketed demand around specific towns rather than even spread across a district, like Puttaparthi's pilgrimage-driven economy or Hindupur's textile industry inside Sri Sathya Sai district, both sitting apart from the district's more rural surrounding areas",
+        ],
+      },
+      {
+        heading: "How to audit which pattern your own dealership actually sits in",
+        body: [
+          "This is the part that matters more than the regional labels themselves. Coastal and Rayalaseema are useful shorthand, but the real question for any single dealership is which behavior pattern its own catchment shows in its own data, not which region it happens to sit in geographically.",
+        ],
+        bullets: [
+          "Plot monthly lead and sales volume against local harvest or agricultural payment cycles; a visible seasonal spike says your funnel should shift budget and follow-up urgency around that window instead of running flat all year",
+          "Check financing attach rate by locality; a locality with a higher salaried or industrial workforce, the way Sri City has changed parts of Chittoor, usually shows a higher and steadier financing attach rate worth building dedicated financing-led campaigns around",
+          "Compare average deal negotiation length across your showroom locations; a commercially seasoned buyer base like Guntur's tends to move faster once a competitive number is on the table, while a more relationship-driven town takes longer but converts at a higher rate once trust is established",
+          "Track what share of enquiries are for commercial or load-carrying vehicles versus personal ones; a district with an active quarrying, trading, or agricultural transport economy will show a meaningfully higher share than a purely residential catchment",
+        ],
+      },
+      {
+        heading: "The mistake: one Andhra Pradesh playbook for every dealership in the state",
+        body: [
+          "The most common failure mode isn't ignoring regional differences entirely, it's running one AP-wide campaign built around whichever region the marketing team understands best and assuming it scales. A Guntur-style price-led offer campaign undersells the relationship-first trust-building a rural delta town or an agricultural Rayalaseema district actually needs. A Rayalaseema-style value-focused, entry-segment campaign leaves premium and financing-led demand on the table in an urban coastal core like Rajahmundry. Neither mistake shows up cleanly in a single vanity metric like total lead volume, it shows up as a conversion rate that never quite matches what the campaign should be delivering.",
+          "This connects directly to the broader Tier-2 marketing question of what changes outside a metro core; regional buyer behavior is one specific, measurable layer inside that broader shift, not a separate problem.",
+        ],
+      },
+      {
+        heading: "What changing the campaign to match the region actually does",
+        body: [
+          "This isn't a theoretical exercise. AutoSutra's work with a regional used car dealer that shifted campaign spend toward the channels and messaging that actually matched its local buyer base, moving budget from a generic paid-search approach into Meta Ads and WhatsApp built around how that specific regional buyer actually shopped, cut cost per verified lead by 42 percent while scaling monthly volume. The lever wasn't a bigger budget, it was matching the channel and the message to the buyer sitting in front of it instead of running the same campaign everywhere.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Are coastal Andhra and Rayalaseema really different markets for dealerships?",
+        answer:
+          "Yes. They run on different underlying economies, delta agriculture and coastal trade versus a drier plateau economy with pockets of quarrying, energy, and industrial investment, and that difference shows up directly in purchase timing, vehicle segment mix, and how much weight buyers give to price versus relationship.",
+      },
+      {
+        question: "How do I know which behavior pattern my own dealership's catchment fits?",
+        answer:
+          "Check your own data rather than assuming from the map. Plot lead and sales volume against local harvest cycles, compare financing attach rate and vehicle type mix by locality, and see which pattern, coastal-style or Rayalaseema-style, actually matches what's happening in your funnel.",
+      },
+      {
+        question: "Does harvest timing really affect car and bike buying decisions?",
+        answer:
+          "In the more agricultural delta and Rayalaseema towns, yes. Purchase activity often picks up visibly after harvest income arrives, and a funnel that shifts budget and follow-up intensity around that window converts better than one that runs flat all year.",
+      },
+      {
+        question: "Why does Guntur's buyer behavior differ from a district like Kurnool?",
+        answer:
+          "Guntur's economy is built on large-scale chilli and tobacco trading, which produces a commercially confident, price-aware buyer used to negotiating. Kurnool's economy centers more on granite quarrying and agriculture, which adds significant commercial and load-carrying vehicle demand alongside personal vehicles.",
+      },
+      {
+        question: "Does industrial investment change buyer behavior within a single district?",
+        answer:
+          "Yes, often unevenly. Chittoor's Sri City SEZ has brought a growing salaried, financing-friendly workforce to parts of the district while its more agricultural areas still follow traditional buying patterns, so campaigns need to account for both inside the same district.",
+      },
+      {
+        question: "Is it enough to just translate creative into Telugu for both regions?",
+        answer:
+          "Language is necessary but not sufficient. The message itself, price-led versus relationship-led, entry-segment versus broader segment mix, needs to match the actual regional buyer pattern, not just the language it's delivered in.",
+      },
+      {
+        question: "What's the biggest sign a dealership is running the wrong regional playbook?",
+        answer:
+          "A conversion rate that consistently underperforms what the lead volume and ad spend should be delivering, even though the campaign looks healthy on surface metrics like click-through rate or raw lead count.",
+      },
+      {
+        question: "Does matching campaigns to regional behavior actually move cost per lead?",
+        answer:
+          "It can meaningfully. Shifting spend and messaging to match how a specific regional buyer actually shops, rather than running one standard campaign, has been shown to cut cost per verified lead significantly while scaling volume.",
+      },
+    ],
+    relatedServiceSlugs: ["dealer-data-services", "digital-marketing"],
+  },
 };
