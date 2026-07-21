@@ -25,6 +25,12 @@ export type ExploreLink = {
   href: string;
 };
 
+export type RelatedMetro = {
+  slug: string;
+  name: string;
+  href: string;
+};
+
 // Shared presentational template for every location page (metro, state hub,
 // district, and future city) below /india. The /city/[slug] metro route
 // intentionally does NOT use this component, since metro pages must stay
@@ -39,6 +45,7 @@ export function LocationPageContent({
   breadcrumbItems,
   otherLocationsHeading,
   otherLocations,
+  relatedMetro,
   extraExploreLinks = [],
   whatsappLocationHero,
   whatsappLocationFooter,
@@ -52,6 +59,7 @@ export function LocationPageContent({
   breadcrumbItems: { name: string; path: string }[];
   otherLocationsHeading: string;
   otherLocations: OtherLocationLink[];
+  relatedMetro?: RelatedMetro;
   extraExploreLinks?: ExploreLink[];
   whatsappLocationHero: string;
   whatsappLocationFooter: string;
@@ -179,6 +187,29 @@ export function LocationPageContent({
           ))}
         </Accordion>
       </section>
+
+      {relatedMetro && (
+        <section className="mx-auto max-w-4xl px-6 py-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-4 rounded-3xl border border-brand/30 bg-brand/5 p-6 text-center sm:flex-row sm:text-left">
+            <div>
+              <h2 className="font-heading text-base font-semibold text-ink">
+                Also serving {relatedMetro.name}
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {relatedMetro.name} is also part of AutoSutra&apos;s coverage
+                in this region.
+              </p>
+            </div>
+            <Link
+              href={relatedMetro.href}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand/40 bg-background px-5 py-2 text-sm font-medium text-brand transition-colors hover:border-brand hover:bg-brand/10"
+            >
+              View {relatedMetro.name}
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-4xl px-6 pb-4 lg:px-8">
         <div className="rounded-3xl border border-border bg-card p-8">

@@ -23,6 +23,7 @@ import {
 import { pageMetadata } from "@/lib/seo";
 import { cityProfiles, type CityFaq } from "@/data/city-content";
 import { services } from "@/data/services";
+import { states } from "@/data/states";
 
 // This route now serves the 8 metro cities only. District and state-hub
 // pages moved to /india/[state]/[district] and /india/[state]; see
@@ -105,6 +106,15 @@ export default async function CityPage({
   const otherLocationsHeading = isDistrict
     ? `AutoSutra in nearby ${location.region} districts`
     : "AutoSutra in other cities";
+
+  // State/district pages already link forward to their region's metro city
+  // (see india/[state]/page.tsx and india/[state]/[district]/page.tsx, which
+  // both match on `cityProfiles.find((city) => city.region === state.name)`).
+  // This is the reciprocal link back down, using the same match, so link
+  // equity flows both ways instead of only downward from India into metros.
+  const relatedState = isDistrict
+    ? undefined
+    : states.find((state) => state.name === location.region);
 
   return (
     <>
@@ -278,6 +288,35 @@ export default async function CityPage({
           </div>
         </div>
       </section>
+
+      {relatedState && (
+        <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+          <h2 className="text-center font-heading text-2xl font-semibold text-ink">
+            AutoSutra in {relatedState.name}
+          </h2>
+          <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
+            {location.name} is part of our {relatedState.name} coverage,
+            spanning {relatedState.districts.length} districts.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href={`/india/${relatedState.slug}`}
+              className="rounded-full border border-brand/40 bg-brand/5 px-5 py-2 text-sm font-medium text-brand transition-colors hover:border-brand hover:bg-brand/10"
+            >
+              {relatedState.name} overview
+            </Link>
+            {relatedState.districts.slice(0, 4).map((district) => (
+              <Link
+                key={district.slug}
+                href={`/india/${relatedState.slug}/${district.slug}`}
+                className="rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:border-brand/40 hover:text-brand"
+              >
+                {district.name}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <h2 className="text-center font-heading text-2xl font-semibold text-ink">
