@@ -12,6 +12,7 @@ export type CityProfile = {
   buyerBehavior: string;
   highlights: string[];
   faqs: CityFaq[];
+  keywords: string[];
 };
 
 // Real, general, well-established characteristics of each city's automotive
@@ -48,6 +49,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Delhi NCR dealership start with?",
+        answer:
+          "Given how much cross-shopping happens across NCR's dense dealer network, most dealerships see the fastest results starting with Verified Buyer Leads paired with WhatsApp Marketing, so a qualified enquiry gets a response before a buyer moves on to a competing showroom.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Delhi NCR",
+      "dealer leads Delhi NCR",
+      "automotive marketing agency Delhi NCR",
+      "dealership digital marketing Delhi NCR",
+      "verified buyer leads Delhi NCR",
+      "dealer CRM Delhi NCR",
     ],
   },
   {
@@ -79,6 +93,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Mumbai dealership start with?",
+        answer:
+          "Given Mumbai's active resale market and space-constrained showrooms, most dealerships start with Verified Buyer Leads to pre-qualify buyers before they make the trip in, adding WhatsApp Marketing soon after for faster follow-up.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Mumbai",
+      "dealer leads Mumbai",
+      "automotive marketing agency Mumbai",
+      "dealership digital marketing Mumbai",
+      "used car dealer marketing Mumbai",
+      "WhatsApp marketing for dealers Mumbai",
     ],
   },
   {
@@ -110,6 +137,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Bangalore dealership start with?",
+        answer:
+          "Given how research-heavy Bangalore buyers are before they contact a dealer, Content Creation paired with Digital Marketing tends to perform best first, giving buyers the specification-level detail they're already looking for online.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Bangalore",
+      "dealer leads Bangalore",
+      "automotive marketing agency Bangalore",
+      "dealership digital marketing Bangalore",
+      "EV dealership marketing Bangalore",
+      "two wheeler dealer marketing Bangalore",
     ],
   },
   {
@@ -141,6 +181,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Pune dealership start with?",
+        answer:
+          "For Pune's mix of vehicle-literate and first-time buyers, Verified Buyer Leads combined with WhatsApp Marketing usually works well from day one, since it qualifies intent while still supporting the financing questions first-time buyers tend to have.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Pune",
+      "dealer leads Pune",
+      "automotive marketing agency Pune",
+      "dealership digital marketing Pune",
+      "first time buyer marketing Pune",
+      "car dealer leads Pune",
     ],
   },
   {
@@ -172,6 +225,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Chennai dealership start with?",
+        answer:
+          "Given Chennai's dense dealer landscape, Local SEO is often the highest-leverage starting point, since map pack visibility and Google Business Profile optimization directly affect who shows up first in 'near me' searches.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Chennai",
+      "dealer leads Chennai",
+      "automotive marketing agency Chennai",
+      "dealership digital marketing Chennai",
+      "local SEO for car dealers Chennai",
+      "auto dealer marketing Chennai",
     ],
   },
   {
@@ -203,6 +269,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should a Hyderabad dealership start with?",
+        answer:
+          "For Hyderabad's fast-growing, smartphone-first buyer base, WhatsApp Marketing paired with Verified Buyer Leads tends to convert fastest, since buyers here respond quickly once a lead is qualified.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Hyderabad",
+      "dealer leads Hyderabad",
+      "automotive marketing agency Hyderabad",
+      "dealership digital marketing Hyderabad",
+      "EV dealership marketing Hyderabad",
+      "premium car dealer marketing Hyderabad",
     ],
   },
   {
@@ -235,6 +314,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Since we're local, onboarding can move quickly, and most services go live within 7 to 10 business days.",
       },
+      {
+        question: "Which AutoSutra service should a Kolkata dealership start with?",
+        answer:
+          "Most Kolkata dealerships start with Verified Buyer Leads, since being based here means our team can support onboarding and account management in person rather than only remotely.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Kolkata",
+      "dealer leads Kolkata",
+      "automotive marketing agency Kolkata",
+      "dealership digital marketing Kolkata",
+      "dealer marketing agency Kolkata",
+      "West Bengal dealership marketing",
     ],
   },
   {
@@ -266,6 +358,19 @@ export const cityProfiles: CityProfile[] = [
         answer:
           "Most services, including verified leads, ad campaigns, and WhatsApp automation, go live within 7 to 10 business days of onboarding.",
       },
+      {
+        question: "Which AutoSutra service should an Ahmedabad dealership start with?",
+        answer:
+          "Given how closely Ahmedabad buyers compare pricing, campaigns built around Digital Marketing with transparent, clear offers tend to outperform image-led messaging, especially for the city's many small and mid-size dealers.",
+      },
+    ],
+    keywords: [
+      "car dealership marketing Ahmedabad",
+      "dealer leads Ahmedabad",
+      "automotive marketing agency Ahmedabad",
+      "dealership digital marketing Ahmedabad",
+      "used car dealer marketing Ahmedabad",
+      "small dealer marketing Gujarat",
     ],
   },
 ];

@@ -19,37 +19,19 @@ import {
   combinationServiceSchema,
   faqPageSchema,
   localBusinessSchema,
+  webPageSchema,
 } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
-import { cityProfiles, type CityFaq } from "@/data/city-content";
+import { cityProfiles } from "@/data/city-content";
 import { services } from "@/data/services";
 import { states } from "@/data/states";
 
-// This route now serves the 8 metro cities only. District and state-hub
-// pages moved to /india/[state]/[district] and /india/[state]; see
-// next.config.ts for the redirects from their old /city/{slug} URLs.
-type LocationKind = "metro" | "district";
-
-type LocationView = {
-  slug: string;
-  name: string;
-  region: string;
-  kind: LocationKind;
-  isHQ?: boolean;
-  marketContext: string;
-  buyerBehavior: string;
-  highlights: string[];
-  faqs: CityFaq[];
-  keywords?: string[];
-  nearbySlugs?: string[];
-};
-
-function allLocations(): LocationView[] {
-  return cityProfiles.map((city) => ({ ...city, kind: "metro" as const }));
-}
+// This route serves the 8 metro cities only. District and state-hub pages
+// live at /india/[state]/[district] and /india/[state]; see next.config.ts
+// for the redirects from their old /city/{slug} URLs.
 
 export function generateStaticParams() {
-  return allLocations().map((location) => ({ slug: location.slug }));
+  return cityProfiles.map((city) => ({ slug: city.slug }));
 }
 
 export async function generateMetadata({
@@ -58,19 +40,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const location = allLocations().find((item) => item.slug === slug);
+  const location = cityProfiles.find((item) => item.slug === slug);
   if (!location) return {};
   return pageMetadata({
     title: `Car & Bike Dealership Marketing in ${location.name}`,
     description: `Verified buyer leads, performance marketing, and dealer growth services for ${location.name} car, bike, EV, and used-car dealerships. ${location.marketContext}`,
     path: `/city/${location.slug}`,
-    keywords:
-      location.keywords ?? [
-        `car dealership marketing ${location.name}`,
-        `dealer leads ${location.name}`,
-        `automotive marketing agency ${location.name}`,
-        `dealership digital marketing ${location.name}`,
-      ],
+    keywords: location.keywords,
   });
 }
 
@@ -80,41 +56,19 @@ export default async function CityPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const locations = allLocations();
-  const location = locations.find((item) => item.slug === slug);
+  const location = cityProfiles.find((item) => item.slug === slug);
   if (!location) notFound();
 
-  const isDistrict = location.kind === "district";
-
-  const otherLocations = isDistrict
-    ? [
-        ...(location.nearbySlugs ?? [])
-          .map((nearbySlug) =>
-            locations.find(
-              (item) => item.slug === nearbySlug && item.kind === "district",
-            ),
-          )
-          .filter((item): item is LocationView => Boolean(item)),
-        ...cityProfiles
-          .filter((city) => city.region === location.region)
-          .map((city) => ({ ...city, kind: "metro" as const })),
-      ]
-    : cityProfiles
-        .filter((city) => city.slug !== location.slug)
-        .map((city) => ({ ...city, kind: "metro" as const }));
-
-  const otherLocationsHeading = isDistrict
-    ? `AutoSutra in nearby ${location.region} districts`
-    : "AutoSutra in other cities";
+  const otherLocations = cityProfiles.filter(
+    (city) => city.slug !== location.slug,
+  );
 
   // State/district pages already link forward to their region's metro city
   // (see india/[state]/page.tsx and india/[state]/[district]/page.tsx, which
   // both match on `cityProfiles.find((city) => city.region === state.name)`).
   // This is the reciprocal link back down, using the same match, so link
   // equity flows both ways instead of only downward from India into metros.
-  const relatedState = isDistrict
-    ? undefined
-    : states.find((state) => state.name === location.region);
+  const relatedState = states.find((state) => state.name === location.region);
 
   return (
     <>
@@ -132,6 +86,13 @@ export default async function CityPage({
           description: location.marketContext,
           path: `/city/${location.slug}`,
           areaServedName: `${location.name}, ${location.region}`,
+        })}
+      />
+      <JsonLd
+        data={webPageSchema({
+          name: `Car & Bike Dealership Marketing in ${location.name}`,
+          description: location.marketContext,
+          path: `/city/${location.slug}`,
         })}
       />
       <JsonLd
@@ -218,13 +179,10 @@ export default async function CityPage({
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
               const Icon = serviceIconMap[service.icon];
-              const href = isDistrict
-                ? `/services/${service.slug}`
-                : `/services/${service.slug}/${location.slug}`;
               return (
                 <Link
                   key={service.slug}
-                  href={href}
+                  href={`/services/${service.slug}/${location.slug}`}
                   className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
                 >
                   <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-brand">
@@ -320,7 +278,7 @@ export default async function CityPage({
 
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <h2 className="text-center font-heading text-2xl font-semibold text-ink">
-          {otherLocationsHeading}
+          AutoSutra in other cities
         </h2>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {otherLocations.map((other) => (
