@@ -956,4 +956,38 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-18",
     coverCluster: "local",
   },
+  {
+    slug: "district-level-local-seo-for-dealerships",
+    title: "Building District-Level Local SEO Beyond Your Google Business Profile",
+    category: "Guide",
+    excerpt:
+      "A single Google Business Profile covers one address. A dealership serving an entire district needs a local SEO structure built around every town buyers actually search from.",
+    readTime: "8 min read",
+    tags: ["local-seo", "dealer-growth"],
+    primaryKeyword: "district level local SEO dealership",
+    secondaryKeywords: [
+      "local SEO beyond Google Business Profile",
+      "district level SEO dealership India",
+    ],
+    publishedDate: "2026-07-20",
+    updatedDate: "2026-07-20",
+    coverCluster: "local",
+  },
+  {
+    slug: "certified-pre-owned-marketing-india",
+    title: "Certified Pre-Owned Marketing: Building Trust Buyers Don't Extend to Used Cars",
+    category: "Guide",
+    excerpt:
+      "A CPO buyer is being asked to trust a used vehicle at a new-car price. That trust doesn't happen by putting a badge on the listing, it has to be built into how the car is marketed.",
+    readTime: "8 min read",
+    tags: ["used-cars", "reputation-management"],
+    primaryKeyword: "certified pre-owned marketing India",
+    secondaryKeywords: [
+      "CPO dealership marketing",
+      "used car certification trust marketing",
+    ],
+    publishedDate: "2026-07-23",
+    updatedDate: "2026-07-23",
+    coverCluster: "local",
+  },
 ];
