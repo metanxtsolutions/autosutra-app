@@ -4884,4 +4884,96 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["digital-marketing", "crm-solutions"],
   },
+
+  "used-car-listing-photos-video-standards": {
+    intro:
+      "By the time a used-car buyer is deciding between two or three shortlisted listings, they've already done the research. They know the fair price range, they've read a few reviews of the model, and they're not asking whether to buy a used car anymore, they're asking which specific one. At that stage, a thin photo set or no video doesn't just look less appealing, it reads as something being held back, and buyers who feel that quietly move to the next listing without ever telling you why.",
+    sections: [
+      {
+        heading: "Drop-off at this stage is a confidence problem, not an interest problem",
+        body: [
+          "A buyer scrolling past a listing at the consideration stage isn't losing interest in buying a used car, they're losing confidence in this specific one. Six blurry exterior shots and nothing of the interior or engine bay forces a buyer to assume the worst about whatever wasn't shown, because that's the safer assumption when real money is involved.",
+          "This is different from the awareness stage, where a rough photo might still get a click because the price or model is compelling enough on its own. By the consideration and decision stage, buyers are actively looking for a reason to eliminate options and narrow their shortlist, and a weak photo or video set gives them exactly that reason, whether or not the car itself is actually fine.",
+        ],
+      },
+      {
+        heading: "The minimum photo set that removes assumption-based drop-off",
+        body: [
+          "A listing that consistently converts at this stage covers specific angles and details, not just a flattering hero shot:",
+        ],
+        bullets: [
+          "Exterior from all four corners plus straight-on front and rear, in daylight without harsh shadows",
+          "Full interior: dashboard, front and rear seats, boot space, and the odometer reading clearly visible",
+          "Engine bay with the bonnet open, photographed clean and well-lit",
+          "Tyre tread on all four wheels, since tyre condition is one of the first things a knowledgeable buyer checks",
+          "Any existing damage, scratches, or wear points, photographed clearly rather than cropped out",
+        ],
+      },
+      {
+        heading: "Disclosing flaws on camera builds more trust than hiding them",
+        body: [
+          "The instinct to crop out a scratch or shoot around a worn seat is understandable, but it usually backfires at the decision stage. A buyer who spots an undisclosed flaw during an in-person visit, after already mentally committing based on the photos, doesn't just negotiate the price down, they often lose trust in the entire listing and walk away from a deal that photos alone had nearly closed.",
+          "A short caption or a five-second mention in the walkaround video acknowledging a known flaw, with an honest note on its severity, consistently performs better than a listing that looks flawless in photos and then disappoints in person. Buyers read disclosed flaws as a sign the rest of the listing is accurate too.",
+        ],
+      },
+      {
+        heading: "A walkaround video is the single highest-converting asset at this stage",
+        body: [
+          "Static photos answer 'what does it look like.' A walkaround video answers the questions photos can't: does the engine sound right on a cold start, do the indicators and lights actually work, is there any visible vibration or noise when the engine's running. These are exactly the questions a BOFU buyer is quietly asking before committing to a showroom visit.",
+          "A two to three minute video covering a cold engine start, a slow walk around the exterior narrating condition, a look inside the boot and cabin, and a quick demonstration of key features like the infotainment screen or climate control does more to move a hesitant buyer toward a visit than another round of photos ever will. It doesn't need professional production value. A steady phone recording with clear narration outperforms a silent, over-edited clip almost every time, because buyers are listening for honesty, not polish.",
+        ],
+      },
+      {
+        heading: "Consistency across every listing matters more than perfection on a few",
+        body: [
+          "Dealers often invest heavily in photographing their premium or hero inventory and let the rest of the lot get a rushed, inconsistent set. Buyers comparing listings within the same dealership notice this inconsistency, and it reads as the dealer having something to hide on the less-photographed cars specifically, even when that's not true.",
+          "A repeatable shot list and a fixed location with good natural light, used for every vehicle regardless of price point, does more for overall drop-off than exceptional photography on a handful of cars. AutoSutra's work with a regional used car dealer, covered at /case-studies/used-car-dealer-cost-per-lead, found that standardizing listing quality across the full inventory, not just top-tier stock, was a meaningful factor in cutting cost-per-verified-lead by 42% while scaling monthly volume, since fewer buyers dropped off mid-consideration once every listing met the same visual bar.",
+        ],
+      },
+      {
+        heading: "Where to invest first if budget or time is limited",
+        body: [
+          "If a full photo and video overhaul isn't possible immediately, the walkaround video is the single highest-leverage addition, since it's the asset most directly tied to late-funnel decisions. After that, fixing interior and engine bay photos on listings that currently only show exterior angles closes the next biggest confidence gap, ahead of upgrading exterior photo quality that's already reasonably complete.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Does photo and video quality really affect buyers this late in the decision?",
+        answer:
+          "Yes, arguably more than earlier in the funnel. A buyer at the consideration stage already wants to buy a used car and is actively looking for a reason to eliminate options, and thin photo or video coverage gives them exactly that reason.",
+      },
+      {
+        question: "Should existing damage or wear be shown in listing photos?",
+        answer:
+          "Yes. Buyers who discover an undisclosed flaw in person after committing mentally based on photos tend to lose trust in the whole listing, while an honestly disclosed flaw with a clear note on severity usually reads as a sign the rest of the listing is accurate too.",
+      },
+      {
+        question: "How long should a walkaround video be?",
+        answer:
+          "Two to three minutes is usually enough to cover a cold engine start, an exterior walk with narration, the interior and boot, and a quick look at key features, without losing a buyer's attention.",
+      },
+      {
+        question: "Does a walkaround video need professional production quality?",
+        answer:
+          "No. A steady phone recording with clear, honest narration typically outperforms an over-edited, silent clip, because buyers at this stage are listening for honesty about condition, not production polish.",
+      },
+      {
+        question: "Should every vehicle in inventory get the same photo treatment, or just premium stock?",
+        answer:
+          "Every vehicle. Buyers comparing listings within the same dealership notice inconsistent photo quality, and it tends to read as something being hidden on the less-photographed cars specifically, even when that isn't the case.",
+      },
+      {
+        question: "What's the minimum photo set a used-car listing needs?",
+        answer:
+          "Four exterior corner angles plus front and rear, full interior including the odometer, the engine bay, tyre tread on all four wheels, and any existing damage photographed clearly rather than cropped out.",
+      },
+      {
+        question: "If budget is limited, what should a dealer fix first?",
+        answer:
+          "Add a walkaround video before anything else, since it's the asset most directly tied to late-funnel decisions. After that, fix listings that are missing interior and engine bay photos before investing further in exterior photo quality that's usually already adequate.",
+      },
+    ],
+    relatedServiceSlugs: ["photography", "videography"],
+  },
 };

@@ -1007,4 +1007,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-23",
     coverCluster: "leads",
   },
+  {
+    slug: "used-car-listing-photos-video-standards",
+    title: "Photo and Video Standards That Reduce Used-Car Buyer Drop-Off",
+    category: "Guide",
+    excerpt:
+      "Most used-car buyers who drop off don't say why. A weak photo set or a missing walkaround video is usually the quiet reason they moved on to the next listing.",
+    readTime: "7 min read",
+    tags: ["used-cars", "video-marketing"],
+    primaryKeyword: "used car listing photos video dealership",
+    secondaryKeywords: [
+      "used car listing photo standards",
+      "walkaround video used car dealership",
+    ],
+    publishedDate: "2026-07-23",
+    updatedDate: "2026-07-23",
+    coverCluster: "ads",
+  },
 ];
