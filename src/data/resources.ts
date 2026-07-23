@@ -990,4 +990,21 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-23",
     coverCluster: "local",
   },
+  {
+    slug: "used-car-dealer-competing-with-online-platforms",
+    title: "How Organized Used-Car Platforms Changed What Buyers Expect From Independent Dealers",
+    category: "Guide",
+    excerpt:
+      "Buyers don't compare an independent dealer against other independent dealers anymore. They compare against the fixed-price, fully-documented experience an organized platform trained them to expect.",
+    readTime: "8 min read",
+    tags: ["used-cars", "digital-marketing"],
+    primaryKeyword: "used car dealer competing with online platforms",
+    secondaryKeywords: [
+      "independent dealer vs organized used car platform",
+      "used car buyer expectations India",
+    ],
+    publishedDate: "2026-07-23",
+    updatedDate: "2026-07-23",
+    coverCluster: "leads",
+  },
 ];
