@@ -33,7 +33,7 @@ export const timeline: Milestone[] = [
   },
   {
     label: "Today",
-    title: "250+ dealer partners nationwide",
+    title: "1.5 lac+ verified leads delivered yearly",
     description:
       "AutoSutra now supports dealer partners across India with verified leads, performance marketing, and a growing suite of dealer growth technology.",
   },
