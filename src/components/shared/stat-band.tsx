@@ -17,7 +17,9 @@ export function StatBand() {
               duration={2}
               enableScrollSpy
               scrollSpyOnce
+              prefix={stat.prefix}
               suffix={stat.suffix}
+              decimals={stat.decimals}
             />
           </span>
           <span className="text-sm text-muted-foreground">{stat.label}</span>
