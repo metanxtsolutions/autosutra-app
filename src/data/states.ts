@@ -95,6 +95,10 @@ import {
   uttarPradeshDistrictProfiles,
   uttarPradeshStateProfile,
 } from "./uttar-pradesh-districts";
+import {
+  madhyaPradeshDistrictProfiles,
+  madhyaPradeshStateProfile,
+} from "./madhya-pradesh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -316,6 +320,12 @@ export const states: StateEntry[] = [
     name: uttarPradeshStateProfile.name,
     hubProfile: uttarPradeshStateProfile,
     districts: uttarPradeshDistrictProfiles,
+  },
+  {
+    slug: madhyaPradeshStateProfile.slug,
+    name: madhyaPradeshStateProfile.name,
+    hubProfile: madhyaPradeshStateProfile,
+    districts: madhyaPradeshDistrictProfiles,
   },
 ];
 
