@@ -61,6 +61,7 @@ import {
   jharkhandDistrictProfiles,
   jharkhandStateProfile,
 } from "./jharkhand-districts";
+import { odishaDistrictProfiles, odishaStateProfile } from "./odisha-districts";
 
 export type StateEntry = {
   slug: string;
@@ -222,6 +223,12 @@ export const states: StateEntry[] = [
     name: jharkhandStateProfile.name,
     hubProfile: jharkhandStateProfile,
     districts: jharkhandDistrictProfiles,
+  },
+  {
+    slug: odishaStateProfile.slug,
+    name: odishaStateProfile.name,
+    hubProfile: odishaStateProfile,
+    districts: odishaDistrictProfiles,
   },
 ];
 
