@@ -53,6 +53,10 @@ import {
   himachalPradeshDistrictProfiles,
   himachalPradeshStateProfile,
 } from "./himachal-pradesh-districts";
+import {
+  uttarakhandDistrictProfiles,
+  uttarakhandStateProfile,
+} from "./uttarakhand-districts";
 
 export type StateEntry = {
   slug: string;
@@ -202,6 +206,12 @@ export const states: StateEntry[] = [
     name: himachalPradeshStateProfile.name,
     hubProfile: himachalPradeshStateProfile,
     districts: himachalPradeshDistrictProfiles,
+  },
+  {
+    slug: uttarakhandStateProfile.slug,
+    name: uttarakhandStateProfile.name,
+    hubProfile: uttarakhandStateProfile,
+    districts: uttarakhandDistrictProfiles,
   },
 ];
 
