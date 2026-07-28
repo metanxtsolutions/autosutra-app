@@ -83,6 +83,10 @@ import {
   dadraAndNagarHaveliAndDamanAndDiuDistrictProfiles,
   dadraAndNagarHaveliAndDamanAndDiuStateProfile,
 } from "./dadra-and-nagar-haveli-and-daman-and-diu-districts";
+import {
+  puducherryDistrictProfiles,
+  puducherryStateProfile,
+} from "./puducherry-districts";
 
 export type StateEntry = {
   slug: string;
@@ -286,6 +290,12 @@ export const states: StateEntry[] = [
     name: dadraAndNagarHaveliAndDamanAndDiuStateProfile.name,
     hubProfile: dadraAndNagarHaveliAndDamanAndDiuStateProfile,
     districts: dadraAndNagarHaveliAndDamanAndDiuDistrictProfiles,
+  },
+  {
+    slug: puducherryStateProfile.slug,
+    name: puducherryStateProfile.name,
+    hubProfile: puducherryStateProfile,
+    districts: puducherryDistrictProfiles,
   },
 ];
 
