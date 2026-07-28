@@ -66,6 +66,10 @@ import {
   rajasthanDistrictProfiles,
   rajasthanStateProfile,
 } from "./rajasthan-districts";
+import {
+  chandigarhDistrictProfiles,
+  chandigarhStateProfile,
+} from "./chandigarh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -239,6 +243,12 @@ export const states: StateEntry[] = [
     name: rajasthanStateProfile.name,
     hubProfile: rajasthanStateProfile,
     districts: rajasthanDistrictProfiles,
+  },
+  {
+    slug: chandigarhStateProfile.slug,
+    name: chandigarhStateProfile.name,
+    hubProfile: chandigarhStateProfile,
+    districts: chandigarhDistrictProfiles,
   },
 ];
 
