@@ -67,8 +67,10 @@ export default async function CityPage({
   // (see india/[state]/page.tsx and india/[state]/[district]/page.tsx, which
   // both match via regionIncludesState). This is the reciprocal link back
   // down, using the same match, so link equity flows both ways instead of
-  // only downward from India into metros.
-  const relatedState = states.find((state) =>
+  // only downward from India into metros. Delhi NCR's region spans both
+  // Delhi and (via the Gurugram/Faridabad tokens) Haryana, so this can
+  // legitimately match more than one state.
+  const relatedStates = states.filter((state) =>
     regionIncludesState(location.region, state.name),
   );
 
@@ -249,8 +251,11 @@ export default async function CityPage({
         </div>
       </section>
 
-      {relatedState && (
-        <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+      {relatedStates.map((relatedState) => (
+        <section
+          key={relatedState.slug}
+          className="mx-auto max-w-6xl px-6 py-16 lg:px-8"
+        >
           <h2 className="text-center font-heading text-2xl font-semibold text-ink">
             AutoSutra in {relatedState.name}
           </h2>
@@ -276,7 +281,7 @@ export default async function CityPage({
             ))}
           </div>
         </section>
-      )}
+      ))}
 
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <h2 className="text-center font-heading text-2xl font-semibold text-ink">
