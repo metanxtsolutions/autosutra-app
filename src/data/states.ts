@@ -33,6 +33,7 @@ import {
   gujaratDistrictProfiles,
   gujaratStateProfile,
 } from "./gujarat-districts";
+import { delhiDistrictProfiles, delhiStateProfile } from "./delhi-districts";
 
 export type StateEntry = {
   slug: string;
@@ -116,6 +117,12 @@ export const states: StateEntry[] = [
     name: gujaratStateProfile.name,
     hubProfile: gujaratStateProfile,
     districts: gujaratDistrictProfiles,
+  },
+  {
+    slug: delhiStateProfile.slug,
+    name: delhiStateProfile.name,
+    hubProfile: delhiStateProfile,
+    districts: delhiDistrictProfiles,
   },
 ];
 
