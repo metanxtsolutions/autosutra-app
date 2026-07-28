@@ -75,6 +75,10 @@ import {
   lakshadweepStateProfile,
 } from "./lakshadweep-districts";
 import { ladakhDistrictProfiles, ladakhStateProfile } from "./ladakh-districts";
+import {
+  andamanAndNicobarIslandsDistrictProfiles,
+  andamanAndNicobarIslandsStateProfile,
+} from "./andaman-and-nicobar-islands-districts";
 
 export type StateEntry = {
   slug: string;
@@ -266,6 +270,12 @@ export const states: StateEntry[] = [
     name: ladakhStateProfile.name,
     hubProfile: ladakhStateProfile,
     districts: ladakhDistrictProfiles,
+  },
+  {
+    slug: andamanAndNicobarIslandsStateProfile.slug,
+    name: andamanAndNicobarIslandsStateProfile.name,
+    hubProfile: andamanAndNicobarIslandsStateProfile,
+    districts: andamanAndNicobarIslandsDistrictProfiles,
   },
 ];
 
