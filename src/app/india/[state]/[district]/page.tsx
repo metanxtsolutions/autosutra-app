@@ -62,7 +62,7 @@ export default async function DistrictPage({
     .map((slug) => state.districts.find((item) => item.slug === slug))
     .filter((item): item is DistrictProfile => Boolean(item));
 
-  const relatedMetroProfile = cityProfiles.find(
+  const relatedMetroProfiles = cityProfiles.filter(
     (city) => city.region === state.name,
   );
 
@@ -117,15 +117,11 @@ export default async function DistrictPage({
         breadcrumbItems={breadcrumbItems}
         otherLocationsHeading={`AutoSutra in nearby ${state.name} districts`}
         otherLocations={otherLocations}
-        relatedMetro={
-          relatedMetroProfile
-            ? {
-                slug: relatedMetroProfile.slug,
-                name: relatedMetroProfile.name,
-                href: `/city/${relatedMetroProfile.slug}`,
-              }
-            : undefined
-        }
+        relatedMetros={relatedMetroProfiles.map((metro) => ({
+          slug: metro.slug,
+          name: metro.name,
+          href: `/city/${metro.slug}`,
+        }))}
         extraExploreLinks={[
           { label: "India", href: "/india" },
           { label: state.name, href: `/india/${state.slug}` },

@@ -52,7 +52,7 @@ export default async function StatePage({
   const hub = state.hubProfile;
   const path = `/india/${state.slug}`;
 
-  const relatedMetroProfile = cityProfiles.find(
+  const relatedMetroProfiles = cityProfiles.filter(
     (city) => city.region === state.name,
   );
 
@@ -108,15 +108,11 @@ export default async function StatePage({
         breadcrumbItems={breadcrumbItems}
         otherLocationsHeading={`${state.name} districts we serve`}
         otherLocations={otherLocations}
-        relatedMetro={
-          relatedMetroProfile
-            ? {
-                slug: relatedMetroProfile.slug,
-                name: relatedMetroProfile.name,
-                href: `/city/${relatedMetroProfile.slug}`,
-              }
-            : undefined
-        }
+        relatedMetros={relatedMetroProfiles.map((metro) => ({
+          slug: metro.slug,
+          name: metro.name,
+          href: `/city/${metro.slug}`,
+        }))}
         extraExploreLinks={[{ label: "India", href: "/india" }]}
         whatsappLocationHero="india_state_page_hero"
         whatsappLocationFooter="india_state_page_footer"
