@@ -79,6 +79,10 @@ import {
   andamanAndNicobarIslandsDistrictProfiles,
   andamanAndNicobarIslandsStateProfile,
 } from "./andaman-and-nicobar-islands-districts";
+import {
+  dadraAndNagarHaveliAndDamanAndDiuDistrictProfiles,
+  dadraAndNagarHaveliAndDamanAndDiuStateProfile,
+} from "./dadra-and-nagar-haveli-and-daman-and-diu-districts";
 
 export type StateEntry = {
   slug: string;
@@ -276,6 +280,12 @@ export const states: StateEntry[] = [
     name: andamanAndNicobarIslandsStateProfile.name,
     hubProfile: andamanAndNicobarIslandsStateProfile,
     districts: andamanAndNicobarIslandsDistrictProfiles,
+  },
+  {
+    slug: dadraAndNagarHaveliAndDamanAndDiuStateProfile.slug,
+    name: dadraAndNagarHaveliAndDamanAndDiuStateProfile.name,
+    hubProfile: dadraAndNagarHaveliAndDamanAndDiuStateProfile,
+    districts: dadraAndNagarHaveliAndDamanAndDiuDistrictProfiles,
   },
 ];
 
