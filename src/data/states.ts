@@ -91,6 +91,10 @@ import {
   jammuAndKashmirDistrictProfiles,
   jammuAndKashmirStateProfile,
 } from "./jammu-and-kashmir-districts";
+import {
+  uttarPradeshDistrictProfiles,
+  uttarPradeshStateProfile,
+} from "./uttar-pradesh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -306,6 +310,12 @@ export const states: StateEntry[] = [
     name: jammuAndKashmirStateProfile.name,
     hubProfile: jammuAndKashmirStateProfile,
     districts: jammuAndKashmirDistrictProfiles,
+  },
+  {
+    slug: uttarPradeshStateProfile.slug,
+    name: uttarPradeshStateProfile.name,
+    hubProfile: uttarPradeshStateProfile,
+    districts: uttarPradeshDistrictProfiles,
   },
 ];
 
