@@ -25,6 +25,10 @@ import {
   tamilNaduDistrictProfiles,
   tamilNaduStateProfile,
 } from "./tamil-nadu-districts";
+import {
+  telanganaDistrictProfiles,
+  telanganaStateProfile,
+} from "./telangana-districts";
 
 export type StateEntry = {
   slug: string;
@@ -96,6 +100,12 @@ export const states: StateEntry[] = [
     name: tamilNaduStateProfile.name,
     hubProfile: tamilNaduStateProfile,
     districts: tamilNaduDistrictProfiles,
+  },
+  {
+    slug: telanganaStateProfile.slug,
+    name: telanganaStateProfile.name,
+    hubProfile: telanganaStateProfile,
+    districts: telanganaDistrictProfiles,
   },
 ];
 
