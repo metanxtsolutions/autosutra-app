@@ -109,6 +109,50 @@ export const tamilNaduDistrictProfiles: DistrictProfile[] = [
       "SIPCOT industrial belt dealer leads Oragadam",
     ],
     nearbySlugs: ["chennai", "kanchipuram", "thiruvallur", "viluppuram"],
+    cities: [
+      {
+        slug: "maraimalai-nagar",
+        name: "Maraimalai Nagar",
+        marketContext:
+          "Maraimalai Nagar sits within the SIPCOT industrial estates that anchor Chengalpattu's automobile, electronics, and component manufacturing belt, distinct from Tambaram's commuter-suburb identity elsewhere in the district. Its economy centers on organized factory employment.",
+        buyerBehavior:
+          "Factory and SIPCOT-linked employment around Maraimalai Nagar supports a growing, financing-comfortable salaried buyer base, distinct from the commuter-driven demand seen in Tambaram and the district's traditional agricultural areas.",
+        highlights: [
+          "Within the SIPCOT auto, electronics, and component manufacturing belt",
+          "A growing, financing-comfortable salaried buyer base",
+          "Distinct from Tambaram's commuter-suburb identity",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Maraimalai Nagar specifically?",
+            answer:
+              "Factory and SIPCOT-linked manufacturing employment drives a growing, financing-comfortable salaried buyer base in Maraimalai Nagar.",
+          },
+          {
+            question: "Is Maraimalai Nagar's dealership market different from the rest of Chengalpattu district?",
+            answer:
+              "Yes, its SIPCOT-linked manufacturing workforce is distinct from Tambaram's commuter-suburb demand and the district's traditional agricultural areas.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Maraimalai Nagar specifically, not just Chengalpattu town?",
+            answer:
+              "Yes, we build campaigns specific to Maraimalai Nagar's own SIPCOT-linked buyer base, separate from our broader Chengalpattu district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Maraimalai Nagar",
+          "Car Dealer CRM in Maraimalai Nagar",
+          "Automotive Marketing in Maraimalai Nagar",
+          "Local SEO for Car Dealerships in Maraimalai Nagar",
+          "SIPCOT manufacturing belt dealer leads Maraimalai Nagar",
+        ],
+      },
+    ],
   },
   {
     slug: "chennai",
@@ -260,6 +304,50 @@ export const tamilNaduDistrictProfiles: DistrictProfile[] = [
       "SIPCOT industrial estate dealer leads Neyveli",
     ],
     nearbySlugs: ["viluppuram", "ariyalur", "thanjavur", "mayiladuthurai", "kallakurichi"],
+    cities: [
+      {
+        slug: "neyveli",
+        name: "Neyveli",
+        marketContext:
+          "Neyveli is a lignite mining and thermal power township, distinct from the coastal trade and farming that shapes the rest of Cuddalore district. Its economy centers on mining and power-sector employment rather than agriculture or trade.",
+        buyerBehavior:
+          "Mining and power-sector employment in Neyveli supports a steady, salary-backed layer of personal and commercial vehicle demand, distinct from the coastal trade and seasonal farming patterns elsewhere in Cuddalore district.",
+        highlights: [
+          "A lignite mining and thermal power township",
+          "Steady, salary-backed vehicle demand tied to mining and power-sector employment",
+          "Distinct from the district's coastal trade and farming economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Neyveli specifically?",
+            answer:
+              "Mining and thermal power-sector employment drives a steady, salary-backed layer of personal and commercial vehicle demand in Neyveli.",
+          },
+          {
+            question: "Is Neyveli's dealership market different from the rest of Cuddalore district?",
+            answer:
+              "Yes, its mining and power-sector workforce is distinct from the coastal trade and farming economy found elsewhere in Cuddalore district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Neyveli specifically, not just Cuddalore town?",
+            answer:
+              "Yes, we build campaigns specific to Neyveli's own mining and power-sector buyer base, separate from our broader Cuddalore district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Neyveli",
+          "Car Dealer CRM in Neyveli",
+          "Automotive Marketing in Neyveli",
+          "Local SEO for Car Dealerships in Neyveli",
+          "Lignite mining township dealer leads Neyveli",
+        ],
+      },
+    ],
   },
   {
     slug: "dharmapuri",

@@ -308,6 +308,50 @@ export const gujaratDistrictProfiles: DistrictProfile[] = [
       "petrochemical belt dealer leads Ankleshwar",
     ],
     nearbySlugs: ["vadodara", "narmada", "surat", "anand"],
+    cities: [
+      {
+        slug: "ankleshwar",
+        name: "Ankleshwar",
+        marketContext:
+          "Ankleshwar anchors one of Gujarat's largest chemical and petrochemical industrial belts through its GIDC estate, distinct from Bharuch city's traditional river-port trading identity elsewhere in the district. Heavy industrial investment along the Narmada river shapes its local economy.",
+        buyerBehavior:
+          "Chemical and petrochemical industry employment around Ankleshwar's GIDC estate supports a strong, financing-comfortable salaried and commercial buyer base, distinct from Bharuch city's river-port trading community and the district's farming taluks.",
+        highlights: [
+          "Anchors one of Gujarat's largest chemical and petrochemical belts",
+          "A strong, financing-comfortable salaried and commercial buyer base",
+          "Distinct from Bharuch city's river-port trading identity",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Ankleshwar specifically?",
+            answer:
+              "Chemical and petrochemical industry employment around Ankleshwar's GIDC estate drives strong, financing-comfortable demand for personal and commercial vehicles.",
+          },
+          {
+            question: "Is Ankleshwar's dealership market different from Bharuch city?",
+            answer:
+              "Yes, Ankleshwar's industrial, salaried buyer base is distinct from Bharuch city's traditional river-port trading community.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Ankleshwar specifically, not just Bharuch city?",
+            answer:
+              "Yes, we build campaigns specific to Ankleshwar's own industrial buyer base, separate from our broader Bharuch district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Ankleshwar",
+          "Car Dealer CRM in Ankleshwar",
+          "Automotive Marketing in Ankleshwar",
+          "Local SEO for Car Dealerships in Ankleshwar",
+          "GIDC petrochemical belt dealer leads Ankleshwar",
+        ],
+      },
+    ],
   },
   {
     slug: "bhavnagar",
@@ -1658,6 +1702,50 @@ export const gujaratDistrictProfiles: DistrictProfile[] = [
       "chemical industrial estate dealer leads Vapi",
     ],
     nearbySlugs: ["navsari", "dang"],
+    cities: [
+      {
+        slug: "vapi",
+        name: "Vapi",
+        marketContext:
+          "Vapi is home to one of Gujarat's largest chemical and industrial estates, sitting near the Maharashtra border along a major highway and rail corridor, distinct from Valsad district's mango and chikoo orchard economy elsewhere. Its economy centers on organized chemical and industrial manufacturing.",
+        buyerBehavior:
+          "Vapi's chemical and industrial workforce supports a strong, financing-comfortable salaried and commercial buyer base, distinct from the seasonal orchard-farming and coastal fishing patterns found elsewhere in Valsad district.",
+        highlights: [
+          "One of Gujarat's largest chemical and industrial estates",
+          "A strong, financing-comfortable salaried and commercial buyer base",
+          "Distinct from the district's orchard and coastal fishing economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Vapi specifically?",
+            answer:
+              "Vapi's chemical and industrial manufacturing workforce drives strong, financing-comfortable demand for personal and commercial vehicles.",
+          },
+          {
+            question: "Is Vapi's dealership market different from the rest of Valsad district?",
+            answer:
+              "Yes, Vapi's industrial, salaried buyer base is distinct from the orchard farming and coastal fishing economy found elsewhere in Valsad district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Vapi specifically, not just Valsad town?",
+            answer:
+              "Yes, we build campaigns specific to Vapi's own industrial buyer base, separate from our broader Valsad district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Vapi",
+          "Car Dealer CRM in Vapi",
+          "Automotive Marketing in Vapi",
+          "Local SEO for Car Dealerships in Vapi",
+          "Chemical industrial estate dealer leads Vapi",
+        ],
+      },
+    ],
   },
   {
     slug: "vav-tharad",

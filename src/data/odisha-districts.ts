@@ -661,6 +661,50 @@ export const odishaDistrictProfiles: DistrictProfile[] = [
       "Chandbali river port agriculture dealer leads Bhadrak town",
     ],
     nearbySlugs: ["balasore", "kendrapara", "jajpur", "mayurbhanj"],
+    cities: [
+      {
+        slug: "chandbali",
+        name: "Chandbali",
+        marketContext:
+          "Chandbali is a port town on the Baitarani river, giving it a distinct trade and cargo-handling economy separate from the farming that anchors most of Bhadrak district. Port-linked activity shapes its local commercial base.",
+        buyerBehavior:
+          "Port and cargo-linked trade in Chandbali supports a steadier layer of commercial vehicle demand, distinct from the seasonal crop-cycle buying patterns seen across the rest of Bhadrak district.",
+        highlights: [
+          "A port town on the Baitarani river",
+          "A steadier, trade-linked commercial vehicle demand layer",
+          "Distinct from the district's farming-driven economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Chandbali specifically?",
+            answer:
+              "Port and cargo-linked trade activity drives a steadier layer of commercial vehicle demand in Chandbali.",
+          },
+          {
+            question: "Is Chandbali's dealership market different from the rest of Bhadrak district?",
+            answer:
+              "Yes, Chandbali's port and trade economy is distinct from the farming-driven demand seen across the rest of Bhadrak district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Chandbali specifically, not just Bhadrak town?",
+            answer:
+              "Yes, we build campaigns specific to Chandbali's own port and trade buyer base, separate from our broader Bhadrak district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Chandbali",
+          "Car Dealer CRM in Chandbali",
+          "Automotive Marketing in Chandbali",
+          "Local SEO for Car Dealerships in Chandbali",
+          "Port town trade dealer leads Chandbali",
+        ],
+      },
+    ],
   },
   {
     slug: "jajpur",

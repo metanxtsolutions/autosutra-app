@@ -517,6 +517,50 @@ export const madhyaPradeshDistrictProfilesBatch2: DistrictProfile[] = [
       "Itarsi railway junction Narmada valley dealer leads Narmadapuram",
     ],
     nearbySlugs: ["betul", "harda", "narsinghpur"],
+    cities: [
+      {
+        slug: "itarsi",
+        name: "Itarsi",
+        marketContext:
+          "Itarsi functions as a major railway junction connecting central and southern India, distinct from the wheat and soybean farming that anchors the rest of Narmadapuram district. Its economy centers on rail-linked logistics and workforce activity rather than agriculture.",
+        buyerBehavior:
+          "Itarsi's railway-junction workforce and logistics businesses support a steadier, less seasonal layer of personal and commercial vehicle demand than the crop-cycle buying seen across the rest of Narmadapuram district.",
+        highlights: [
+          "A major railway junction connecting central and southern India",
+          "A steadier, rail-linked logistics economy",
+          "Distinct from the district's wheat and soybean farming base",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Itarsi specifically?",
+            answer:
+              "Itarsi's railway-junction workforce and logistics businesses drive a steadier, less seasonal layer of personal and commercial vehicle demand.",
+          },
+          {
+            question: "Is Itarsi's dealership market different from the rest of Narmadapuram district?",
+            answer:
+              "Yes, Itarsi's rail-linked logistics economy is distinct from the wheat and soybean farming that anchors the rest of Narmadapuram district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Itarsi specifically, not just Narmadapuram town?",
+            answer:
+              "Yes, we build campaigns specific to Itarsi's own logistics and workforce buyer base, separate from our broader Narmadapuram district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Itarsi",
+          "Car Dealer CRM in Itarsi",
+          "Automotive Marketing in Itarsi",
+          "Local SEO for Car Dealerships in Itarsi",
+          "Railway junction logistics dealer leads Itarsi",
+        ],
+      },
+    ],
   },
   {
     slug: "betul",

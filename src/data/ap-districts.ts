@@ -1255,6 +1255,50 @@ export const apDistrictProfiles: DistrictProfile[] = [
       "car dealer leads Proddatur",
     ],
     nearbySlugs: ["annamayya", "kurnool", "nandyal"],
+    cities: [
+      {
+        slug: "proddatur",
+        name: "Proddatur",
+        marketContext:
+          "Proddatur is known for its jewelry and gold trading business, giving it a distinct commercial identity within YSR Kadapa district separate from Kadapa city's administrative role. Its trading economy centers on the gold and jewelry market rather than agriculture.",
+        buyerBehavior:
+          "Traders and businesses tied to Proddatur's jewelry trade support a steady, financing-comfortable commercial buyer base, distinct from the more administrative and agricultural buying patterns found elsewhere in YSR Kadapa district.",
+        highlights: [
+          "Known for its jewelry and gold trading business",
+          "A steady, financing-comfortable commercial buyer base",
+          "Distinct from Kadapa city's administrative economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Proddatur specifically?",
+            answer:
+              "Traders and businesses tied to Proddatur's jewelry and gold trading market drive a steady, financing-comfortable commercial buyer base.",
+          },
+          {
+            question: "Is Proddatur's dealership market different from Kadapa city?",
+            answer:
+              "Yes, Proddatur's jewelry-trade commercial base is distinct from Kadapa city's more administrative and agricultural economy.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Proddatur specifically, not just Kadapa city?",
+            answer:
+              "Yes, we build campaigns specific to Proddatur's own jewelry-trade buyer base, separate from our broader YSR Kadapa district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Proddatur",
+          "Car Dealer CRM in Proddatur",
+          "Automotive Marketing in Proddatur",
+          "Local SEO for Car Dealerships in Proddatur",
+          "Jewelry trade town dealer leads Proddatur",
+        ],
+      },
+    ],
   },
 ];
 

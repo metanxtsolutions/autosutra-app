@@ -733,6 +733,50 @@ export const districtProfiles: DistrictProfile[] = [
       "dealer leads Digha Tamluk",
     ],
     nearbySlugs: ["paschim-medinipur", "south-24-parganas", "howrah"],
+    cities: [
+      {
+        slug: "haldia",
+        name: "Haldia",
+        marketContext:
+          "Haldia is a major port and petrochemical industrial town, distinct from the more agricultural and tourism-driven economy found elsewhere across Purba Medinipur district. Port-linked cargo handling and refining activity anchor its local employment base.",
+        buyerBehavior:
+          "Port and petrochemical industry employment in Haldia supports a strong, financing-comfortable salaried and commercial vehicle demand layer, distinct from the farming and coastal-tourism patterns seen elsewhere in Purba Medinipur district.",
+        highlights: [
+          "A major port and petrochemical industrial town",
+          "Strong, financing-comfortable salaried and commercial vehicle demand",
+          "Distinct from the district's agricultural and tourism economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Haldia specifically?",
+            answer:
+              "Port and petrochemical industry employment drives strong, financing-comfortable demand for personal and commercial vehicles in Haldia.",
+          },
+          {
+            question: "Is Haldia's dealership market different from the rest of Purba Medinipur district?",
+            answer:
+              "Yes, Haldia's port and industrial workforce is distinct from the farming and coastal-tourism economy found elsewhere in the district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Haldia specifically, not just Tamluk?",
+            answer:
+              "Yes, we build campaigns specific to Haldia's own port and industrial buyer base, separate from our broader Purba Medinipur district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Haldia",
+          "Car Dealer CRM in Haldia",
+          "Automotive Marketing in Haldia",
+          "Local SEO for Car Dealerships in Haldia",
+          "Port petrochemical town dealer leads Haldia",
+        ],
+      },
+    ],
   },
   {
     slug: "malda",

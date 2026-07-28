@@ -460,6 +460,50 @@ export const uttarPradeshDistrictProfilesBatch2: DistrictProfile[] = [
       "Jagdishpur industrial area dealer leads Amethi district",
     ],
     nearbySlugs: ["raebareli", "sultanpur", "pratapgarh", "barabanki"],
+    cities: [
+      {
+        slug: "jagdishpur",
+        name: "Jagdishpur",
+        marketContext:
+          "Jagdishpur carries a pocket of industrial development that adds manufacturing employment to Amethi district's otherwise farming-centered economy. Its workforce is smaller and steadier than the district's broader seasonal, agriculture-driven buyer base.",
+        buyerBehavior:
+          "Workers linked to Jagdishpur's industrial area support a smaller, steadier layer of salary-backed personal vehicle demand, distinct from the seasonal buying patterns tied to Amethi district's agricultural calendar.",
+        highlights: [
+          "A pocket of industrial development within Amethi district",
+          "A steadier, salary-backed layer of personal vehicle demand",
+          "Distinct from the district's farming-driven buyer base",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Jagdishpur specifically?",
+            answer:
+              "Workers linked to Jagdishpur's industrial area drive a smaller, steadier layer of salary-backed personal vehicle demand.",
+          },
+          {
+            question: "Is Jagdishpur's dealership market different from the rest of Amethi district?",
+            answer:
+              "Yes, its industrial workforce is steadier and less seasonal than the farming-driven demand seen across the rest of Amethi district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Jagdishpur specifically, not just Amethi town?",
+            answer:
+              "Yes, we build campaigns specific to Jagdishpur's own industrial buyer base, separate from our broader Amethi district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Jagdishpur",
+          "Car Dealer CRM in Jagdishpur",
+          "Automotive Marketing in Jagdishpur",
+          "Local SEO for Car Dealerships in Jagdishpur",
+          "Industrial area dealer leads Jagdishpur",
+        ],
+      },
+    ],
   },
   {
     slug: "barabanki",

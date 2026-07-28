@@ -174,6 +174,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
+  const districtCityRoutes: MetadataRoute.Sitemap = states.flatMap((state) => {
+    const lastModified = gitLastModified(stateSourceFile[state.slug]);
+    return state.districts.flatMap((district) =>
+      (district.cities ?? []).map((city) => ({
+        url: `${siteConfig.url}/india/${state.slug}/${district.slug}/${city.slug}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+      })),
+    );
+  });
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
@@ -282,6 +294,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...indiaRoute,
     ...stateRoutes,
     ...districtRoutes,
+    ...districtCityRoutes,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,

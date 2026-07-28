@@ -808,6 +808,50 @@ export const madhyaPradeshDistrictProfilesBatch1: DistrictProfile[] = [
       "Narmada cotton belt highway trade dealer leads Sendhwa town",
     ],
     nearbySlugs: ["alirajpur", "dhar", "khargone", "burhanpur"],
+    cities: [
+      {
+        slug: "sendhwa",
+        name: "Sendhwa",
+        marketContext:
+          "Sendhwa has developed into a trading town along the Mumbai-Agra highway corridor, distinct from the cotton and maize farming that dominates the rest of Barwani district. Its position on the corridor supports a steady trade and transport economy.",
+        buyerBehavior:
+          "Traders and transporters along the Sendhwa highway corridor support a steadier, less seasonal layer of commercial vehicle demand than the conventional crop-cycle buying seen across the rest of Barwani district.",
+        highlights: [
+          "A trading town along the Mumbai-Agra highway corridor",
+          "A steadier, less seasonal commercial vehicle demand layer",
+          "Distinct from the district's cotton and maize farming economy",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Sendhwa specifically?",
+            answer:
+              "Traders and transporters along the Mumbai-Agra highway corridor drive a steadier, less seasonal layer of commercial vehicle demand in Sendhwa.",
+          },
+          {
+            question: "Is Sendhwa's dealership market different from the rest of Barwani district?",
+            answer:
+              "Yes, Sendhwa's highway trade and transport economy is distinct from the cotton and maize farming that dominates the rest of Barwani district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Sendhwa specifically, not just Barwani town?",
+            answer:
+              "Yes, we build campaigns specific to Sendhwa's own highway-trade buyer base, separate from our broader Barwani district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Sendhwa",
+          "Car Dealer CRM in Sendhwa",
+          "Automotive Marketing in Sendhwa",
+          "Local SEO for Car Dealerships in Sendhwa",
+          "Highway corridor trade dealer leads Sendhwa",
+        ],
+      },
+    ],
   },
   {
     slug: "burhanpur",
@@ -908,6 +952,50 @@ export const madhyaPradeshDistrictProfilesBatch1: DistrictProfile[] = [
       "Pithampur auto-component cluster dealer leads Pithampur town",
     ],
     nearbySlugs: ["indore", "alirajpur", "barwani", "khargone", "jhabua"],
+    cities: [
+      {
+        slug: "pithampur",
+        name: "Pithampur",
+        marketContext:
+          "Pithampur is one of central India's larger automobile and auto-component manufacturing clusters, distinct from Dhar district's broader tribal-majority farming economy. Its industrial estate hosts a concentration of organized manufacturing employment not found elsewhere in the district.",
+        buyerBehavior:
+          "Employees and contractors tied to Pithampur's auto-component manufacturing base support strong, salary-backed demand for personal and two-wheeler vehicles, distinct from the seasonal buying patterns seen across the rest of Dhar district.",
+        highlights: [
+          "A major auto-component manufacturing cluster within Dhar district",
+          "Organized, salary-backed industrial employment",
+          "A distinct commercial identity from the district's rural areas",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Pithampur specifically?",
+            answer:
+              "Salary-backed employees and contractors at Pithampur's auto-component manufacturing units drive strong, financing-comfortable demand for personal and two-wheeler vehicles.",
+          },
+          {
+            question: "Is Pithampur's dealership market different from the rest of Dhar district?",
+            answer:
+              "Yes, Pithampur's industrial, salaried buyer base is distinct from the farming-driven demand seen across the rest of Dhar district.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Pithampur specifically, not just Dhar town?",
+            answer:
+              "Yes, we build campaigns specific to Pithampur's own industrial buyer base, separate from our broader Dhar district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Pithampur",
+          "Car Dealer CRM in Pithampur",
+          "Automotive Marketing in Pithampur",
+          "Local SEO for Car Dealerships in Pithampur",
+          "Auto-component cluster dealer leads Pithampur",
+        ],
+      },
+    ],
   },
   {
     slug: "jhabua",
@@ -1108,6 +1196,50 @@ export const madhyaPradeshDistrictProfilesBatch1: DistrictProfile[] = [
       "Pilgrimage tourism Nagda fiber industry dealer leads Ujjain city",
     ],
     nearbySlugs: ["indore", "dewas", "shajapur", "ratlam", "agar-malwa"],
+    cities: [
+      {
+        slug: "nagda",
+        name: "Nagda",
+        marketContext:
+          "Nagda carries an industrial base built around chemical and synthetic fiber manufacturing, distinct from Ujjain city's pilgrimage-driven economy elsewhere in the district. Its employment base is organized manufacturing rather than tourism or trade.",
+        buyerBehavior:
+          "Employees and contractors linked to Nagda's chemical and fiber manufacturing base support a steady, salary-backed layer of commercial and personal vehicle demand, distinct from the pilgrimage-linked transport demand seen in Ujjain city.",
+        highlights: [
+          "A chemical and synthetic fiber manufacturing base",
+          "Organized industrial employment distinct from Ujjain city's tourism economy",
+          "A steady, salary-backed commercial vehicle demand layer",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Nagda specifically?",
+            answer:
+              "Employees and contractors tied to Nagda's chemical and synthetic fiber manufacturing base drive a steady, salary-backed layer of commercial and personal vehicle demand.",
+          },
+          {
+            question: "Is Nagda's dealership market different from Ujjain city?",
+            answer:
+              "Yes, Nagda's industrial, salaried buyer base is distinct from Ujjain city's pilgrimage tourism-driven demand.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Nagda specifically, not just Ujjain city?",
+            answer:
+              "Yes, we build campaigns specific to Nagda's own industrial buyer base, separate from our broader Ujjain district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Nagda",
+          "Car Dealer CRM in Nagda",
+          "Automotive Marketing in Nagda",
+          "Local SEO for Car Dealerships in Nagda",
+          "Chemical fiber industry dealer leads Nagda",
+        ],
+      },
+    ],
   },
   {
     slug: "agar-malwa",

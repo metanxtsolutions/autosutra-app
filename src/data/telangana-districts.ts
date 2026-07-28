@@ -159,6 +159,50 @@ export const telanganaDistrictProfiles: DistrictProfile[] = [
       "railway junction dealer leads Kazipet",
     ],
     nearbySlugs: ["warangal", "jangaon", "karimnagar", "mahabubabad"],
+    cities: [
+      {
+        slug: "kazipet",
+        name: "Kazipet",
+        marketContext:
+          "Kazipet is anchored by its railway junction, one of the region's busiest, giving it a distinct rail-linked workforce and logistics economy separate from Hanumakonda's broader commercial and educational identity. Transport and goods movement tied to the junction shape much of its local trade.",
+        buyerBehavior:
+          "Railway-junction workforce and logistics businesses in Kazipet support a steadier layer of personal and commercial vehicle demand, distinct from the student and coaching-institute driven demand seen in Hanumakonda town.",
+        highlights: [
+          "Anchored by one of the region's busiest railway junctions",
+          "A rail-linked workforce and logistics economy",
+          "Distinct from Hanumakonda's commercial and educational identity",
+        ],
+        faqs: [
+          {
+            question: "What drives vehicle demand in Kazipet specifically?",
+            answer:
+              "Railway-junction workforce and logistics businesses drive a steadier layer of personal and commercial vehicle demand in Kazipet.",
+          },
+          {
+            question: "Is Kazipet's dealership market different from Hanumakonda town?",
+            answer:
+              "Yes, Kazipet's rail-linked logistics workforce is distinct from Hanumakonda town's student and coaching-institute driven demand.",
+          },
+          {
+            question: "Does AutoSutra serve dealerships in Kazipet specifically, not just Hanumakonda town?",
+            answer:
+              "Yes, we build campaigns specific to Kazipet's own railway-linked buyer base, separate from our broader Hanumakonda district coverage.",
+          },
+          {
+            question: "How fast can a dealership here get started with AutoSutra?",
+            answer:
+              "Most services, including verified leads and local SEO campaigns, go live within 7 to 10 business days of onboarding.",
+          },
+        ],
+        keywords: [
+          "Automotive CRM in Kazipet",
+          "Car Dealer CRM in Kazipet",
+          "Automotive Marketing in Kazipet",
+          "Local SEO for Car Dealerships in Kazipet",
+          "Railway junction workforce dealer leads Kazipet",
+        ],
+      },
+    ],
   },
   {
     slug: "hyderabad",
