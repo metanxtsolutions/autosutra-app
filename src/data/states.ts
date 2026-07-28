@@ -37,6 +37,10 @@ import { delhiDistrictProfiles, delhiStateProfile } from "./delhi-districts";
 import { sikkimDistrictProfiles, sikkimStateProfile } from "./sikkim-districts";
 import { tripuraDistrictProfiles, tripuraStateProfile } from "./tripura-districts";
 import { mizoramDistrictProfiles, mizoramStateProfile } from "./mizoram-districts";
+import {
+  meghalayaDistrictProfiles,
+  meghalayaStateProfile,
+} from "./meghalaya-districts";
 
 export type StateEntry = {
   slug: string;
@@ -144,6 +148,12 @@ export const states: StateEntry[] = [
     name: mizoramStateProfile.name,
     hubProfile: mizoramStateProfile,
     districts: mizoramDistrictProfiles,
+  },
+  {
+    slug: meghalayaStateProfile.slug,
+    name: meghalayaStateProfile.name,
+    hubProfile: meghalayaStateProfile,
+    districts: meghalayaDistrictProfiles,
   },
 ];
 
