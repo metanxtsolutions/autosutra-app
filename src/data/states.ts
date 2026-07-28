@@ -46,6 +46,7 @@ import {
   nagalandDistrictProfiles,
   nagalandStateProfile,
 } from "./nagaland-districts";
+import { keralaDistrictProfiles, keralaStateProfile } from "./kerala-districts";
 
 export type StateEntry = {
   slug: string;
@@ -171,6 +172,12 @@ export const states: StateEntry[] = [
     name: nagalandStateProfile.name,
     hubProfile: nagalandStateProfile,
     districts: nagalandDistrictProfiles,
+  },
+  {
+    slug: keralaStateProfile.slug,
+    name: keralaStateProfile.name,
+    hubProfile: keralaStateProfile,
+    districts: keralaDistrictProfiles,
   },
 ];
 
