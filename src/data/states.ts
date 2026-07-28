@@ -70,6 +70,10 @@ import {
   chandigarhDistrictProfiles,
   chandigarhStateProfile,
 } from "./chandigarh-districts";
+import {
+  lakshadweepDistrictProfiles,
+  lakshadweepStateProfile,
+} from "./lakshadweep-districts";
 
 export type StateEntry = {
   slug: string;
@@ -249,6 +253,12 @@ export const states: StateEntry[] = [
     name: chandigarhStateProfile.name,
     hubProfile: chandigarhStateProfile,
     districts: chandigarhDistrictProfiles,
+  },
+  {
+    slug: lakshadweepStateProfile.slug,
+    name: lakshadweepStateProfile.name,
+    hubProfile: lakshadweepStateProfile,
+    districts: lakshadweepDistrictProfiles,
   },
 ];
 
