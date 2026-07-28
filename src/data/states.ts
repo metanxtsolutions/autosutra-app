@@ -21,6 +21,10 @@ import {
   maharashtraDistrictProfiles,
   maharashtraStateProfile,
 } from "./maharashtra-districts";
+import {
+  tamilNaduDistrictProfiles,
+  tamilNaduStateProfile,
+} from "./tamil-nadu-districts";
 
 export type StateEntry = {
   slug: string;
@@ -86,6 +90,12 @@ export const states: StateEntry[] = [
     name: maharashtraStateProfile.name,
     hubProfile: maharashtraStateProfile,
     districts: maharashtraDistrictProfiles,
+  },
+  {
+    slug: tamilNaduStateProfile.slug,
+    name: tamilNaduStateProfile.name,
+    hubProfile: tamilNaduStateProfile,
+    districts: tamilNaduDistrictProfiles,
   },
 ];
 
