@@ -74,6 +74,7 @@ import {
   lakshadweepDistrictProfiles,
   lakshadweepStateProfile,
 } from "./lakshadweep-districts";
+import { ladakhDistrictProfiles, ladakhStateProfile } from "./ladakh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -259,6 +260,12 @@ export const states: StateEntry[] = [
     name: lakshadweepStateProfile.name,
     hubProfile: lakshadweepStateProfile,
     districts: lakshadweepDistrictProfiles,
+  },
+  {
+    slug: ladakhStateProfile.slug,
+    name: ladakhStateProfile.name,
+    hubProfile: ladakhStateProfile,
+    districts: ladakhDistrictProfiles,
   },
 ];
 
