@@ -13,6 +13,10 @@ import {
   chhattisgarhStateProfile,
 } from "./chhattisgarh-districts";
 import { goaDistrictProfiles, goaStateProfile } from "./goa-districts";
+import {
+  karnatakaDistrictProfiles,
+  karnatakaStateProfile,
+} from "./karnataka-districts";
 
 export type StateEntry = {
   slug: string;
@@ -66,6 +70,12 @@ export const states: StateEntry[] = [
     name: goaStateProfile.name,
     hubProfile: goaStateProfile,
     districts: goaDistrictProfiles,
+  },
+  {
+    slug: karnatakaStateProfile.slug,
+    name: karnatakaStateProfile.name,
+    hubProfile: karnatakaStateProfile,
+    districts: karnatakaDistrictProfiles,
   },
 ];
 
