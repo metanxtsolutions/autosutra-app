@@ -49,6 +49,10 @@ import {
 import { keralaDistrictProfiles, keralaStateProfile } from "./kerala-districts";
 import { haryanaDistrictProfiles, haryanaStateProfile } from "./haryana-districts";
 import { punjabDistrictProfiles, punjabStateProfile } from "./punjab-districts";
+import {
+  himachalPradeshDistrictProfiles,
+  himachalPradeshStateProfile,
+} from "./himachal-pradesh-districts";
 
 export type StateEntry = {
   slug: string;
@@ -192,6 +196,12 @@ export const states: StateEntry[] = [
     name: punjabStateProfile.name,
     hubProfile: punjabStateProfile,
     districts: punjabDistrictProfiles,
+  },
+  {
+    slug: himachalPradeshStateProfile.slug,
+    name: himachalPradeshStateProfile.name,
+    hubProfile: himachalPradeshStateProfile,
+    districts: himachalPradeshDistrictProfiles,
   },
 ];
 
