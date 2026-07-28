@@ -193,15 +193,31 @@ export function getDistrictBySlug(
   return state?.districts.find((district) => district.slug === districtSlug);
 }
 
+// Delhi NCR's `region` lists city names, not state names ("Delhi, Gurugram,
+// Noida, Faridabad"), since the metro spans multiple states even though only
+// Delhi itself gets its own /india entry. "Delhi" matches the Delhi state
+// entry by name directly, but "Gurugram" and "Faridabad" are Haryana towns
+// and "Noida" is a Uttar Pradesh town, none of which match those states'
+// names as plain strings. This lookup maps those specific city tokens to
+// their state, so Haryana's and Uttar Pradesh's /india hubs also get the
+// reciprocal Delhi NCR link once (if) those states are registered.
+const REGION_TOKEN_STATE_OVERRIDES: Record<string, string> = {
+  Gurugram: "Haryana",
+  Faridabad: "Haryana",
+  Noida: "Uttar Pradesh",
+};
+
 // A metro's `region` is usually a single state name ("Karnataka"), but Delhi
-// NCR's spans multiple states ("Delhi, Gurugram, Noida, Faridabad"), since
-// the metro area itself crosses state lines even though only Delhi gets its
-// own /india entry. Splitting on comma lets that metro still match the
-// "Delhi" state entry without a plain string a.includes(b) risking a false
-// positive on an unrelated substring.
+// NCR's spans multiple states, since the metro area itself crosses state
+// lines even though only Delhi gets its own /india entry. Splitting on comma
+// lets that metro match every state it actually touches, via either a direct
+// name match or the city-to-state override above, without a plain string
+// a.includes(b) risking a false positive on an unrelated substring.
 export function regionIncludesState(region: string, stateName: string): boolean {
   return region
     .split(",")
     .map((part) => part.trim())
-    .includes(stateName);
+    .some(
+      (part) => part === stateName || REGION_TOKEN_STATE_OVERRIDES[part] === stateName,
+    );
 }
