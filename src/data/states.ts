@@ -17,6 +17,10 @@ import {
   karnatakaDistrictProfiles,
   karnatakaStateProfile,
 } from "./karnataka-districts";
+import {
+  maharashtraDistrictProfiles,
+  maharashtraStateProfile,
+} from "./maharashtra-districts";
 
 export type StateEntry = {
   slug: string;
@@ -76,6 +80,12 @@ export const states: StateEntry[] = [
     name: karnatakaStateProfile.name,
     hubProfile: karnatakaStateProfile,
     districts: karnatakaDistrictProfiles,
+  },
+  {
+    slug: maharashtraStateProfile.slug,
+    name: maharashtraStateProfile.name,
+    hubProfile: maharashtraStateProfile,
+    districts: maharashtraDistrictProfiles,
   },
 ];
 
