@@ -41,6 +41,7 @@ import {
   meghalayaDistrictProfiles,
   meghalayaStateProfile,
 } from "./meghalaya-districts";
+import { manipurDistrictProfiles, manipurStateProfile } from "./manipur-districts";
 
 export type StateEntry = {
   slug: string;
@@ -154,6 +155,12 @@ export const states: StateEntry[] = [
     name: meghalayaStateProfile.name,
     hubProfile: meghalayaStateProfile,
     districts: meghalayaDistrictProfiles,
+  },
+  {
+    slug: manipurStateProfile.slug,
+    name: manipurStateProfile.name,
+    hubProfile: manipurStateProfile,
+    districts: manipurDistrictProfiles,
   },
 ];
 
