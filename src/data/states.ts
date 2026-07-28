@@ -130,3 +130,16 @@ export function getDistrictBySlug(
   const state = getStateBySlug(stateSlug);
   return state?.districts.find((district) => district.slug === districtSlug);
 }
+
+// A metro's `region` is usually a single state name ("Karnataka"), but Delhi
+// NCR's spans multiple states ("Delhi, Gurugram, Noida, Faridabad"), since
+// the metro area itself crosses state lines even though only Delhi gets its
+// own /india entry. Splitting on comma lets that metro still match the
+// "Delhi" state entry without a plain string a.includes(b) risking a false
+// positive on an unrelated substring.
+export function regionIncludesState(region: string, stateName: string): boolean {
+  return region
+    .split(",")
+    .map((part) => part.trim())
+    .includes(stateName);
+}

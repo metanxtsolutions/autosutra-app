@@ -24,7 +24,7 @@ import {
 import { pageMetadata } from "@/lib/seo";
 import { cityProfiles } from "@/data/city-content";
 import { services } from "@/data/services";
-import { states } from "@/data/states";
+import { states, regionIncludesState } from "@/data/states";
 
 // This route serves the 8 metro cities only. District and state-hub pages
 // live at /india/[state]/[district] and /india/[state]; see next.config.ts
@@ -65,10 +65,12 @@ export default async function CityPage({
 
   // State/district pages already link forward to their region's metro city
   // (see india/[state]/page.tsx and india/[state]/[district]/page.tsx, which
-  // both match on `cityProfiles.find((city) => city.region === state.name)`).
-  // This is the reciprocal link back down, using the same match, so link
-  // equity flows both ways instead of only downward from India into metros.
-  const relatedState = states.find((state) => state.name === location.region);
+  // both match via regionIncludesState). This is the reciprocal link back
+  // down, using the same match, so link equity flows both ways instead of
+  // only downward from India into metros.
+  const relatedState = states.find((state) =>
+    regionIncludesState(location.region, state.name),
+  );
 
   return (
     <>

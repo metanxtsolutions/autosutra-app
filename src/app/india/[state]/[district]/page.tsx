@@ -14,7 +14,7 @@ import {
 } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { cityProfiles } from "@/data/city-content";
-import { states, getStateBySlug } from "@/data/states";
+import { states, getStateBySlug, regionIncludesState } from "@/data/states";
 import type { DistrictProfile } from "@/data/wb-districts";
 
 export const dynamicParams = false;
@@ -62,8 +62,8 @@ export default async function DistrictPage({
     .map((slug) => state.districts.find((item) => item.slug === slug))
     .filter((item): item is DistrictProfile => Boolean(item));
 
-  const relatedMetroProfiles = cityProfiles.filter(
-    (city) => city.region === state.name,
+  const relatedMetroProfiles = cityProfiles.filter((city) =>
+    regionIncludesState(city.region, state.name),
   );
 
   const otherLocations: OtherLocationLink[] = nearbyDistricts.map((item) => ({

@@ -14,7 +14,7 @@ import {
 } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { cityProfiles } from "@/data/city-content";
-import { states, getStateBySlug } from "@/data/states";
+import { states, getStateBySlug, regionIncludesState } from "@/data/states";
 
 export const dynamicParams = false;
 
@@ -52,8 +52,8 @@ export default async function StatePage({
   const hub = state.hubProfile;
   const path = `/india/${state.slug}`;
 
-  const relatedMetroProfiles = cityProfiles.filter(
-    (city) => city.region === state.name,
+  const relatedMetroProfiles = cityProfiles.filter((city) =>
+    regionIncludesState(city.region, state.name),
   );
 
   const otherLocations: OtherLocationLink[] = state.districts.map(
