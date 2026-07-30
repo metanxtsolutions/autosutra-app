@@ -4976,4 +4976,98 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["photography", "videography"],
   },
+
+  "two-wheeler-dealership-marketing-india": {
+    intro:
+      "Car dealership marketing playbooks get applied to two-wheeler showrooms more often than they should, usually because the same team or agency runs both, and it shows up as flat lead quality even when spend looks healthy. A two-wheeler buyer moves through the funnel differently, decides faster, cares about different things, and responds to different channels than a car buyer does. Treating a bike showroom's marketing like a smaller-budget version of a car dealership's is a common reason two-wheeler campaigns generate enquiries that never convert to a sale.",
+    sections: [
+      {
+        heading: "The buying decision moves in days, not weeks",
+        body: [
+          "A car buyer, especially outside the entry segment, often spends weeks comparing models, reading reviews, and scheduling multiple test drives before deciding. A two-wheeler buyer, particularly in the commuter and entry segments where the vehicle is closer to a daily necessity than a considered purchase, frequently decides within days of the first serious enquiry. The vehicle needs to be on the road soon, whether that's for a new job, a child starting college, or a bike that's finally given up.",
+          "This changes what top-of-funnel marketing needs to prioritize. A long nurture sequence built around educating a buyer over several weeks misses the window entirely for most two-wheeler shoppers. Response speed and immediate stock visibility matter more than a polished multi-touch content journey, since a lead that doesn't get a callback within the hour is often already at a competing showroom by evening.",
+        ],
+      },
+      {
+        heading: "EMI and monthly payment, not the vehicle story, close the sale",
+        body: [
+          "Price sensitivity runs sharper in the two-wheeler segment, and for most buyers the EMI or monthly payment number matters more than the kind of brand story a car dealership can lean on. Marketing that leads with lifestyle imagery and feature lists without an upfront EMI or down payment figure attached tends to underperform against messaging that answers the \"what will this actually cost me per month\" question directly and early.",
+        ],
+        bullets: [
+          "EMI starting from an actual number, not a vague \"attractive financing available\" line",
+          "Down payment options stated clearly, since many buyers are comparing 2 to 3 showrooms specifically on this figure",
+          "Exchange value for an old two-wheeler quoted early, since trade-in weighs more heavily in this segment than it does for car buyers",
+          "Festive or seasonal scheme terms explained in plain language, since these often decide timing more than brand preference does",
+        ],
+      },
+      {
+        heading: "Local search and WhatsApp carry more of the funnel than a showroom website",
+        body: [
+          "A two-wheeler buyer's search behavior tends to be hyper-local. Searches like \"bike showroom near me\" or a search naming a specific locality happen far more often than broad brand searches, which means Google Business Profile and local SEO carry a heavier share of the funnel than a polished website does for this segment.",
+          "AutoSutra's work with a city-wide bike dealership chain, detailed at /case-studies/bike-dealership-local-seo, restructured local SEO around individual showroom locations instead of one shared profile and saw Google Business call volume rise 3.4x. That kind of gain doesn't come from website investment alone, it comes from treating each location's local presence as its own asset rather than an afterthought. WhatsApp follows the same logic as the immediate-response channel that matches how quickly two-wheeler buyers expect to move from enquiry to decision.",
+        ],
+      },
+      {
+        heading: "The buyer is often younger and more influenced by people they know",
+        body: [
+          "First-time two-wheeler buyers skew younger than first-time car buyers, often students or early-career professionals buying their first vehicle. Peer and family influence weighs heavier here. A friend's or sibling's experience with a specific model frequently carries more weight than a manufacturer's spec sheet. Content built around real owners in a similar age group and situation, rather than generic feature-focused creative, tends to land better with this buyer than the aspirational, lifestyle-led content that works for premium car segments.",
+        ],
+      },
+      {
+        heading: "Service marketing runs on a shorter, more frequent cycle",
+        body: [
+          "Cars typically come back for service every few months. Two-wheelers usually need servicing every 2 to 3 months, which creates a repeat-contact opportunity a car dealership simply doesn't get at the same frequency. That frequency is valuable enough that it deserves its own dedicated approach, built around WhatsApp-based service reminders rather than treated as a footnote to acquisition marketing. It's worth planning as a separate piece of the strategy rather than folding it into the same campaigns that bring in new buyers.",
+        ],
+      },
+      {
+        heading: "What doesn't carry over from the car playbook",
+        body: [
+          "Long nurture sequences, expensive lifestyle-production creative, wide comparison content built for a leisurely research phase, and brand-story-led campaigns that work well for premium car segments generally underperform in two-wheeler marketing. This segment converts better when marketing is fast to respond, hyper-local, transparent on EMI and exchange value from the first interaction, and built around frequent repeat contact rather than around a single big-ticket sale that happens once every several years.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How is two-wheeler dealership marketing different from car dealership marketing in India?",
+        answer:
+          "Two-wheeler buyers decide faster, care more about the EMI and exchange value than the brand story, and rely more heavily on local search and WhatsApp than on a showroom website or long-form comparison content.",
+      },
+      {
+        question: "Do two-wheeler buyers research as long as car buyers before purchasing?",
+        answer:
+          "Generally no. Especially in the commuter and entry segments, the vehicle is closer to a daily necessity, and buyers often decide within days of their first serious enquiry rather than spending weeks comparing options.",
+      },
+      {
+        question: "Should two-wheeler ads lead with EMI or with the vehicle's features?",
+        answer:
+          "EMI and monthly payment usually matter more to this buyer than feature lists or lifestyle imagery. Ads and landing pages that state an actual EMI figure upfront tend to outperform ones that lead with the vehicle story alone.",
+      },
+      {
+        question: "How important is local SEO for a bike dealership?",
+        answer:
+          "Very. Two-wheeler buyers search in hyper-local terms far more than they search by brand, so Google Business Profile and local SEO typically carry a larger share of the funnel than they do for car dealerships.",
+      },
+      {
+        question: "Does WhatsApp work as well for two-wheeler dealerships as it does for cars?",
+        answer:
+          "Yes, and arguably more so, since it matches the speed at which two-wheeler buyers expect to move from enquiry to decision. It's also the natural channel for the frequent service reminders this segment needs.",
+      },
+      {
+        question: "How often should a two-wheeler dealership follow up with a lead?",
+        answer:
+          "Within the hour where possible. Because the decision window is short, a lead that doesn't get a prompt callback or WhatsApp response is often already considering a competing showroom by the same evening.",
+      },
+      {
+        question: "Does exchange or trade-in value matter more for two-wheelers than cars?",
+        answer:
+          "It tends to. Many two-wheeler buyers are replacing an existing vehicle, and quoting exchange value early in the conversation is a bigger factor in their decision than it typically is for car buyers.",
+      },
+      {
+        question: "What's the biggest mistake dealerships make applying car marketing to bikes?",
+        answer:
+          "Running the same long nurture sequences and lifestyle-led creative that work for car buyers. Two-wheeler marketing converts better when it's fast, hyper-local, and transparent on cost from the first interaction.",
+      },
+    ],
+    relatedServiceSlugs: ["local-seo", "whatsapp-marketing"],
+  },
 };

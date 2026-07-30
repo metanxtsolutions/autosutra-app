@@ -1024,4 +1024,22 @@ export const resources: Resource[] = [
     updatedDate: "2026-07-23",
     coverCluster: "ads",
   },
+  {
+    slug: "two-wheeler-dealership-marketing-india",
+    title: "Two-Wheeler Dealership Marketing: Why the Playbook Isn't the Same as Cars",
+    category: "Guide",
+    excerpt:
+      "Bike buyers decide faster, care more about the EMI than the brand story, and live in different channels than car buyers. Running a car dealership's marketing playbook on a two-wheeler showroom is why so many campaigns generate enquiries that never convert.",
+    readTime: "7 min read",
+    tags: ["two-wheelers", "dealer-growth"],
+    primaryKeyword: "two wheeler dealership marketing India",
+    secondaryKeywords: [
+      "bike dealership marketing India",
+      "two wheeler showroom marketing strategy",
+    ],
+    publishedDate: "2026-07-30",
+    updatedDate: "2026-07-30",
+    featured: false,
+    coverCluster: "leads",
+  },
 ];
