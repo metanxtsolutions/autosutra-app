@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MessageCircle, PhoneCall } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
+import { isInternalRoute } from "@/lib/is-internal-route";
 
 export function StickyMobileCta() {
+  const pathname = usePathname();
+  if (isInternalRoute(pathname)) return null;
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-30 flex gap-2 border-t border-border bg-background/95 p-3 backdrop-blur-lg lg:hidden">
       <WhatsAppLink

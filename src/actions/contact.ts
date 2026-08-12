@@ -6,6 +6,7 @@ import {
   type ContactFormValues,
 } from "@/lib/validations/contact";
 import { siteConfig } from "@/data/site-config";
+import { prisma } from "@/lib/prisma";
 
 export type ContactActionState = {
   success: boolean;
@@ -48,6 +49,26 @@ export async function submitContactForm(
       success: false,
       message: "Please check the form for errors and try again.",
     };
+  }
+
+  // Save the lead first, independent of whether the notification email
+  // below succeeds. This is what actually fixes the underlying problem:
+  // previously a lead only ever existed as a one-off email, so a missed
+  // or failed send meant the lead was gone with no record anywhere.
+  try {
+    await prisma.lead.create({
+      data: {
+        name: parsed.data.name,
+        dealership: parsed.data.dealership,
+        email: parsed.data.email,
+        phone: parsed.data.phone,
+        service: parsed.data.service,
+        message: parsed.data.message || null,
+        source: "WEBSITE_CONTACT",
+      },
+    });
+  } catch (error) {
+    console.error("Failed to save contact form lead to the tracker:", error);
   }
 
   const apiKey = process.env.RESEND_API_KEY;

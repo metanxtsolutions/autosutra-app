@@ -34,6 +34,7 @@ export function BookDemoForm() {
   const [isSubmittingStepTwo, setIsSubmittingStepTwo] = useState(false);
   const [stage, setStage] = useState<"form" | "details" | "done">("form");
   const [contact, setContact] = useState<BookDemoStepOneValues | null>(null);
+  const [leadId, setLeadId] = useState<string | undefined>(undefined);
   const searchParams = useSearchParams();
 
   const preselectedSlugs = searchParams.get("services")?.split(",") ?? [];
@@ -71,6 +72,7 @@ export function BookDemoForm() {
       if (result.success) {
         trackEvent("generate_lead", { service: values.service });
         setContact(values);
+        setLeadId(result.leadId);
         setStage("details");
       } else {
         toast.error(result.message);
@@ -86,7 +88,7 @@ export function BookDemoForm() {
     if (!contact) return;
     setIsSubmittingStepTwo(true);
     try {
-      const result = await submitDemoStepTwo(contact, values);
+      const result = await submitDemoStepTwo(contact, values, leadId);
       if (result.success) {
         setStage("done");
       } else {

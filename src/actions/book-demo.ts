@@ -8,10 +8,12 @@ import {
   type BookDemoStepTwoValues,
 } from "@/lib/validations/book-demo";
 import { siteConfig } from "@/data/site-config";
+import { prisma } from "@/lib/prisma";
 
 export type BookDemoActionState = {
   success: boolean;
   message: string;
+  leadId?: string;
 };
 
 function stepOneEmailHtml(data: BookDemoStepOneValues) {
@@ -74,6 +76,25 @@ export async function submitDemoStepOne(
     };
   }
 
+  // Save the lead first, independent of whether the notification email
+  // below succeeds, same reasoning as the Contact form. The id is handed
+  // back so step two, if the visitor continues, updates this same record
+  // instead of creating a duplicate.
+  let leadId: string | undefined;
+  try {
+    const lead = await prisma.lead.create({
+      data: {
+        name: parsed.data.name,
+        phone: parsed.data.phone,
+        service: parsed.data.service,
+        source: "WEBSITE_BOOK_DEMO",
+      },
+    });
+    leadId = lead.id;
+  } catch (error) {
+    console.error("Failed to save demo request lead to the tracker:", error);
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
@@ -81,6 +102,7 @@ export async function submitDemoStepOne(
     return {
       success: true,
       message: "Thanks. Our team will call you within 30 minutes.",
+      leadId,
     };
   }
 
@@ -105,12 +127,14 @@ export async function submitDemoStepOne(
   return {
     success: true,
     message: "Thanks. Our team will call you within 30 minutes.",
+    leadId,
   };
 }
 
 export async function submitDemoStepTwo(
   contact: BookDemoStepOneValues,
   values: BookDemoStepTwoValues,
+  leadId?: string,
 ): Promise<BookDemoActionState> {
   const parsed = bookDemoStepTwoSchema.safeParse(values);
 
@@ -119,6 +143,24 @@ export async function submitDemoStepTwo(
       success: false,
       message: "Please check the form for errors and try again.",
     };
+  }
+
+  // Enrich the same lead step one created, rather than creating a second
+  // record. leadId is only missing if step one's own save failed, in
+  // which case there is nothing to update.
+  if (leadId) {
+    try {
+      await prisma.lead.update({
+        where: { id: leadId },
+        data: {
+          dealership: parsed.data.dealership || null,
+          email: parsed.data.email || null,
+          message: parsed.data.message || null,
+        },
+      });
+    } catch (error) {
+      console.error("Failed to update demo request lead in the tracker:", error);
+    }
   }
 
   const apiKey = process.env.RESEND_API_KEY;

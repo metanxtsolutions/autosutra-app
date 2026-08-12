@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Mail, MapPin, Phone } from "lucide-react";
 import {
   FacebookIcon,
@@ -11,6 +14,7 @@ import { footerNav, siteConfig } from "@/data/site-config";
 import { services } from "@/data/services";
 import { cityProfiles } from "@/data/city-content";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
+import { isInternalRoute } from "@/lib/is-internal-route";
 
 const socialLinks = [
   { href: siteConfig.socials.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
@@ -20,6 +24,9 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  if (isInternalRoute(pathname)) return null;
+
   return (
     <footer className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">

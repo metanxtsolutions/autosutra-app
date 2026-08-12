@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import { mainNav, siteConfig } from "@/data/site-config";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
+import { isInternalRoute } from "@/lib/is-internal-route";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +33,8 @@ export function Header() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  if (isInternalRoute(pathname)) return null;
 
   return (
     <header

@@ -1,0 +1,82 @@
+// AutoSutra internal lead tracker. Single tenant: every user and lead
+// belongs to AutoSutra's own team, never a dealer or client account.
+// See MEMORY note in the CRM strategy artifact for the product rationale.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  passwordHash  String
+  createdAt     DateTime @default(now())
+
+  assignedLeads Lead[]   @relation("AssignedLeads")
+  notes         Note[]
+}
+
+enum LeadSource {
+  WEBSITE_CONTACT
+  WEBSITE_BOOK_DEMO
+  OUTSIDE
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL_SENT
+  WON
+  LOST
+}
+
+model Lead {
+  id           String     @id @default(cuid())
+  name         String
+  dealership   String?
+  email        String?
+  phone        String?
+  service      String?
+  message      String?
+
+  source       LeadSource
+  sourceDetail String?
+
+  status       LeadStatus @default(NEW)
+  lostReason   String?
+  followUpAt   DateTime?
+
+  assignedToId String?
+  assignedTo   User?      @relation("AssignedLeads", fields: [assignedToId], references: [id])
+
+  notes        Note[]
+
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([status])
+  @@index([source])
+  @@index([followUpAt])
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  body      String
+
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([leadId])
+}
