@@ -8,6 +8,11 @@ import type { NextAuthConfig } from "next-auth";
 export const authConfig = {
   session: { strategy: "jwt" },
   pages: { signIn: "/login" },
+  // Required for NextAuth v5 to trust the request's Host header rather
+  // than only the exact NEXTAUTH_URL value. Needed both for Vercel
+  // deployments (which sit behind a proxy) and for local testing on a
+  // non-default port.
+  trustHost: true,
   providers: [],
   callbacks: {
     jwt: ({ token, user }) => {
