@@ -40,6 +40,7 @@ export async function generateMetadata({
       `${service.name} ${city.name}`,
       `${service.name} agency ${city.name}`,
       `car dealership marketing ${city.name}`,
+      ...(service.extraKeywords ?? []).map((keyword) => `${keyword} ${city.name}`),
     ],
   });
 }

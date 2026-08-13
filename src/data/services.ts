@@ -28,6 +28,9 @@ export type Service = {
   benefits: string[];
   howItWorks: string[];
   pricingTable?: PricingTable;
+  // Appended to the templated `${name} ...` keywords generateMetadata
+  // builds automatically, for terms the service name itself doesn't cover.
+  extraKeywords?: string[];
   icon:
     | "target"
     | "megaphone"
@@ -324,6 +327,11 @@ export const services: Service[] = [
       disclaimer:
         "All prices are exclusive of applicable GST unless mentioned otherwise. WhatsApp pricing is based on applicable Meta pricing and may be subject to change.",
     },
+    extraKeywords: [
+      "omnichannel communication platform India",
+      "omnichannel messaging for dealerships",
+      "omnichannel customer engagement platform",
+    ],
     icon: "radio",
   },
 ];

@@ -37,6 +37,7 @@ export async function generateMetadata({
       `${service.name} agency India`,
       `${service.name} Mumbai`,
       `${service.name} Delhi`,
+      ...(service.extraKeywords ?? []),
     ],
   });
 }
