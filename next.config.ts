@@ -41,6 +41,14 @@ const nextConfig: NextConfig = {
       ...stateHubRedirects,
       ...districtRedirects,
       ...legacyWordPressRedirects,
+      // /omni-communication-platform/resellers is a real page (the B2B
+      // reseller landing page); the bare path itself isn't, so it sends
+      // dealer-facing visitors to the actual product page instead of 404ing.
+      {
+        source: "/omni-communication-platform",
+        destination: "/services/omni-communication-platform",
+        permanent: true,
+      },
     ];
   },
 };

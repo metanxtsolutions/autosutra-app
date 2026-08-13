@@ -92,6 +92,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources/sitemap": "src/app/resources/sitemap/page.tsx",
     "/contact": "src/app/contact/page.tsx",
     "/book-a-demo": "src/app/book-a-demo/page.tsx",
+    "/omni-communication-platform/resellers":
+      "src/app/omni-communication-platform/resellers/page.tsx",
   };
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -107,6 +109,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/resources/sitemap", priority: 0.3, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/book-a-demo", priority: 0.9, changeFrequency: "monthly" as const },
+    {
+      path: "/omni-communication-platform/resellers",
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
   ].map(({ path, priority, changeFrequency }) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: gitLastModified(staticFileByPath[path]),
