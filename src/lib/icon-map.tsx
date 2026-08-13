@@ -12,6 +12,7 @@ import {
   Megaphone,
   MessageCircle,
   PenTool,
+  Radio,
   Recycle,
   Share2,
   Target,
@@ -36,6 +37,7 @@ export const serviceIconMap: Record<Service["icon"], LucideIcon> = {
   video: Video,
   layers: Layers,
   cloud: Cloud,
+  radio: Radio,
 };
 
 export const solutionIconMap: Record<Solution["icon"], LucideIcon> = {

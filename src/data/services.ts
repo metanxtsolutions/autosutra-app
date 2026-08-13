@@ -1,3 +1,24 @@
+export type PricingRow = {
+  label: string;
+  price: string;
+};
+
+export type BundlePricingRow = {
+  label: string;
+  oneMonth: string;
+  threeMonth: string;
+  sixMonth: string;
+  twelveMonth: string;
+};
+
+// Only used by services priced per-unit rather than as a flat retainer, so
+// it stays optional and every other service leaves it undefined.
+export type PricingTable = {
+  perMessage: PricingRow[];
+  bundles?: BundlePricingRow[];
+  disclaimer?: string;
+};
+
 export type Service = {
   slug: string;
   name: string;
@@ -6,6 +27,7 @@ export type Service = {
   popular?: boolean;
   benefits: string[];
   howItWorks: string[];
+  pricingTable?: PricingTable;
   icon:
     | "target"
     | "megaphone"
@@ -18,7 +40,8 @@ export type Service = {
     | "camera"
     | "video"
     | "layers"
-    | "cloud";
+    | "cloud"
+    | "radio";
 };
 
 export const services: Service[] = [
@@ -240,5 +263,67 @@ export const services: Service[] = [
       "Scale usage as you add more services and locations",
     ],
     icon: "cloud",
+  },
+  {
+    slug: "omni-communication-platform",
+    name: "Omni Communication Platform",
+    summary:
+      "One platform to run every customer communication channel, SMS, RCS, WhatsApp, and voice, for your dealership.",
+    idealFor:
+      "Dealers who want one platform for every customer touchpoint instead of five different tools",
+    benefits: [
+      "Test drive confirmations, service reminders, and offers sent across SMS, RCS, and WhatsApp from one place",
+      "IVR and missed-call numbers route showroom enquiries to the right salesperson automatically",
+      "Delivery reports and real-time analytics show exactly which channel is converting",
+    ],
+    howItWorks: [
+      "We set up your SMS, RCS, WhatsApp, and voice channels on one unified wallet",
+      "Campaigns, reminders, and confirmations are automated and scheduled across channels",
+      "Delivery and response data feeds back into your dealership's lead and sales tracking",
+    ],
+    pricingTable: {
+      perMessage: [
+        { label: "SMS", price: "₹0.15 / SMS" },
+        { label: "RCS", price: "₹0.22 / message" },
+        { label: "WhatsApp Utility / Authentication", price: "₹0.12 / message" },
+        { label: "WhatsApp Marketing", price: "₹0.8631 / message" },
+        { label: "IVR / Voice", price: "As per requirement" },
+        { label: "Unified Wallet", price: "Minimum top-up ₹10,000" },
+        { label: "WhatsApp Platform Fee", price: "₹800 + GST / month" },
+      ],
+      bundles: [
+        {
+          label: "IVR Normal Number (Unlimited)",
+          oneMonth: "₹2,500",
+          threeMonth: "₹4,500",
+          sixMonth: "₹8,500",
+          twelveMonth: "₹15,500",
+        },
+        {
+          label: "IVR Toll Free",
+          oneMonth: "₹3,000 (1,000 min)",
+          threeMonth: "₹5,000 (3,000 min)",
+          sixMonth: "₹8,000 (6,000 min)",
+          twelveMonth: "₹14,500 (12,000 min)",
+        },
+        {
+          label: "Missed Call (Normal Number)",
+          oneMonth: "—",
+          threeMonth: "₹1,000",
+          sixMonth: "₹2,000",
+          twelveMonth: "₹3,500",
+        },
+        {
+          label: "Missed Call (Mobile Number)",
+          oneMonth: "—",
+          threeMonth: "₹4,500",
+          sixMonth: "₹6,500",
+          twelveMonth: "₹9,500",
+        },
+      ],
+      disclaimer:
+        "All prices are exclusive of applicable GST unless mentioned otherwise. WhatsApp pricing is based on applicable Meta pricing and may be subject to change.",
+    },
+    icon: "radio",
   },
 ];

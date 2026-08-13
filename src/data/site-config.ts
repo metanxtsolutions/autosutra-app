@@ -60,7 +60,7 @@ export const mainNav: NavItem[] = [
   {
     label: "Services",
     href: "/services",
-    description: "Leads, marketing, data, and SaaS, all 12 services",
+    description: "Leads, marketing, data, and SaaS, all 13 services",
   },
   {
     label: "Case Studies",

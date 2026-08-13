@@ -7,6 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
+import { ServicePricingTable } from "@/components/services/service-pricing-table";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/data/services";
@@ -166,6 +167,10 @@ export default async function ServiceDetailPage({
           </div>
         </div>
       </section>
+
+      {service.pricingTable && (
+        <ServicePricingTable table={service.pricingTable} />
+      )}
 
       <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
         <h2 className="text-center font-heading text-2xl font-semibold text-ink">

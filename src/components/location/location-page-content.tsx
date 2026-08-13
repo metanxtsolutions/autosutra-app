@@ -140,7 +140,7 @@ export function LocationPageContent({
             Our services in {name}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-            All 12 services, delivered for {name} dealerships.
+            All 13 services, delivered for {name} dealerships.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
