@@ -292,7 +292,10 @@ export const services: Service[] = [
         { label: "WhatsApp Marketing", price: "₹0.8631 / message" },
         { label: "IVR / Voice", price: "As per requirement" },
         { label: "Unified Wallet", price: "Minimum top-up ₹10,000" },
-        { label: "WhatsApp Platform Fee", price: "₹800 + GST / month" },
+        {
+          label: "WhatsApp Platform Fee",
+          price: "₹1,500 + GST / month, or ₹15,000 + GST / year",
+        },
       ],
       bundles: [
         {
