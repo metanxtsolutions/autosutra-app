@@ -13,7 +13,7 @@ export function Stats() {
         whileInView="show"
         viewport={viewportOnce}
         variants={staggerContainer(0.1)}
-        className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border shadow-xl sm:grid-cols-3 lg:grid-cols-5"
+        className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border shadow-xl lg:grid-cols-4"
       >
         {stats.map((stat) => (
           <motion.div
