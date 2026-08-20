@@ -5070,4 +5070,100 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["local-seo", "whatsapp-marketing"],
   },
+
+  "whatsapp-service-reminders-for-bike-dealerships": {
+    intro:
+      "Ask a service manager at a two-wheeler dealership how they remind customers about upcoming service, and \"we have a WhatsApp group for that\" comes up often. It sounds efficient. It usually isn't the mechanism they think it is, and used the way most dealers picture it, a shared group chat is close to the worst way to run a service reminder program. The good news is that the fix doesn't cost more, it just requires understanding what a WhatsApp group actually is and building the reminder system around something else instead.",
+    sections: [
+      {
+        heading: "What dealers usually mean, and why it's the wrong tool",
+        body: [
+          "When a service advisor says \"we put customers in a WhatsApp group,\" they're almost always describing a shared group chat where every member sees every message and every other member's phone number. That's the WhatsApp feature built for a community that wants to talk to each other, not for a business that wants to send one-way reminders to individual customers.",
+          "Put a hundred service customers into one group and every one of them can see the other ninety-nine phone numbers, a privacy exposure most customers never agreed to. Worse for the dealership, the group becomes a shared inbox. One customer's complaint about a delayed part or a billing dispute is now visible to everyone else waiting for their own service reminder, and it sits there next to your reminder messages doing active damage to trust instead of building it.",
+        ],
+      },
+      {
+        heading: "The mechanism that actually works: segmented broadcast, not a shared room",
+        body: [
+          "A service reminder program should look like an individual message that happens to be sent to many people at once, not a room everyone sits in together. That means using WhatsApp Business API broadcast messaging or, at minimum, individual Broadcast Lists, where each customer gets the reminder as a private message and any reply comes back to you alone.",
+          "The trigger should come from your CRM or DMS, not a manually maintained contact list. Last service date plus average km covered, or a fixed interval from purchase or last visit, should generate the reminder automatically rather than relying on a service advisor remembering to add someone to a spreadsheet before the due date passes.",
+        ],
+      },
+      {
+        heading: "Why two-wheelers make this worth building properly",
+        body: [
+          "A two-wheeler typically needs servicing every 2 to 3 months, several times more often than a car on the same ownership timeline. That frequency is the whole reason this deserves a dedicated system instead of being folded into general marketing messaging. A dealership that gets service reminders right is touching every customer 4 to 6 times a year with a message that has an obvious, low-friction reason to convert into a booked visit.",
+          "It cuts the other way too. That same frequency means a poorly run reminder system, one built on a shared group or sent without real segmentation, generates fatigue and opt-outs far faster than an occasional promotional blast would. High frequency raises the cost of getting the mechanism wrong.",
+        ],
+      },
+      {
+        heading: "What a working reminder sequence looks like",
+        body: [
+          "A reminder that converts is specific, not generic. It names the vehicle model, references the approximate due date or km reading, and gives a direct way to book, ideally a link or a reply option rather than a phone number the customer has to dial separately.",
+        ],
+        bullets: [
+          "First reminder 10 to 14 days before the estimated due date, framed as a heads-up rather than a push",
+          "Second reminder closer to the date itself if no booking has been made, with a specific slot suggestion",
+          "One follow-up after the due date has passed, since a missed window is still a live opportunity, not a dead one",
+          "No promotional offers stacked into the same message as the service reminder, since mixing the two makes both look like generic marketing rather than a personal service notice",
+        ],
+      },
+      {
+        heading: "Segmenting by location, not one dealership-wide blast",
+        body: [
+          "A dealership running multiple showrooms should segment reminder lists by the location the customer actually bought from or last serviced at, not run one undifferentiated list across the whole network. AutoSutra's work with a city-wide bike dealership chain, detailed at /case-studies/bike-dealership-local-seo, restructured that dealer's local presence around individual showroom locations instead of one shared profile and saw Google Business call volume rise 3.4x. The same logic applies to service reminders: a message that clearly comes from the customer's own service center, with that location's specific booking slots, reads as relevant in a way a generic head-office broadcast doesn't, and it drives the same kind of measurable lift in response.",
+        ],
+      },
+      {
+        heading: "Measuring whether the program is actually working",
+        body: [
+          "Track booking rate against reminders sent, not just messages delivered. A useful reminder program should show a meaningful share of due-for-service customers booking within a week of the first message, and that number should be visible by location if you're running multiple showrooms. Watch opt-out and block rates closely too, since a rising block rate is usually the first sign that message frequency or relevance has slipped, well before it shows up in booking numbers.",
+        ],
+      },
+      {
+        heading: "The compliance layer doesn't disappear because it's a reminder, not a promotion",
+        body: [
+          "Service reminders are still commercial messaging under WhatsApp's business policies and TRAI's regulations, and customers still need to have opted in and saved your number for messages to deliver reliably. A reminder feeling more like a service than an ad doesn't exempt it from the same consent requirements that apply to any other WhatsApp marketing message.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Should a bike dealership actually use WhatsApp Groups for service reminders?",
+        answer:
+          "No. A shared Group exposes every member's phone number to every other member and turns the thread into a shared inbox where complaints sit next to your reminders. Individual messages sent through Broadcast Lists or the WhatsApp Business API achieve the same reach without either problem.",
+      },
+      {
+        question: "How often should a two-wheeler dealership send service reminders?",
+        answer:
+          "Roughly in line with the service interval itself, every 2 to 3 months per customer, structured as an initial reminder 10 to 14 days before the due date, a closer follow-up, and one message after the window passes if no booking was made.",
+      },
+      {
+        question: "What should trigger a service reminder message?",
+        answer:
+          "Your CRM or DMS, using last service date, estimated km covered, or a fixed interval from purchase or last visit. Relying on a service advisor to manually track and message customers is where reminder programs break down at scale.",
+      },
+      {
+        question: "Should promotional offers be included in service reminder messages?",
+        answer:
+          "No. Mixing a promotional offer into a service reminder makes the message read as generic marketing rather than a personal notice, which tends to hurt response rates on both fronts. Keep the two message types separate.",
+      },
+      {
+        question: "Does segmenting reminders by location actually make a difference?",
+        answer:
+          "Yes. A message that reads as coming from the customer's own service center, with that location's specific booking slots, performs better than one dealership-wide blast. AutoSutra's work restructuring a bike dealership chain's presence by location saw a 3.4x increase in Google Business call volume using the same per-location logic.",
+      },
+      {
+        question: "What metrics show whether a service reminder program is working?",
+        answer:
+          "Booking rate against reminders sent is the core number, tracked by location if you run more than one showroom. Opt-out and block rates matter just as much, since a rising block rate usually signals a frequency or relevance problem before it shows up in bookings.",
+      },
+      {
+        question: "Do service reminders need the same WhatsApp consent as promotional messages?",
+        answer:
+          "Yes. Customers still need to have opted in and saved your number for a reminder to deliver reliably, and the message still falls under WhatsApp's business policies and TRAI regulations regardless of how service-oriented it feels.",
+      },
+    ],
+    relatedServiceSlugs: ["whatsapp-marketing", "crm-solutions"],
+  },
 };

@@ -1042,4 +1042,22 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "leads",
   },
+  {
+    slug: "whatsapp-service-reminders-for-bike-dealerships",
+    title: "WhatsApp Groups for Bike Dealership Service Reminders",
+    category: "Guide",
+    excerpt:
+      "Two-wheelers come back for service every 2 to 3 months, which makes WhatsApp reminders a real revenue lever. But the 'group' most dealers picture is the wrong mechanism. Here's the structure that actually works.",
+    readTime: "7 min read",
+    tags: ["two-wheelers", "whatsapp-marketing"],
+    primaryKeyword: "bike dealership WhatsApp service reminder",
+    secondaryKeywords: [
+      "WhatsApp service reminders for dealerships",
+      "two wheeler service reminder WhatsApp",
+    ],
+    publishedDate: "2026-08-17",
+    updatedDate: "2026-08-17",
+    featured: false,
+    coverCluster: "whatsapp",
+  },
 ];
