@@ -1060,4 +1060,22 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "whatsapp",
   },
+  {
+    slug: "financing-led-marketing-entry-level-bike-buyers",
+    title: "Financing-Led Marketing for Entry-Level Bike Buyers",
+    category: "Guide",
+    excerpt:
+      "An entry-level bike buyer isn't shopping for a vehicle first. They're shopping for a monthly payment they can commit to. What changes when financing terms lead the marketing instead of trailing it.",
+    readTime: "7 min read",
+    tags: ["two-wheelers", "sales-funnel"],
+    primaryKeyword: "bike dealership financing marketing",
+    secondaryKeywords: [
+      "EMI led bike marketing India",
+      "entry level bike buyer financing",
+    ],
+    publishedDate: "2026-08-31",
+    updatedDate: "2026-08-31",
+    featured: false,
+    coverCluster: "leads",
+  },
 ];
