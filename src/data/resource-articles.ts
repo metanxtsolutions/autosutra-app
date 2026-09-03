@@ -5277,4 +5277,137 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["meta-ads", "crm-solutions"],
   },
+  "hiring-a-digital-first-dealership-sales-team": {
+    intro:
+      "A dealership hiring a salesperson today is hiring for a job that mostly happens before the buyer ever walks in. The enquiry lands on WhatsApp at 9:40 at night, the buyer has already compared three showrooms online, and whoever replies first with something actually useful usually gets the test drive. Most dealership hiring processes are still built to assess the older version of this job, the one that started the moment someone stepped onto the showroom floor.",
+    sections: [
+      {
+        heading: "What 'digital-first' actually changes about the job",
+        body: [
+          "The traditional dealership sales role was built around a walk-in. The buyer arrived, a salesperson greeted them, and the whole relationship, qualification, product pitch, negotiation, happened face to face over one or two visits. That job still exists, but for most dealerships it is now the second half of the process rather than the whole of it.",
+          "The first half now happens in text. A buyer submits a form, sends a WhatsApp message, or taps the call button on a Google Business Profile, and what happens over the next 48 hours decides whether the showroom visit happens at all. Response speed, whether the reply answers the actual question asked, whether the promised follow-up arrives: those are the things being assessed by the buyer, and none of them are visible in a face-to-face interview. Hiring for the second half of the job while ignoring the first is why dealerships end up with sales teams that are excellent in person and invisible online.",
+        ],
+      },
+      {
+        heading: "The hiring filter most dealerships still use is the wrong one",
+        body: [
+          "The standard filter is years of dealership experience, brand experience, product knowledge, and showroom presentation. Every one of those is defensible for the walk-in half of the job. The problem is that they are ranked in roughly the opposite order of how much they actually predict performance now.",
+          "Product knowledge is the most overrated of the four. A capable person learns a dealership's model line, variant differences, and on-road pricing structure in a few weeks, because it is finite, documented information that someone can hand over. Written responsiveness, follow-up discipline, and the judgment to know when to stop typing and pick up the phone are habits rather than information, and they take far longer to install in someone who does not already have them.",
+          "Prior dealership experience can even work against you when the candidate learned the job at a showroom with no CRM discipline. Someone who spent six years keeping their pipeline in a personal notebook and a personal WhatsApp thread is arriving with six years of habits to unlearn, and unlearning is slower than learning.",
+        ],
+      },
+      {
+        heading: "Written response quality is the highest-signal screen you can run",
+        body: [
+          "The single most useful thing you can do in a dealership sales interview costs ten minutes. Take a real enquiry from your CRM, strip the buyer's name and number, hand it to the candidate on a phone, and ask them to type the reply they would actually send. Not describe it. Type it.",
+          "What you are reading for is not polish. It is whether the person instinctively moves the conversation forward:",
+        ],
+        bullets: [
+          "Does the reply answer the specific question asked, or is it a generic \"please share your details, our executive will contact you\"?",
+          "Does it propose a concrete next step, a specific day and time slot, rather than an open-ended \"let me know when you are free\"?",
+          "If the buyer's stated budget does not match the vehicle they asked about, does the reply handle that honestly and suggest a variant that fits, or does it pretend the gap is not there?",
+          "Is the tone right for the channel, short and direct, rather than a formal email pasted into a chat window?",
+          "Is it three or four lines, or twelve? A buyer scanning a message on a phone at night does not read twelve.",
+        ],
+      },
+      {
+        heading: "Language fit is a channel skill, not a box to tick",
+        body: [
+          "Dealership job posts routinely list local language fluency as a requirement and then assess it entirely through a spoken interview. That misses most of what the job now needs. A buyer in a Bihar district town messaging on WhatsApp is often typing Hindi in Roman script. A buyer in a West Bengal district is doing the same in Bengali. A salesperson who speaks the language fluently but only writes formal English will sound like a different person in text than on a call, and text is where the relationship starts.",
+          "Test written language the way it will actually be used. Give the candidate an enquiry written the way real buyers write, in mixed script, with typos, without punctuation, and see whether they can match that register without either sounding stiff or sounding careless. Voice notes are a legitimate answer here too. If your market's buyers prefer voice, you want people who are comfortable recording a clear twenty second reply, not people who avoid the format because they find it awkward.",
+        ],
+      },
+      {
+        heading: "Where to look outside the automotive hiring pool",
+        body: [
+          "Dealerships tend to recruit from other dealerships, which means competing for the same shrinking pool of people, usually on salary alone. The skills that matter most for the digital half of the job are common in several adjacent industries where nobody is bidding against you.",
+        ],
+        bullets: [
+          "Telecom and consumer-durables retail: high enquiry volume, constant EMI and price conversations, and comfort working inside a system that logs every interaction",
+          "NBFC and insurance field sales: genuinely strong at follow-up over weeks rather than days, used to documentation, and already fluent in eligibility and tenure conversations that transfer straight to the finance desk",
+          "E-commerce and D2C customer support: written response quality is the entire job, so it arrives pre-built; the predictable gap is closing ability, which is the more teachable half",
+          "Local service businesses that run on WhatsApp, such as clinics, coaching centers, and travel agents: these hires often show up with real written follow-up discipline already formed",
+          "What transfers poorly: roles where the person only worked a queue and never owned an outcome, because dealership sales still requires someone willing to push a hesitant buyer toward a decision",
+        ],
+      },
+      {
+        heading: "Test CRM behavior before the hire, not after",
+        body: [
+          "CRM adoption is where digital-first hiring most often quietly fails. The hire is capable, personable, and closes deals, and six months later the pipeline is unreadable because nothing was ever logged properly. This is testable in the interview. Sit the candidate in front of the actual CRM, give them a ten minute walkthrough, then hand them a scenario: log this call, set the follow-up, move the stage, write the note.",
+          "The note is the tell. A candidate who writes \"not interested\" is telling you exactly what your pipeline will look like under them, full of dead ends with no explanation attached. A candidate who writes \"wants automatic only, our variant is manual, asked us to call back when AMT stock arrives in October\" is telling you the pipeline will still be readable six weeks from now, by someone who is not them.",
+          "This matters more than it looks. AutoSutra's work with a multi-city used car chain, detailed at /case-studies/used-car-chain-crm-rollout, moved a spreadsheet-based process onto a structured CRM workflow and cut lead response time by 5x. That gain came from the process and from the people working it consistently, which means a single hire with poor logging habits on a small sales floor is enough to put a visible hole in it.",
+        ],
+      },
+      {
+        heading: "Incentive structure decides which leads actually get worked",
+        body: [
+          "A compensation structure that pays only on closure is telling a new hire, correctly, that the fastest route to income is to work the handful of hottest leads in the pipeline and ignore the rest. That is rational behavior for the salesperson and expensive for the dealership, because the dealership paid for the rest.",
+          "Adding a smaller component tied to process, first response inside a defined window, complete CRM notes, follow-ups actually attempted before a lead is closed as lost, changes what a new hire optimizes for during their first month, which is exactly when their habits set. It does not need to be a large share of the package to work. It needs to be measured and reported consistently, which in practice means your CRM has to be capable of reporting it before you write the incentive into an offer letter.",
+        ],
+      },
+      {
+        heading: "The personal-number problem is an ops and compliance issue, not just a preference",
+        body: [
+          "Ask every candidate how customer contact worked at their last job. Someone who describes a personal WhatsApp full of past buyers may well present that as an asset they are bringing with them. It is worth being direct in the interview that at your dealership, customer conversations happen on a dealership-owned number and get logged, because the alternative has two costs.",
+          "The first is commercial. When that salesperson leaves, the relationship and the entire conversation history leave with them, including buyers who are due for an exchange in two years. The second is compliance. India's Digital Personal Data Protection Act, 2023 places obligations on any business collecting personal data about how that data is handled and who can access it. A dealership that cannot say where its customer conversations live, because they are spread across a dozen personal phones nobody controls, is in a weak position on that question regardless of how good its intentions are. Setting the expectation at hiring is far easier than reclaiming data from a departing employee.",
+        ],
+      },
+      {
+        heading: "The first 30 days decide whether the hire works out",
+        body: [
+          "Most digital-first hires that fail do not fail because the wrong person was picked. They fail because the person spent their first three weeks without CRM access, learning the job by copying whoever sat next to them, which means inheriting that person's habits including the bad ones. A short, deliberate onboarding is what converts a good hire into a good salesperson.",
+        ],
+        bullets: [
+          "CRM login, dealership WhatsApp access, and a tracking number on day one, not week three",
+          "A named owner for the hire who reads their first two weeks of written replies line by line and corrects them in private, quickly, while the habits are still forming",
+          "A small set of enquiry templates handed over explicitly as a starting point to adapt, not as a script to paste unchanged",
+          "Shadowing that runs in both directions: the new hire watches a strong performer handle live enquiries, then the strong performer watches the new hire do it",
+          "A day 30 review that looks at the CRM record, response times and note quality, rather than at units closed, since 30 days is too short a window for closure count to mean very much",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What does 'digital-first' actually mean for a dealership sales role?",
+        answer:
+          "It means the first half of the sales job now happens in text, before any showroom visit. The enquiry arrives on WhatsApp, a web form, or a call from a Google Business Profile, and response speed, reply quality, and follow-up discipline decide whether the buyer ever visits at all. The face-to-face half of the job still exists, it just comes second now.",
+      },
+      {
+        question: "Should we only hire candidates with prior dealership experience?",
+        answer:
+          "No. Product knowledge is learnable in a few weeks because it is finite, documented information. Written responsiveness and follow-up discipline are habits and take much longer to install. Prior dealership experience at a showroom with no CRM discipline can actively slow a hire down, because they arrive with habits to unlearn.",
+      },
+      {
+        question: "How do you test for digital-first ability in an interview?",
+        answer:
+          "Hand the candidate a real anonymized enquiry from your CRM on a phone and ask them to type the reply they would actually send. Read for whether they answer the specific question, propose a concrete next step with a day and time, handle a budget mismatch honestly, and keep it short enough for a phone screen at night.",
+      },
+      {
+        question: "Does local language fluency still matter when most enquiries come over WhatsApp?",
+        answer:
+          "It matters more, but written fluency is what needs testing. Many buyers type Hindi, Bengali, or Telugu in Roman script. A candidate who speaks the language well but only writes formal English will read as a different person in text than on a call. Test with an enquiry written the way real buyers write, in mixed script and without careful punctuation.",
+      },
+      {
+        question: "Where can dealerships find sales candidates outside the automotive industry?",
+        answer:
+          "Telecom and consumer-durables retail, NBFC and insurance field sales, e-commerce and D2C customer support, and local service businesses that run on WhatsApp. Each brings a different half of the job pre-built: EMI fluency, long-cycle follow-up, or written response quality. The consistent gap to train for is closing ability.",
+      },
+      {
+        question: "How should compensation change for a digital-first sales team?",
+        answer:
+          "A closure-only structure rewards working the few hottest leads and abandoning the rest, which the dealership already paid for. Add a smaller component tied to process, first response time, note completeness, and follow-ups attempted before a lead is marked lost. It only works if the CRM can actually report those numbers consistently.",
+      },
+      {
+        question: "Should sales staff use their personal WhatsApp number for customers?",
+        answer:
+          "No, and it is worth saying so at the interview stage. Commercially, the relationship and the full conversation history leave with the employee. On compliance, India's DPDP Act, 2023 places obligations on how customer personal data is handled and who can access it, and a dealership whose customer conversations sit on a dozen uncontrolled personal phones cannot answer that question well.",
+      },
+      {
+        question: "How soon should we know whether a new hire is working out?",
+        answer:
+          "Run a structured review at day 30, but judge it on the CRM record, response times and note quality, rather than on units closed. Thirty days is too short for closure count to be meaningful, while response and logging behavior is visible almost immediately and is what predicts the next six months.",
+      },
+    ],
+    relatedServiceSlugs: ["crm-solutions", "verified-buyer-leads"],
+  },
 };

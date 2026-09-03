@@ -1078,4 +1078,22 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "leads",
   },
+  {
+    slug: "hiring-a-digital-first-dealership-sales-team",
+    title: "Hiring a Digital-First Sales Team: What to Actually Look For",
+    category: "Guide",
+    excerpt:
+      "The dealership sales job now starts on WhatsApp at 9:40 at night, not on the showroom floor. Most hiring processes still assess the older version of the role. What to test for instead, and where to look for candidates.",
+    readTime: "8 min read",
+    tags: ["dealer-growth", "crm"],
+    primaryKeyword: "dealership sales team hiring",
+    secondaryKeywords: [
+      "hiring digital first sales team dealership",
+      "car dealership sales executive hiring India",
+    ],
+    publishedDate: "2026-09-03",
+    updatedDate: "2026-09-03",
+    featured: false,
+    coverCluster: "crm",
+  },
 ];
