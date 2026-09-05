@@ -1096,4 +1096,22 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "crm",
   },
+  {
+    slug: "dealership-gst-compliance-basics-for-marketers",
+    title: "GST and Compliance Basics Every Dealership Marketer Should Know",
+    category: "Guide",
+    excerpt:
+      "You will never file a return, but every price you publish is a promise the invoice has to honor. Where advertised price and final invoice drift apart at Indian dealerships, and the checks that keep a price-led campaign out of trouble.",
+    readTime: "8 min read",
+    tags: ["dealer-growth", "digital-marketing"],
+    primaryKeyword: "dealership GST compliance marketing",
+    secondaryKeywords: [
+      "on road price advertising compliance India",
+      "car dealership advertised price rules",
+    ],
+    publishedDate: "2026-09-05",
+    updatedDate: "2026-09-05",
+    featured: false,
+    coverCluster: "ads",
+  },
 ];

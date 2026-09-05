@@ -5410,4 +5410,129 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["crm-solutions", "verified-buyer-leads"],
   },
+  "dealership-gst-compliance-basics-for-marketers": {
+    intro:
+      "Nobody expects a dealership marketer to file a GST return. But every price that goes into an ad, a landing page, or a WhatsApp broadcast is a promise, and the invoice at the end of the sale is what has to honor it. A lot of the trust damage that gets blamed on pushy sales staff actually starts earlier than the showroom, in a campaign that quoted a number the finance desk was never going to be able to match.",
+    sections: [
+      {
+        heading: "The damage happens in the gap between the ad and the invoice",
+        body: [
+          "A buyer who sees one figure in an ad and a meaningfully higher one on the invoice does not conclude that taxes are complicated. They conclude that the dealership was not straight with them. That reaction shows up as a walked deal, a one-star review mentioning hidden charges, or a finance-desk argument that a salesperson has to absorb for a decision marketing made weeks earlier.",
+          "The point of understanding the tax and compliance basics is not to turn marketers into accountants. It is to know which numbers are stable enough to advertise, which ones move by state or by buyer, and which ones need a line of context next to them so the invoice never comes as a surprise.",
+        ],
+      },
+      {
+        heading: "Ex-showroom, on-road, and why choosing between them is a marketing decision",
+        body: [
+          "Ex-showroom price is the vehicle price including GST and applicable cess. On-road price is what the buyer actually pays to drive away, and it adds registration and road tax, insurance, any tax collected at source where it applies, and whatever handling or accessory charges the dealership adds.",
+          "The most common misleading practice in Indian automotive advertising is not inventing a fake number. It is quoting a real ex-showroom price without saying that is what it is. The figure is accurate and the ad is still misleading, because the buyer reads it as the price of owning the car. If a campaign leads with ex-showroom, the words \"ex-showroom\" belong next to the number at readable size, not in a footer nobody scrolls to.",
+          "The stronger play for most dealerships is to lead with an honest on-road figure for one clearly named location and variant. It is a bigger number, and it converts better anyway, because the buyer who clicks has already accepted it.",
+        ],
+      },
+      {
+        heading: "On-road price is state-specific, which breaks any single national number",
+        body: [
+          "Road tax is levied by the state, and it varies enough between states that an on-road price calculated for one city can be wrong by a substantial margin in another. Registration charges and the way insurance is bundled add more variation on top.",
+          "For a dealership running location pages across districts, this is not a footnote, it is a structural problem. A single on-road figure repeated across /india/west-bengal/hooghly, /india/bihar/darbhanga and /india/andhra-pradesh/guntur is going to be wrong in at least two of the three, and the page that quotes it is the page a local buyer trusts most because it names their district. Either compute the figure per state, or quote ex-showroom clearly and offer an on-road quote on request. What does not work is one national number wearing a local page's name.",
+        ],
+      },
+      {
+        heading: "Discount stacking is where honest offers turn misleading",
+        body: [
+          "A typical festive offer is assembled from several components: a consumer or cash discount, an exchange bonus, a corporate discount, a loyalty bonus for existing customers, and sometimes an accessory or extended warranty package. Each has its own eligibility condition, and they are not all available to the same person.",
+          "Adding them up into a single \"benefits up to\" headline is where campaigns get into trouble. The number is technically achievable by a hypothetical buyer who is simultaneously trading in an eligible vehicle, working at a listed corporate, and already owns a car from the same brand. Almost nobody is all three. The buyer who arrives expecting the headline figure and qualifies for a third of it feels misled, and they are not wrong to.",
+          "The fix is not to stop advertising the total. It is to make the components visible at the point of the claim: name the largest component, state that the rest are conditional, and say what the conditions are. A slightly smaller number that survives contact with the finance desk is worth more than a larger one that does not.",
+        ],
+      },
+      {
+        heading: "Whether a discount sits on the invoice or after it changes what the buyer pays",
+        body: [
+          "This is the one piece of tax mechanics worth a marketer actually understanding. A discount applied on the invoice itself reduces the taxable value, so the buyer pays less tax as well as less price. A discount handed over after the sale generally does not reduce the taxable value, unless it was established in an agreement made before or at the time of the sale and can be linked back to the specific invoices.",
+          "The practical consequence is that two offers advertised with the same rupee figure can leave the buyer in different places. \"Fifty thousand off\" applied on the invoice is worth more to the buyer than the same amount arriving as a post-sale cashback, and a buyer who compares carefully will notice. Before a number goes into a creative, ask finance one question: is this coming off the invoice or after it? Then write the ad to match the answer instead of assuming.",
+        ],
+      },
+      {
+        heading: "The line items buyers meet for the first time at the finance desk",
+        body: [
+          "Tax collected at source applies to motor vehicle sales above a specified value threshold, and it is collected from the buyer at the point of sale. It is fully creditable against their income tax, so it is not a real cost in the end, but it is an unexpected line on an invoice and it reads like one more charge nobody mentioned.",
+          "Confirm the current threshold and rate with your finance team rather than carrying a figure in your head, because these are revised periodically. For marketing purposes the specific number matters less than the disclosure: for any campaign promoting a vehicle in that price band, a single line saying the invoice will include TCS, and that it is recoverable when the buyer files their return, converts a nasty surprise into a moment where the dealership looks like it knows what it is doing.",
+          "The same principle covers handling charges, logistics charges, and mandatory accessory packages. If a charge is going to appear on the invoice for every buyer, it belongs in the advertised price rather than in a conversation at the desk.",
+        ],
+      },
+      {
+        heading: "Used-car pricing follows different tax logic, and that is a marketing advantage",
+        body: [
+          "For used vehicles, a dealer who has not claimed input tax credit on the purchase is generally taxed under a margin scheme, meaning GST applies to the dealer's margin rather than the full sale value, and where the margin is negative there is no GST to pay. This is a materially different structure from a new-vehicle sale, and most used-car buyers have never heard of it.",
+          "That gap is a content opportunity rather than a compliance burden. An independent used-car dealer competing against a large organized platform is usually competing on trust, and explaining plainly why the tax component of a used-car price works the way it does is exactly the kind of thing that builds it. It also heads off the suspicion, common among buyers comparing a dealer's price against a private seller's, that the difference is all margin.",
+        ],
+      },
+      {
+        heading: "The rules that apply to the advertising itself, not just the price",
+        body: [
+          "Consumer protection rules on misleading advertisements cover more than prices. Bait advertising, promoting a deal on stock you cannot actually supply in the advertised quantity, is a specific problem for dealerships running festive campaigns on a variant with two units in stock. Superlative claims such as largest, cheapest, or number one need substantiation you could produce if asked, not just confidence. Disclaimers are expected to be legible and to sit with the claim they qualify, not contradict it in small print.",
+          "Lead forms carry their own obligation. India's Digital Personal Data Protection Act, 2023 requires a clear notice about what is being collected and why, and consent that is specific rather than bundled into a general tick box. For a dealership this is a small change to the form, a plain sentence and an unchecked consent box, and it is far cheaper to build in now than to retrofit across dozens of landing pages later.",
+          "Transparency of this kind is not just risk reduction. AutoSutra's work with a multi-brand dealership network, detailed at /case-studies/multi-brand-dealership-lead-growth, more than doubled qualified showroom footfall in a quarter, and a meaningful part of that came from campaigns stating specific, honest numbers that pre-qualified the buyer before the click rather than maximizing raw clicks with a headline figure the invoice could not support.",
+        ],
+      },
+      {
+        heading: "A pre-publish checklist, and who signs off",
+        body: [
+          "Routing every creative through a chartered accountant is not realistic and would slow campaigns to a halt. A short structured check by one marketer and one person from finance catches nearly everything that matters:",
+        ],
+        bullets: [
+          "Is every price labeled as ex-showroom or on-road, at the same visual weight as the number itself?",
+          "If on-road, which city or state was it calculated for, and does the ad say so?",
+          "Which variant is this price for, and is that variant actually in stock in the quantity the campaign implies?",
+          "For any \"benefits up to\" figure, what is the largest single component, and are the conditions on the rest stated at the point of the claim?",
+          "Is each discount applied on the invoice or after it, and does the wording reflect the real mechanism?",
+          "For vehicles above the TCS threshold, does the campaign disclose that the invoice will include it and that it is recoverable?",
+          "Does every lead form carry a plain-language purpose notice and an unchecked, specific consent box?",
+          "Could you substantiate any superlative claim in the copy if a regulator or a competitor asked you to?",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does a dealership marketer need to understand GST at all?",
+        answer:
+          "Not to file anything, but because every advertised price is a promise the invoice has to honor. Knowing which numbers are stable, which vary by state or buyer, and which need a line of context is what stops a campaign from generating enquiries the finance desk cannot close without an argument.",
+      },
+      {
+        question: "Is it wrong to advertise an ex-showroom price?",
+        answer:
+          "No, as long as the ad says that is what it is, in the same visual weight as the number. The common failure is quoting an accurate ex-showroom figure without labeling it, so the buyer reads it as the cost of driving away. The number is true and the ad is still misleading.",
+      },
+      {
+        question: "Can we use one on-road price across all our location pages?",
+        answer:
+          "No. Road tax is set by the state and varies enough that a figure computed for one city will be wrong elsewhere. Either compute it per state or quote a clearly labeled ex-showroom price and offer an on-road quote on request. A single national number is most damaging on the district page a local buyer trusts most.",
+      },
+      {
+        question: "What is wrong with a \"benefits up to\" headline?",
+        answer:
+          "Nothing, if the components are visible at the point of the claim. The total usually assumes one buyer simultaneously qualifies for a cash discount, an exchange bonus, a corporate discount and a loyalty bonus, which almost nobody does. Name the largest component and state the conditions on the rest.",
+      },
+      {
+        question: "Does it matter whether a discount is given on the invoice or after the sale?",
+        answer:
+          "Yes, and it changes the buyer's real cost. An invoice discount reduces the taxable value, so the buyer pays less tax as well. A post-sale discount generally does not, unless it was agreed before or at the time of sale and can be linked to specific invoices. Ask finance which mechanism an offer uses before writing the ad.",
+      },
+      {
+        question: "Should marketing mention TCS in campaigns?",
+        answer:
+          "For vehicles above the value threshold, yes. It is recoverable against the buyer's income tax so it is not a real cost, but it is an unexpected invoice line. One sentence saying it will appear and that it is recoverable turns a finance-desk surprise into a signal the dealership is being straight. Confirm the current threshold and rate with your finance team.",
+      },
+      {
+        question: "How does used-car tax treatment affect marketing?",
+        answer:
+          "A dealer who has not claimed input tax credit is generally taxed on the margin rather than the full sale value, with no GST where the margin is negative. Most buyers do not know this, so explaining it plainly is a trust-building content opportunity, particularly for an independent dealer competing against a larger organized platform.",
+      },
+      {
+        question: "What compliance issues apply to the advertising itself, beyond price?",
+        answer:
+          "Bait advertising on stock you cannot supply, superlative claims you could not substantiate if asked, and disclaimers that contradict the claim they qualify. Lead forms also need a plain purpose notice and specific, unchecked consent under the DPDP Act, 2023, which is far cheaper to build in now than to retrofit across dozens of landing pages.",
+      },
+    ],
+    relatedServiceSlugs: ["digital-marketing", "content-creation"],
+  },
 };
