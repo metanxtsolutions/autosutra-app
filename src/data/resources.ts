@@ -1114,4 +1114,23 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "ads",
   },
+  {
+    slug: "trade-in-exchange-marketing-for-dealerships",
+    title:
+      "Trade-In and Exchange Programs as a Marketing Hook, Not Just an Ops Process",
+    category: "Guide",
+    excerpt:
+      "The old vehicle is the first thing a replacement buyer thinks about and the last thing most dealerships price. Moving the valuation to the front of the process turns it into a lead source, an inventory channel, and a reason to buy from you instead of the platform quoting higher.",
+    readTime: "8 min read",
+    tags: ["used-cars", "sales-funnel"],
+    primaryKeyword: "trade in exchange marketing dealership",
+    secondaryKeywords: [
+      "car exchange offer marketing India",
+      "dealership trade in valuation leads",
+    ],
+    publishedDate: "2026-09-07",
+    updatedDate: "2026-09-07",
+    featured: false,
+    coverCluster: "leads",
+  },
 ];
