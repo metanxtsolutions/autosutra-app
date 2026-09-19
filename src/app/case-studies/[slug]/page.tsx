@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!study) return {};
   return pageMetadata({
     title: study.headline,
-    description: `${study.dealership}: ${study.category}. ${study.headline}, an AutoSutra case study for ${study.industry.toLowerCase()} in India.`,
+    description: `${study.dealership}: ${study.category}. ${study.headline}, an illustrative AutoSutra growth scenario for ${study.industry.toLowerCase()} in India.`,
     path: `/case-studies/${study.slug}`,
   });
 }
@@ -75,6 +75,10 @@ export default async function CaseStudyDetailPage({
             {study.headline}
           </h1>
           <p className="mt-6 text-lg text-white/60">{study.dealership}</p>
+          <p className="mx-auto mt-3 max-w-xl text-xs text-white/40">
+            An illustrative scenario based on typical engagement patterns,
+            not an individual client&apos;s verified results.
+          </p>
 
           <div className="mx-auto mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/50">
             <span>

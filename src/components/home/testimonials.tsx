@@ -32,6 +32,10 @@ export function Testimonials() {
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
             What dealer partners say
           </h2>
+          <p className="mt-3 text-xs text-muted-foreground/70">
+            Illustrative feedback reflecting how we aim to serve dealer
+            partners, not verified customer reviews.
+          </p>
         </div>
 
         <div className="mt-14">

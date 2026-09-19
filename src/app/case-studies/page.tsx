@@ -6,9 +6,9 @@ import { CaseStudiesGrid } from "@/components/case-studies/case-studies-grid";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Real Dealer Growth Results, Before vs After",
+  title: "How AutoSutra Approaches Dealer Growth",
   description:
-    "Real before-and-after growth stories from car, bike, EV, used-car, and OEM dealerships in India, with verified leads, cost-per-lead, and conversion numbers.",
+    "Illustrative before-and-after growth scenarios showing how AutoSutra approaches lead quality, cost-per-lead, and conversion for car, bike, EV, used-car, and OEM dealerships in India.",
   path: "/case-studies",
 });
 
@@ -23,12 +23,17 @@ export default function CaseStudiesPage() {
             Case Studies
           </span>
           <h1 className="mx-auto mt-4 max-w-3xl text-balance font-heading text-5xl font-semibold tracking-tight sm:text-6xl">
-            Real dealerships, real growth
+            How AutoSutra approaches dealer growth
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             Filter by industry to see how AutoSutra approaches lead quality,
             cost-per-lead, and conversion differently for every category of
             dealer.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40">
+            Illustrative scenarios based on typical engagement patterns, not
+            individual client results. Ask us for outcomes specific to your
+            market.
           </p>
         </div>
       </section>

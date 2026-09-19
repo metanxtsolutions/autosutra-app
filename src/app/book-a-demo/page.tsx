@@ -148,6 +148,9 @@ export default function BookADemoPage() {
                 </p>
                 <p className="mt-4 text-sm font-medium">{testimonial.name}</p>
                 <p className="text-xs text-white/50">{testimonial.role}</p>
+                <p className="mt-4 text-[11px] text-white/30">
+                  Illustrative feedback, not a verified customer review.
+                </p>
               </div>
             </div>
           )}

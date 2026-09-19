@@ -66,6 +66,7 @@ function stepTwoEmailHtml(
 
 export async function submitDemoStepOne(
   values: BookDemoStepOneValues,
+  sourceDetail?: string,
 ): Promise<BookDemoActionState> {
   const parsed = bookDemoStepOneSchema.safeParse(values);
 
@@ -88,6 +89,7 @@ export async function submitDemoStepOne(
         phone: parsed.data.phone,
         service: parsed.data.service,
         source: "WEBSITE_BOOK_DEMO",
+        sourceDetail: sourceDetail || null,
       },
     });
     leadId = lead.id;

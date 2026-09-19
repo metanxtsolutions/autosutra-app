@@ -37,6 +37,6 @@ export const faqs: Faq[] = [
   {
     question: "How can I check AutoSutra's reviews before signing up?",
     answer:
-      "Start with our case studies page for named, specific results, then check our LinkedIn, Instagram, and Facebook pages linked in the footer for direct engagement with real dealer partners. We're headquartered in Kolkata at the address listed in our footer and About page, not a virtual-only operation. If you're already a partner with a concern, email info@autosutra.in directly. We would rather resolve it than have it sit unanswered.",
+      "Check our LinkedIn, Instagram, and Facebook pages linked in the footer for direct engagement with our team and partners. We're headquartered in Kolkata at the address listed in our footer and About page, not a virtual-only operation. Ask us directly for references from current dealer partners in your category. If you're already a partner with a concern, email info@autosutra.in directly. We would rather resolve it than have it sit unanswered.",
   },
 ];

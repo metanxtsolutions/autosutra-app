@@ -68,7 +68,7 @@ export const mainNav: NavItem[] = [
   {
     label: "Case Studies",
     href: "/case-studies",
-    description: "Real dealer growth, before vs after",
+    description: "How dealer growth looks with AutoSutra, before vs after",
   },
   {
     label: "Resources",

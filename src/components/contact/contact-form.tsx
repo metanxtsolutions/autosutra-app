@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
 import { submitContactForm } from "@/actions/contact";
 import { trackEvent } from "@/lib/analytics";
+import { captureLeadSourceDetail } from "@/lib/lead-attribution";
 import {
   contactSchema,
   type ContactFormValues,
@@ -52,7 +53,8 @@ export function ContactForm() {
   const onSubmit = async (values: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      const result = await submitContactForm(values);
+      const sourceDetail = captureLeadSourceDetail();
+      const result = await submitContactForm(values, sourceDetail);
       if (result.success) {
         toast.success(result.message);
         trackEvent("generate_lead", { service: values.service });

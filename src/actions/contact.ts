@@ -41,6 +41,7 @@ function leadEmailHtml(data: ContactFormValues) {
 
 export async function submitContactForm(
   values: ContactFormValues,
+  sourceDetail?: string,
 ): Promise<ContactActionState> {
   const parsed = contactSchema.safeParse(values);
 
@@ -65,6 +66,7 @@ export async function submitContactForm(
         service: parsed.data.service,
         message: parsed.data.message || null,
         source: "WEBSITE_CONTACT",
+        sourceDetail: sourceDetail || null,
       },
     });
   } catch (error) {

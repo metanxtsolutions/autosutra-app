@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
 import { submitDemoStepOne, submitDemoStepTwo } from "@/actions/book-demo";
 import { trackEvent } from "@/lib/analytics";
+import { captureLeadSourceDetail } from "@/lib/lead-attribution";
 import {
   bookDemoStepOneSchema,
   bookDemoStepTwoSchema,
@@ -68,7 +69,8 @@ export function BookDemoForm() {
   const onSubmit = async (values: BookDemoStepOneValues) => {
     setIsSubmitting(true);
     try {
-      const result = await submitDemoStepOne(values);
+      const sourceDetail = captureLeadSourceDetail();
+      const result = await submitDemoStepOne(values, sourceDetail);
       if (result.success) {
         trackEvent("generate_lead", { service: values.service });
         setContact(values);

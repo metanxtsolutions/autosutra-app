@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -10,6 +11,7 @@ import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider
 import { Toaster } from "@/components/ui/sonner";
 import { JsonLd } from "@/components/shared/json-ld";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { LeadLandingTracker } from "@/components/analytics/lead-landing-tracker";
 import { organizationSchema } from "@/lib/schema";
 import { siteConfig } from "@/data/site-config";
 
@@ -88,6 +90,9 @@ export default function RootLayout({
       >
         <JsonLd data={organizationSchema()} />
         <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <LeadLandingTracker />
+        </Suspense>
         <SmoothScrollProvider>
           <Header />
           <main className="pb-20 lg:pb-0">{children}</main>

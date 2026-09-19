@@ -17,7 +17,7 @@ export function CaseStudyTeaser() {
             Case Studies
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-            Real dealerships, real growth
+            How dealer growth looks with AutoSutra
           </h2>
         </div>
         <Link
