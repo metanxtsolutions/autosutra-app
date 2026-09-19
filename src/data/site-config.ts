@@ -15,6 +15,9 @@ export const siteConfig = {
   metaDescription:
     "Get verified buyer leads, performance marketing, and dealer CRM software built for car, bike, EV, and used-car dealerships across India. Book a free demo.",
   url: "https://www.autosutra.in",
+  // The Omni Communication Platform's own app/login portal, on its own
+  // domain rather than a autosutra.in subpage.
+  omniAppUrl: "https://omnisutra.online",
   contact: {
     email: "info@autosutra.in",
     phoneDisplay: "+91 6291 043 537",

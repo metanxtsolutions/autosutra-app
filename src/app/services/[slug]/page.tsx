@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Check, LogIn, MessageCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { JsonLd } from "@/components/shared/json-ld";
@@ -11,6 +11,7 @@ import { ServicePricingTable } from "@/components/services/service-pricing-table
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/data/services";
+import { siteConfig } from "@/data/site-config";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
 import { resourceArticles } from "@/data/resource-articles";
@@ -129,6 +130,17 @@ export default async function ServiceDetailPage({
               Chat on WhatsApp
             </WhatsAppLink>
           </div>
+          {service.slug === "omni-communication-platform" && (
+            <a
+              href={siteConfig.omniAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+            >
+              <LogIn className="size-3.5" />
+              Already a customer? Log in to Omni
+            </a>
+          )}
         </div>
       </section>
 

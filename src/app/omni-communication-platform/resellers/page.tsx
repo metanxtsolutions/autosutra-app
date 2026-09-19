@@ -4,6 +4,7 @@ import {
   Check,
   Headset,
   Layers,
+  LogIn,
   MessageCircle,
   Palette,
   Radio,
@@ -17,11 +18,12 @@ import { ServicePricingTable } from "@/components/services/service-pricing-table
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/data/services";
+import { siteConfig } from "@/data/site-config";
 
 export const metadata = pageMetadata({
   title: "Omni Communication Platform for Resellers",
   description:
-    "White-label AutoSutra's Omni Communication Platform, SMS, RCS, WhatsApp, and voice, for your own clients. Reseller margins, one wallet, no infrastructure to build.",
+    "White-label AutoSutra's Omni Communication Platform, SMS, GlobalSMS, RCS, WhatsApp, Voice, and Email, for your own clients. Reseller margins, one wallet, no infrastructure to build.",
   path: "/omni-communication-platform/resellers",
   keywords: [
     "Omni Communication Platform reseller",
@@ -40,7 +42,7 @@ const partnerBenefits = [
     icon: Wallet,
     title: "Margin on every channel",
     description:
-      "Set your own client-facing rates across SMS, RCS, WhatsApp, and voice. You keep the difference on every message and every client.",
+      "Set your own client-facing rates across SMS, GlobalSMS, RCS, WhatsApp, Voice, and Email. You keep the difference on every message and every client.",
   },
   {
     icon: Palette,
@@ -76,7 +78,7 @@ const onboardingSteps = [
   {
     step: "Onboard your clients",
     description:
-      "Resell SMS, RCS, WhatsApp, and IVR under your own brand, at your own rates.",
+      "Resell SMS, GlobalSMS, RCS, WhatsApp, Voice/IVR, and Email under your own brand, at your own rates.",
   },
   {
     step: "Ongoing support",
@@ -140,9 +142,9 @@ export default function OmniCommunicationPlatformResellersPage() {
             Resell the Omni Communication Platform, Powered by AutoSutra
           </h1>
           <p className="mt-6 text-balance text-lg text-white/60">
-            White-label SMS, RCS, WhatsApp, and voice communication for your
-            own clients, backed by AutoSutra&apos;s infrastructure and
-            partner support.
+            White-label SMS, GlobalSMS, RCS, WhatsApp, Voice, and Email
+            communication for your own clients, backed by AutoSutra&apos;s
+            infrastructure and partner support.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -166,6 +168,15 @@ export default function OmniCommunicationPlatformResellersPage() {
               Chat on WhatsApp
             </WhatsAppLink>
           </div>
+          <a
+            href={siteConfig.omniAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+          >
+            <LogIn className="size-3.5" />
+            Already a partner? Log in to Omni
+          </a>
         </div>
       </section>
 
