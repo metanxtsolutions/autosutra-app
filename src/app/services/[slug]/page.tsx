@@ -4,14 +4,21 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, LogIn, MessageCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
 import { ServicePricingTable } from "@/components/services/service-pricing-table";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { services } from "@/data/services";
+import { serviceFaqs } from "@/data/service-faqs";
 import { siteConfig } from "@/data/site-config";
 import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
@@ -82,10 +89,13 @@ export default async function ServiceDetailPage({
     { name: service.name, path: `/services/${service.slug}` },
   ];
 
+  const faqs = serviceFaqs[service.slug] ?? [];
+
   return (
     <>
       <JsonLd data={serviceSchema(service)} />
       <JsonLd data={breadcrumbSchema(breadcrumbItems)} />
+      {faqs.length > 0 && <JsonLd data={faqPageSchema(faqs)} />}
 
       <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8 lg:pb-32">
         <div className="absolute inset-0 bg-grid opacity-30" />
@@ -191,6 +201,33 @@ export default async function ServiceDetailPage({
 
       {service.pricingTable && (
         <ServicePricingTable table={service.pricingTable} />
+      )}
+
+      {faqs.length > 0 && (
+        <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+              FAQ
+            </span>
+            <h2 className="mt-4 text-balance font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              Questions about {service.name}
+            </h2>
+          </div>
+          <div className="mt-10 rounded-2xl border border-border bg-card px-6">
+            <Accordion>
+              {faqs.map((faq) => (
+                <AccordionItem key={faq.question} value={faq.question}>
+                  <AccordionTrigger className="py-5 text-left text-base font-heading font-medium text-ink">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
       )}
 
       <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
