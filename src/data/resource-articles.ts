@@ -5697,4 +5697,113 @@ export const resourceArticles: Record<string, ResourceArticle> = {
     ],
     relatedServiceSlugs: ["verified-buyer-leads", "whatsapp-marketing"],
   },
+  "dlt-registration-for-dealership-sms": {
+    intro:
+      "If your dealership sends test drive confirmations, service reminders, or offer blasts by SMS, every one of those messages now passes through TRAI's DLT (Distributed Ledger Technology) system before it reaches a buyer's phone. Messages from an unregistered sender, or a template the operator has never seen, are simply dropped. DLT registration is a one-time setup, but getting it wrong is the most common reason a dealership's SMS campaign goes out and nobody receives it.",
+    sections: [
+      {
+        heading: "What DLT is and why it exists",
+        body: [
+          "Under the Telecom Commercial Communications Customer Preference Regulations issued by TRAI in July 2018, all telecom operators moved commercial SMS onto a blockchain-based DLT platform. Enforcement began in 2020, and since then no operator will deliver bulk or application-to-person SMS unless the sender, the sender ID, and the message template are all registered.",
+          "The goal is to cut spam and make every commercial message traceable to a registered business. For a dealership, the practical effect is simple: you register once, get your sender IDs and templates approved, and your messages deliver. Skip it, and they don't.",
+        ],
+      },
+      {
+        heading: "What you actually register",
+        body: [
+          "DLT registration is really four separate approvals, each building on the last:",
+        ],
+        bullets: [
+          "Entity (Principal Entity): your business itself, verified with PAN, GST, and a letter of authorisation. On approval you receive an Entity ID (PE ID) that is used on every message you send.",
+          "Header (Sender ID): the six-character name that appears as the sender, such as a short form of your dealership's name. Each header must be approved and should clearly relate to your brand.",
+          "Content templates: the exact wording of each message, with placeholders for variable parts like the customer's name, model, or appointment time. Messages must match an approved template to deliver.",
+          "Consent templates: for promotional and service-explicit messages, the wording you use to take the customer's opt-in, so the operator can verify you had permission to message them.",
+        ],
+      },
+      {
+        heading: "The operator DLT portals",
+        body: [
+          "You only need to register your entity on one operator's portal; the registration is shared across the DLT network. Choose whichever portal you find easiest to work with:",
+        ],
+        bullets: [
+          "Airtel: dltconnect.airtel.in",
+          "Jio: trueconnect.jio.com",
+          "Vodafone Idea (Vi): vilpower.in",
+          "BSNL: ucc-bsnl.co.in",
+          "MTNL: ucc-mtnl.in",
+          "Smartping (formerly the Videocon portal): smartping.live",
+        ],
+      },
+      {
+        heading: "Step-by-step registration for a dealership",
+        body: [
+          "The process usually takes a few working days end to end, most of it waiting on document verification:",
+        ],
+        bullets: [
+          "Sign up on one DLT portal as an Enterprise (not as a telemarketer) and upload your PAN, GST certificate, and authorisation letter on company letterhead.",
+          "Once your Entity ID is issued, link your SMS provider's registered telemarketer ID to your entity, so the provider is authorised to push traffic on your behalf. Your SMS provider will give you the exact telemarketer name to select.",
+          "Apply for your headers (sender IDs), choosing the right category for each: transactional, service, or promotional.",
+          "Submit a content template for every message type you plan to send, such as booking confirmations, service due reminders, delivery updates, and festive offers.",
+          "Share your Entity ID, approved headers, and template IDs with your SMS provider so each message is tagged correctly when it is sent.",
+        ],
+      },
+      {
+        heading: "Choosing the right message category",
+        body: [
+          "The category you register a template under decides when and to whom it can be sent, so it's worth getting right the first time:",
+        ],
+        bullets: [
+          "Transactional: OTPs and similar messages from banks and financial entities. Most dealerships won't use this category directly.",
+          "Service Implicit: messages a customer expects because of an existing relationship, such as a test drive confirmation, booking receipt, or service reminder. These can go to numbers on the Do Not Disturb list.",
+          "Service Explicit: service-style messages that need the customer's recorded consent, such as follow-ups to a past enquiry.",
+          "Promotional: offers, new model launches, and festive campaigns. These can only go to non-DND numbers and only during permitted hours.",
+        ],
+      },
+      {
+        heading: "Mistakes that get dealership SMS blocked",
+        body: [
+          "Most delivery failures after DLT go live trace back to a handful of avoidable errors: a message that doesn't match its approved template word for word, a link or callback number that wasn't included in the approved template, a promotional message filed under a service category, a header that doesn't clearly relate to the business name, or a provider sending under a telemarketer ID that was never linked to your entity. Operators have also tightened rules on links in recent years, so any URL you send should be registered in the template itself.",
+        ],
+      },
+      {
+        heading: "How this fits with the rest of your messaging",
+        body: [
+          "DLT only governs SMS. WhatsApp Business messages have their own template approval through Meta, and RCS has separate brand verification. If you run all three, it's worth planning your templates together, so a buyer gets the same booking confirmation whichever channel reaches them first. Our Omni Communication Platform runs SMS, RCS, and WhatsApp from one wallet, and we help dealerships set up their DLT entity, headers, and templates as part of onboarding.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is DLT registration mandatory for sending SMS to customers?",
+        answer:
+          "Yes. Operators will not deliver commercial or application-to-person SMS from a business that hasn't registered its entity, headers, and templates on a DLT portal. This applies to promotional offers and to service messages like booking confirmations and reminders.",
+      },
+      {
+        question: "Do we need to register on every operator's DLT portal?",
+        answer:
+          "No. Registering your entity on any one operator's portal is enough, because the DLT network shares registrations across operators. Your headers and templates registered there will be recognised when messages are delivered to customers on other networks.",
+      },
+      {
+        question: "Is there a fee for DLT registration?",
+        answer:
+          "Fees vary by portal and change from time to time. Some portals charge a one-time entity registration fee and others have offered it free, so check the current charges on the portal before you sign up. Header and template approvals are generally not charged separately.",
+      },
+      {
+        question: "How long does DLT registration take?",
+        answer:
+          "Entity approval typically takes two to five working days once your documents are in order. Header and template approvals are usually quicker, often within a day or two. Plan for about a week before your first campaign if you're starting from scratch.",
+      },
+      {
+        question: "Can we send promotional SMS to customers on the DND list?",
+        answer:
+          "No. Promotional messages are blocked for numbers registered on the Do Not Disturb list. Service Implicit messages, such as a service reminder to an existing customer, can still be delivered, provided they are registered under the correct category and match the approved template.",
+      },
+      {
+        question: "What is a telemarketer ID and why does it matter?",
+        answer:
+          "A telemarketer is the registered company that actually pushes your messages to the operator network, usually your SMS provider. During DLT setup you link your entity to your provider's telemarketer ID. If that link is missing, the operator treats your messages as unauthorised and drops them.",
+      },
+    ],
+    relatedServiceSlugs: ["omni-communication-platform", "whatsapp-marketing"],
+  },
 };

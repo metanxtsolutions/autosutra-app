@@ -1133,4 +1133,23 @@ export const resources: Resource[] = [
     featured: false,
     coverCluster: "leads",
   },
+  {
+    slug: "dlt-registration-for-dealership-sms",
+    title: "DLT Registration for SMS: A Dealership's Step-by-Step Guide",
+    category: "Guide",
+    excerpt:
+      "Every commercial SMS in India now passes through TRAI's DLT system, and unregistered messages are dropped without warning. What to register, which operator portal to use, how to pick the right message category, and the mistakes that get dealership SMS blocked.",
+    readTime: "7 min read",
+    tags: ["marketing-automation", "customer-retention"],
+    primaryKeyword: "DLT registration for SMS",
+    secondaryKeywords: [
+      "TRAI DLT registration process",
+      "DLT sender ID header registration",
+      "bulk SMS DLT template approval",
+    ],
+    publishedDate: "2026-09-22",
+    updatedDate: "2026-09-22",
+    featured: false,
+    coverCluster: "retention",
+  },
 ];

@@ -12,7 +12,22 @@ import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
 import { services } from "@/data/services";
+import { resources } from "@/data/resources";
 import type { CityFaq } from "@/data/city-content";
+
+// Curated rather than per-location-matched: these guides are about the
+// pattern of local/regional dealer marketing generically, not any one
+// district specifically, so the same set is genuinely useful on every
+// page that renders this component (state hub, district, district-city —
+// see the comment on LocationPageContent below) instead of needing
+// per-location content that doesn't exist.
+const LOCAL_MARKETING_READING_SLUGS = [
+  "district-level-local-seo-for-dealerships",
+  "tier-2-city-dealership-marketing",
+  "coastal-andhra-vs-rayalaseema-buyer-behavior",
+  "local-seo-checklist-for-multi-location-dealerships",
+  "local-link-building-for-dealerships",
+];
 
 export type OtherLocationLink = {
   slug: string;
@@ -64,6 +79,12 @@ export function LocationPageContent({
   whatsappLocationHero: string;
   whatsappLocationFooter: string;
 }) {
+  const localMarketingReading = LOCAL_MARKETING_READING_SLUGS.map((slug) =>
+    resources.find((resource) => resource.slug === slug),
+  ).filter((resource): resource is (typeof resources)[number] =>
+    Boolean(resource),
+  );
+
   const explorePills: ExploreLink[] = [
     ...extraExploreLinks,
     { label: "Services", href: "/services" },
@@ -187,6 +208,34 @@ export function LocationPageContent({
           ))}
         </Accordion>
       </section>
+
+      {localMarketingReading.length > 0 && (
+        <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+          <h2 className="text-center font-heading text-2xl font-semibold text-ink sm:text-3xl">
+            Local marketing reading for {name}
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {localMarketingReading.map((resource) => (
+              <Link
+                key={resource.slug}
+                href={`/resources/${resource.slug}`}
+                className="group flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
+              >
+                <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                  {resource.category}
+                </span>
+                <p className="mt-3 text-sm font-heading font-semibold text-ink">
+                  {resource.title}
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                  Read more
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {relatedMetros.length > 0 && (
         <section className="mx-auto max-w-4xl px-6 py-6 lg:px-8">

@@ -63,6 +63,10 @@ export default async function ServiceDetailPage({
       service.slug,
     ),
   );
+  // A cluster this size has enough depth to read as a start-to-finish
+  // playbook rather than a handful of loosely related links, so the page
+  // frames itself as a hub instead of a generic "Learn more" grid.
+  const isResourceHub = relatedResources.length >= 4;
 
   const currentIndex = services.findIndex((item) => item.slug === slug);
   const otherServices = Array.from({ length: 4 }, (_, i) => {
@@ -240,29 +244,67 @@ export default async function ServiceDetailPage({
       {relatedResources.length > 0 && (
         <section className="bg-muted/40 py-20">
           <div className="mx-auto max-w-5xl px-6 lg:px-8">
-            <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
-              Learn more
-            </h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {relatedResources.slice(0, 3).map((resource) => (
-                <Link
-                  key={resource.slug}
-                  href={`/resources/${resource.slug}`}
-                  className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-brand/40"
-                >
-                  <span className="text-xs font-medium uppercase tracking-wide text-brand">
-                    {resource.category}
-                  </span>
-                  <p className="mt-3 font-heading font-semibold text-ink">
-                    {resource.title}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
-                    Read more
-                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              ))}
-            </div>
+            {isResourceHub ? (
+              <>
+                <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
+                  The {service.name} playbook
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-center text-sm text-foreground/70">
+                  {relatedResources.length} guides covering {service.name.toLowerCase()}
+                  , start to finish.
+                </p>
+                <div className="mx-auto mt-10 max-w-2xl space-y-3">
+                  {relatedResources.slice(0, 8).map((resource, index) => (
+                    <Link
+                      key={resource.slug}
+                      href={`/resources/${resource.slug}`}
+                      className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
+                    >
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent font-heading text-sm font-semibold text-brand">
+                        {index + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        {index === 0 && (
+                          <span className="text-[11px] font-semibold tracking-wide text-brand uppercase">
+                            Start here
+                          </span>
+                        )}
+                        <p className="font-heading font-semibold text-ink">
+                          {resource.title}
+                        </p>
+                      </div>
+                      <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-brand" />
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
+                  Learn more
+                </h2>
+                <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                  {relatedResources.slice(0, 3).map((resource) => (
+                    <Link
+                      key={resource.slug}
+                      href={`/resources/${resource.slug}`}
+                      className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-brand/40"
+                    >
+                      <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                        {resource.category}
+                      </span>
+                      <p className="mt-3 font-heading font-semibold text-ink">
+                        {resource.title}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                        Read more
+                        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </section>
       )}
