@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
@@ -30,6 +31,7 @@ export async function generateMetadata({
     title: study.headline,
     description: `${study.dealership}: ${study.category}. ${study.headline}, an illustrative AutoSutra growth scenario for ${study.industry.toLowerCase()} in India.`,
     path: `/case-studies/${study.slug}`,
+    ownSocialImage: true,
   });
 }
 
@@ -53,16 +55,16 @@ export default async function CaseStudyDetailPage({
     return caseStudyTeasers[index];
   }).filter((item) => item.slug !== study.slug);
 
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Case Studies", path: "/case-studies" },
+    { name: study.headline, path: `/case-studies/${study.slug}` },
+  ];
+
   return (
     <>
       <JsonLd data={caseStudySchema(study)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Case Studies", path: "/case-studies" },
-          { name: study.headline, path: `/case-studies/${study.slug}` },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema(breadcrumbItems)} />
 
       <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8 lg:pb-32">
         <div className="absolute inset-0 bg-grid opacity-30" />
@@ -107,6 +109,8 @@ export default async function CaseStudyDetailPage({
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
         <h2 className="font-heading text-2xl font-semibold text-ink">

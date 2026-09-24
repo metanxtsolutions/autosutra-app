@@ -11,13 +11,54 @@ const areaServed = [
   ...targetCities.map((city) => ({ "@type": "City", name: city })),
 ];
 
+// Stable node identifiers so every page's structured data points back at
+// the one Organization and WebSite declared on the root layout / homepage,
+// instead of each page describing a fresh anonymous "AutoSutra" entity.
+export const organizationId = `${siteConfig.url}/#organization`;
+export const websiteId = `${siteConfig.url}/#website`;
+
+const logo = {
+  "@type": "ImageObject",
+  url: `${siteConfig.url}/brand/autosutra-logo.png`,
+  width: 2560,
+  height: 605,
+};
+
+// Compact reference used wherever another entity points at AutoSutra
+// (Service.provider, Article.publisher, WebPage.isPartOf.publisher, ...).
+const organizationRef = {
+  "@type": "Organization",
+  "@id": organizationId,
+  name: siteConfig.name,
+  url: siteConfig.url,
+};
+
+const websiteRef = {
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: siteConfig.name,
+  url: siteConfig.url,
+};
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": organizationId,
     name: siteConfig.name,
     url: siteConfig.url,
+    logo,
     description: siteConfig.description,
+    // Topics the site demonstrably covers (its service lines), stated in
+    // plain terms so answer engines can place the entity without inference.
+    knowsAbout: [
+      "Automotive dealership marketing in India",
+      "Verified buyer lead generation for car, bike, EV, and used-car dealers",
+      "Performance marketing (Google Ads, Meta Ads) for dealerships",
+      "Local SEO and Google Business Profile for dealerships",
+      "WhatsApp, SMS, and RCS communication for dealerships",
+      "Dealer CRM and SaaS platforms",
+    ],
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phoneDisplay,
     address: {
@@ -38,6 +79,17 @@ export function organizationSchema() {
       availableLanguage: ["English", "Hindi"],
     },
     sameAs: Object.values(siteConfig.socials),
+  };
+}
+
+// Rendered on the homepage only, per Google's site-name guidance. Carries
+// no SearchAction because the site has no search results page.
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...websiteRef,
+    inLanguage: "en-IN",
+    publisher: organizationRef,
   };
 }
 
@@ -62,11 +114,7 @@ export function serviceSchema(service: Service) {
     "@type": "Service",
     name: service.name,
     description: service.summary,
-    provider: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    provider: organizationRef,
     areaServed,
     url: `${siteConfig.url}/services/${service.slug}`,
   };
@@ -78,19 +126,16 @@ export function articleSchema(resource: Resource) {
     "@type": resource.category === "Blog" ? "BlogPosting" : "Article",
     headline: resource.title,
     description: resource.excerpt,
+    articleSection: resource.category,
     keywords: [resource.primaryKeyword, ...resource.secondaryKeywords].join(", "),
     datePublished: resource.publishedDate,
     dateModified: resource.updatedDate,
-    author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    // The same generated cover the page shows above the article body.
+    image: `${siteConfig.url}/resources/cover/${resource.slug}`,
+    inLanguage: "en-IN",
+    author: organizationRef,
+    publisher: { ...organizationRef, logo },
+    isPartOf: websiteRef,
     url: `${siteConfig.url}/resources/${resource.slug}`,
     mainEntityOfPage: `${siteConfig.url}/resources/${resource.slug}`,
   };
@@ -105,16 +150,11 @@ export function caseStudySchema(study: CaseStudyTeaser) {
     about: study.dealership,
     datePublished: study.publishedDate,
     dateModified: study.updatedDate,
-    author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    image: `${siteConfig.url}/case-studies/${study.slug}/opengraph-image`,
+    inLanguage: "en-IN",
+    author: organizationRef,
+    publisher: { ...organizationRef, logo },
+    isPartOf: websiteRef,
     url: `${siteConfig.url}/case-studies/${study.slug}`,
     mainEntityOfPage: `${siteConfig.url}/case-studies/${study.slug}`,
   };
@@ -143,11 +183,7 @@ export function pricingSchema(tiers: PricingTier[]) {
         "@type": "Service",
         name: `${tier.name} plan`,
         description: tier.description,
-        provider: {
-          "@type": "Organization",
-          name: siteConfig.name,
-          url: siteConfig.url,
-        },
+        provider: organizationRef,
       },
     })),
   };
@@ -169,11 +205,7 @@ export function combinationServiceSchema({
     "@type": "Service",
     name,
     description,
-    provider: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    provider: organizationRef,
     areaServed: areaServedName
       ? { "@type": "City", name: areaServedName }
       : areaServed,
@@ -213,11 +245,7 @@ export function localBusinessSchema({
       addressCountry: "IN",
     },
     areaServed: { "@type": "AdministrativeArea", name: areaServedName },
-    parentOrganization: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    parentOrganization: organizationRef,
   };
 }
 
@@ -236,11 +264,8 @@ export function webPageSchema({
     name,
     description,
     url: `${siteConfig.url}${path}`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    inLanguage: "en-IN",
+    isPartOf: websiteRef,
   };
 }
 

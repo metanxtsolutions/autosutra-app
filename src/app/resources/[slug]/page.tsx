@@ -39,6 +39,7 @@ export async function generateMetadata({
     description: resource.excerpt,
     path: `/resources/${resource.slug}`,
     keywords: [resource.primaryKeyword, ...resource.secondaryKeywords],
+    ownSocialImage: true,
   });
 }
 

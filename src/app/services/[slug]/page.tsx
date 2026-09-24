@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, LogIn, MessageCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { JsonLd } from "@/components/shared/json-ld";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { serviceIconMap } from "@/lib/icon-map";
@@ -40,6 +41,7 @@ export async function generateMetadata({
       `${service.name} Delhi`,
       ...(service.extraKeywords ?? []),
     ],
+    ownSocialImage: true,
   });
 }
 
@@ -74,16 +76,16 @@ export default async function ServiceDetailPage({
     return services[index];
   }).filter((item) => item.slug !== service.slug);
 
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: service.name, path: `/services/${service.slug}` },
+  ];
+
   return (
     <>
       <JsonLd data={serviceSchema(service)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Services", path: "/services" },
-          { name: service.name, path: `/services/${service.slug}` },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema(breadcrumbItems)} />
 
       <section className="relative overflow-hidden bg-ink px-6 pt-40 pb-28 text-center text-ink-foreground lg:px-8 lg:pb-32">
         <div className="absolute inset-0 bg-grid opacity-30" />
@@ -147,6 +149,8 @@ export default async function ServiceDetailPage({
           )}
         </div>
       </section>
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">

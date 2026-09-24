@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LoginForm } from "@/components/leads/login-form";
 
 export const metadata: Metadata = {
-  title: "Sign in — AutoSutra",
+  title: { absolute: "Sign in — AutoSutra" },
   robots: { index: false, follow: false },
 };
 

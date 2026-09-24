@@ -57,6 +57,7 @@ export function Header() {
             width={2487}
             height={605}
             priority
+            sizes="148px"
             className="h-8 w-[131px] sm:h-9 sm:w-[148px]"
           />
         </Link>
@@ -121,6 +122,7 @@ export function Header() {
                   alt="AutoSutra"
                   width={2487}
                   height={605}
+                  sizes="115px"
                   className="h-7 w-[115px]"
                 />
               </SheetTitle>

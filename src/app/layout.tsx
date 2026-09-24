@@ -49,12 +49,21 @@ export const metadata: Metadata = {
     "dealer CRM software India",
   ],
   authors: [{ name: siteConfig.name }],
-  alternates: {
-    canonical: siteConfig.url,
-    languages: {
-      "en-IN": siteConfig.url,
+  // Lets Google show large image previews (Discover, image results) and
+  // full-length snippets instead of its conservative defaults. Only the
+  // googlebot directives are set, so Next's automatic noindex on the 404
+  // page and the explicit noindex on /login and /leads are not contradicted.
+  robots: {
+    googleBot: {
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
+  // No canonical here on purpose: a root-level canonical is inherited by
+  // every route that doesn't set its own (the 404 page, /login, /leads),
+  // which made those pages declare the homepage as their canonical URL.
+  // The homepage sets its own canonical in src/app/page.tsx instead.
   openGraph: {
     type: "website",
     locale: "en_IN",

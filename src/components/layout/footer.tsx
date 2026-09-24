@@ -38,6 +38,7 @@ export function Footer() {
                 alt="AutoSutra"
                 width={2487}
                 height={605}
+                sizes="131px"
                 className="h-8 w-[131px]"
               />
             </Link>

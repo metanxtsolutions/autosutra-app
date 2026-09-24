@@ -26,7 +26,7 @@ export async function generateMetadata({
   const industry = industries.find((item) => item.slug === slug);
   if (!industry) return {};
   return pageMetadata({
-    title: industry.name,
+    title: industry.seoTitle,
     description: `${industry.description} Serving ${industry.name} across India.`,
     path: `/industries/${industry.slug}`,
     keywords: [

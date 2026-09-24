@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Compass } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description:
+    "The page you're looking for doesn't exist or has moved. Head back to the AutoSutra homepage to find dealer growth services, resources, and locations.",
+};
 
 export default function NotFound() {
   return (

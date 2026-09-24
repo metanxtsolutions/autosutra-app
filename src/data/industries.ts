@@ -1,6 +1,10 @@
 export type Industry = {
   slug: string;
   name: string;
+  // <title> for the detail page. The bare industry name ("Car Dealerships")
+  // reads in search results as if AutoSutra *is* a dealership, so the title
+  // names what the page actually offers that audience.
+  seoTitle: string;
   description: string;
   points: string[];
   icon: "car" | "bike" | "zap" | "recycle" | "factory" | "badgeCheck";
@@ -9,6 +13,7 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     slug: "car-dealerships",
+    seoTitle: "Car Dealership Marketing & Lead Generation",
     name: "Car Dealerships",
     description:
       "Single-showroom and multi-outlet car dealers looking to fill their funnel with serious, financing-ready buyers.",
@@ -21,6 +26,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "bike-dealerships",
+    seoTitle: "Bike Dealership Marketing & Lead Generation",
     name: "Bike Dealerships",
     description:
       "Two-wheeler dealers competing on speed of response. We help you reach buyers first and follow up faster.",
@@ -33,6 +39,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "ev-dealers",
+    seoTitle: "EV Dealership Marketing & Lead Generation",
     name: "EV Dealers",
     description:
       "Electric vehicle dealerships educating a newer buyer segment while building trust in a fast-moving category.",
@@ -45,6 +52,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "used-car-dealers",
+    seoTitle: "Used Car Dealer Marketing & Verified Leads",
     name: "Used Car Dealers",
     description:
       "Used and certified pre-owned dealers who need verified, high-intent leads to protect margins on every sale.",
@@ -57,6 +65,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "oems",
+    seoTitle: "Dealer Network Marketing Programs for OEMs",
     name: "OEMs",
     description:
       "Original equipment manufacturers running pan-India or regional dealer network programs that need consistent execution.",
@@ -69,6 +78,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "automotive-brands",
+    seoTitle: "Marketing for Automotive Brands",
     name: "Automotive Brands",
     description:
       "Accessory, service, and automotive-adjacent brands that sell through or alongside the dealer network.",

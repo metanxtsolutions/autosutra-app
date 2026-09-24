@@ -94,6 +94,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/book-a-demo": "src/app/book-a-demo/page.tsx",
     "/omni-communication-platform/resellers":
       "src/app/omni-communication-platform/resellers/page.tsx",
+    "/legal/privacy-policy": "src/data/legal-content.ts",
+    "/legal/terms": "src/data/legal-content.ts",
   };
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -114,6 +116,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
       changeFrequency: "monthly" as const,
     },
+    { path: "/legal/privacy-policy", priority: 0.2, changeFrequency: "yearly" as const },
+    { path: "/legal/terms", priority: 0.2, changeFrequency: "yearly" as const },
   ].map(({ path, priority, changeFrequency }) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: gitLastModified(staticFileByPath[path]),

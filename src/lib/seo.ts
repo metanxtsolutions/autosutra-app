@@ -3,6 +3,21 @@ import { siteConfig } from "@/data/site-config";
 
 const MAX_DESCRIPTION_LENGTH = 160;
 
+// Every page gets a social preview image. Next.js merges `openGraph` as a
+// whole object rather than field by field, so a page that sets its own
+// openGraph (which every page here does via this helper) silently drops the
+// root layout's file-based opengraph-image and shares with no image at all.
+// Routes that ship their own opengraph-image.tsx (services, resources, case
+// studies) pass `ownSocialImage: true` so this default is left out and the
+// route's file-based image is used; an explicit `images` entry here would
+// otherwise take precedence over it.
+const defaultSocialImage = {
+  url: `${siteConfig.url}/opengraph-image`,
+  width: 1200,
+  height: 630,
+  alt: siteConfig.name,
+};
+
 // Templated descriptions (service x city, solution x city, etc.) combine
 // variable-length real fields and can exceed Google's ~160 character
 // snippet guideline. Truncate at the last full word before the limit
@@ -19,15 +34,20 @@ export function pageMetadata({
   description,
   path,
   keywords,
+  ownSocialImage = false,
 }: {
   title: string;
   description: string;
   path: string;
   keywords?: string[];
+  ownSocialImage?: boolean;
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
   const socialTitle = `${title} | ${siteConfig.name}`;
   const safeDescription = truncateDescription(description);
+  // Spread in only when set: an `images: undefined` key still counts as
+  // "images provided" to Next's metadata merge and blocks the file-based one.
+  const images = ownSocialImage ? {} : { images: [defaultSocialImage] };
 
   return {
     title,
@@ -46,11 +66,13 @@ export function pageMetadata({
       siteName: siteConfig.name,
       locale: "en_IN",
       type: "website",
+      ...images,
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
       description: safeDescription,
+      ...images,
     },
   };
 }

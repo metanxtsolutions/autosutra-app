@@ -3,7 +3,7 @@ import Link from "next/link";
 import { auth, signOut } from "@/lib/auth";
 
 export const metadata: Metadata = {
-  title: "Leads — AutoSutra",
+  title: { absolute: "Leads — AutoSutra" },
   robots: { index: false, follow: false },
 };
 
