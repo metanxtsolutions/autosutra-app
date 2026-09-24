@@ -340,7 +340,7 @@ export const serviceFaqs: Record<string, Faq[]> = {
     {
       question: "Do we need DLT registration before sending SMS?",
       answer:
-        "Yes. Every commercial SMS in India passes through TRAI's DLT system, and messages from unregistered senders or templates are dropped. We help set up your DLT entity, headers, and templates during onboarding; our DLT registration guide in Resources explains what is involved.",
+        "Yes. Every commercial SMS in India passes through TRAI's DLT system, and messages from unregistered senders or templates are dropped. You can register on an operator portal yourself, and our DLT registration guide in Resources walks through it, or we can handle entity, header, and template registration for you as a paid setup service.",
     },
     {
       question: "Is there a lock-in or minimum term?",
