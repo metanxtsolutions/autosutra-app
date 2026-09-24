@@ -5768,7 +5768,7 @@ export const resourceArticles: Record<string, ResourceArticle> = {
       {
         heading: "How this fits with the rest of your messaging",
         body: [
-          "DLT only governs SMS. WhatsApp Business messages have their own template approval through Meta, and RCS has separate brand verification. If you run all three, it's worth planning your templates together, so a buyer gets the same booking confirmation whichever channel reaches them first. Our Omni Communication Platform runs SMS, RCS, and WhatsApp from one wallet, and we help dealerships set up their DLT entity, headers, and templates as part of onboarding.",
+          "DLT only governs SMS. WhatsApp Business messages have their own template approval through Meta, and RCS has separate brand verification. If you run all three, it's worth planning your templates together, so a buyer gets the same booking confirmation whichever channel reaches them first. Our Omni Communication Platform runs SMS, RCS, and WhatsApp from one wallet. We also handle DLT entity, header, and template registration for dealerships as a paid setup service if you would rather not work through the portals yourself.",
         ],
       },
     ],
