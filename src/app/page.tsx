@@ -4,6 +4,7 @@ import { TrustedByMarquee } from "@/components/home/trusted-by-marquee";
 import { About } from "@/components/home/about";
 import { WhyAutoSutra } from "@/components/home/why-autosutra";
 import { ServicesGrid } from "@/components/home/services-grid";
+import { ComparisonTable } from "@/components/home/comparison-table";
 import { ProcessTimeline } from "@/components/home/process-timeline";
 import { CaseStudyTeaser } from "@/components/home/case-study-teaser";
 import { Testimonials } from "@/components/home/testimonials";
@@ -38,6 +39,7 @@ export default function Home() {
       <About />
       <WhyAutoSutra />
       <ServicesGrid />
+      <ComparisonTable />
       <ProcessTimeline />
       <CaseStudyTeaser />
       <Testimonials />
