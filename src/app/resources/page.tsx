@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/shared/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { resources } from "@/data/resources";
+import { latestBenchmarkReport } from "@/data/benchmarks";
 
 const baseMetadata = pageMetadata({
   title: "Resources",
@@ -140,6 +141,14 @@ export default function ResourcesPage() {
             >
               Dealer marketing glossary
             </Link>
+            {latestBenchmarkReport && (
+              <Link
+                href="/benchmarks"
+                className="text-foreground/70 underline-offset-4 hover:text-brand hover:underline"
+              >
+                Monthly benchmarks ({latestBenchmarkReport.periodLabel})
+              </Link>
+            )}
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import type { Resource } from "@/data/resources";
 import type { PricingTier } from "@/data/pricing";
 import type { CaseStudyTeaser } from "@/data/case-studies";
 import type { GlossaryTerm } from "@/data/glossary";
+import type { BenchmarkReport } from "@/data/benchmarks";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -254,10 +255,14 @@ export function webPageSchema({
   name,
   description,
   path,
+  datePublished,
+  dateModified,
 }: {
   name: string;
   description: string;
   path: string;
+  datePublished?: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -266,7 +271,35 @@ export function webPageSchema({
     description,
     url: `${siteConfig.url}${path}`,
     inLanguage: "en-IN",
+    ...(datePublished && { datePublished }),
+    ...(dateModified && { dateModified }),
     isPartOf: websiteRef,
+  };
+}
+
+// The benchmark report as a Dataset: what was measured, over what period,
+// by whom. Only rendered when a real report exists (see data/benchmarks.ts).
+export function benchmarkDatasetSchema(report: BenchmarkReport) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": `${siteConfig.url}/benchmarks#${report.period}`,
+    name: `Dealer marketing benchmarks in India, ${report.periodLabel}`,
+    description: report.sample,
+    url: `${siteConfig.url}/benchmarks`,
+    inLanguage: "en-IN",
+    isAccessibleForFree: true,
+    temporalCoverage: report.period,
+    datePublished: report.publishedDate,
+    creator: organizationRef,
+    publisher: organizationRef,
+    spatialCoverage: { "@type": "Country", name: "India" },
+    variableMeasured: report.tables.map((table) => table.title),
+    keywords: [
+      "car dealership marketing benchmarks India",
+      "cost per lead automotive India",
+      "dealer lead to walk-in rate",
+    ].join(", "),
   };
 }
 

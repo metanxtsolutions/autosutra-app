@@ -9,6 +9,7 @@ import { resources } from "@/data/resources";
 import { cityProfiles } from "@/data/city-content";
 import { states } from "@/data/states";
 import { glossaryTerms } from "@/data/glossary";
+import { latestBenchmarkReport } from "@/data/benchmarks";
 
 // Real per-page "last modified" dates instead of a shared build timestamp:
 // this reads each data/page file's actual last commit date from git history,
@@ -214,6 +215,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // Only once a real report exists; with none, /benchmarks is a 404.
+  const benchmarkRoutes: MetadataRoute.Sitemap = latestBenchmarkReport
+    ? [
+        {
+          url: `${siteConfig.url}/benchmarks`,
+          lastModified: new Date(latestBenchmarkReport.publishedDate),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        },
+      ]
+    : [];
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
@@ -324,6 +337,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...districtRoutes,
     ...districtCityRoutes,
     ...glossaryRoutes,
+    ...benchmarkRoutes,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,
