@@ -5741,7 +5741,7 @@ export const resourceArticles: Record<string, ResourceArticle> = {
         ],
         bullets: [
           "Sign up on one DLT portal as an Enterprise (not as a telemarketer) and upload your PAN, GST certificate, and authorisation letter on company letterhead.",
-          "Once your Entity ID is issued, link your SMS provider's registered telemarketer ID to your entity, so the provider is authorised to push traffic on your behalf. Your SMS provider will give you the exact telemarketer name to select.",
+          "Once your Entity ID is issued, link your SMS provider's registered telemarketer ID to your entity, so the provider is authorised to push traffic on your behalf. Dealerships sending through AutoSutra select SMARTTECH, telemarketer ID 1102838490000012345, which is the registered telemarketer that carries our SMS traffic.",
           "Apply for your headers (sender IDs), choosing the right category for each: transactional, service, or promotional.",
           "Submit a content template for every message type you plan to send, such as booking confirmations, service due reminders, delivery updates, and festive offers.",
           "Share your Entity ID, approved headers, and template IDs with your SMS provider so each message is tagged correctly when it is sent.",
@@ -5801,7 +5801,7 @@ export const resourceArticles: Record<string, ResourceArticle> = {
       {
         question: "What is a telemarketer ID and why does it matter?",
         answer:
-          "A telemarketer is the registered company that actually pushes your messages to the operator network, usually your SMS provider. During DLT setup you link your entity to your provider's telemarketer ID. If that link is missing, the operator treats your messages as unauthorised and drops them.",
+          "A telemarketer is the registered company that actually pushes your messages to the operator network, usually your SMS provider. During DLT setup you link your entity to your provider's telemarketer ID. If that link is missing, the operator treats your messages as unauthorised and drops them. Dealerships running SMS through AutoSutra link to SMARTTECH, telemarketer ID 1102838490000012345, the registered telemarketer carrying our traffic.",
       },
     ],
     relatedServiceSlugs: ["omni-communication-platform", "whatsapp-marketing"],
