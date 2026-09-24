@@ -5,6 +5,7 @@ import type { Service } from "@/data/services";
 import type { Resource } from "@/data/resources";
 import type { PricingTier } from "@/data/pricing";
 import type { CaseStudyTeaser } from "@/data/case-studies";
+import type { GlossaryTerm } from "@/data/glossary";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -266,6 +267,48 @@ export function webPageSchema({
     url: `${siteConfig.url}${path}`,
     inLanguage: "en-IN",
     isPartOf: websiteRef,
+  };
+}
+
+const glossarySetId = `${siteConfig.url}/glossary#definedtermset`;
+
+const glossarySetRef = {
+  "@type": "DefinedTermSet",
+  "@id": glossarySetId,
+  name: "AutoSutra Dealer Marketing Glossary",
+  url: `${siteConfig.url}/glossary`,
+};
+
+// The glossary hub: the set itself, listing every term it defines.
+export function definedTermSetSchema(terms: GlossaryTerm[]) {
+  return {
+    "@context": "https://schema.org",
+    ...glossarySetRef,
+    description:
+      "Plain-English definitions of the terms dealerships meet in lead generation, advertising, local search, messaging compliance, and dealer systems.",
+    inLanguage: "en-IN",
+    publisher: organizationRef,
+    hasDefinedTerm: terms.map((term) => ({
+      "@type": "DefinedTerm",
+      "@id": `${siteConfig.url}/glossary/${term.slug}#term`,
+      name: term.term,
+      url: `${siteConfig.url}/glossary/${term.slug}`,
+    })),
+  };
+}
+
+// One term page: the definition shown directly under the H1, plus its
+// alternative names, tied back to the set.
+export function definedTermSchema(term: GlossaryTerm) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "@id": `${siteConfig.url}/glossary/${term.slug}#term`,
+    name: term.term,
+    ...(term.alsoKnownAs && { alternateName: term.alsoKnownAs }),
+    description: term.definition,
+    url: `${siteConfig.url}/glossary/${term.slug}`,
+    inDefinedTermSet: glossarySetRef,
   };
 }
 

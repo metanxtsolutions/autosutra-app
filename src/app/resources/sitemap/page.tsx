@@ -2,11 +2,12 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { pageMetadata } from "@/lib/seo";
 import { resources, type Resource } from "@/data/resources";
+import { sortedGlossaryTerms } from "@/data/glossary";
 
 export const metadata = pageMetadata({
   title: "Resources sitemap",
   description:
-    "A full index of every AutoSutra Resources guide, article, download, category, and topic page.",
+    "A full index of every AutoSutra Resources guide, article, download, category, topic page, and glossary term.",
   path: "/resources/sitemap",
 });
 
@@ -30,8 +31,8 @@ export default function ResourcesSitemapPage() {
             Resources sitemap
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-white/60">
-            Every guide, article, download, category, and topic page in one
-            place.
+            Every guide, article, download, category, topic page, and
+            glossary term in one place.
           </p>
         </div>
       </section>
@@ -98,6 +99,26 @@ export default function ResourcesSitemapPage() {
                   <span className="shrink-0 text-xs text-muted-foreground">
                     {resource.category}
                   </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="font-heading text-xl font-semibold text-ink">
+            <Link href="/glossary" className="hover:text-brand">
+              Glossary
+            </Link>
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {sortedGlossaryTerms().map((term) => (
+              <li key={term.slug}>
+                <Link
+                  href={`/glossary/${term.slug}`}
+                  className="rounded-full border border-border px-4 py-1.5 text-sm text-foreground/70 transition-colors hover:border-brand/40 hover:text-brand"
+                >
+                  {term.term}
                 </Link>
               </li>
             ))}

@@ -107,6 +107,14 @@ export function Footer() {
                   Cities
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/glossary"
+                  className="text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+                >
+                  Glossary
+                </Link>
+              </li>
             </ul>
           </div>
 

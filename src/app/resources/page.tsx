@@ -134,6 +134,12 @@ export default function ResourcesPage() {
             >
               RSS feed
             </Link>
+            <Link
+              href="/glossary"
+              className="text-foreground/70 underline-offset-4 hover:text-brand hover:underline"
+            >
+              Dealer marketing glossary
+            </Link>
           </div>
         </div>
       </section>

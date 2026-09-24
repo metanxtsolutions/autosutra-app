@@ -8,6 +8,7 @@ import { caseStudyTeasers } from "@/data/case-studies";
 import { resources } from "@/data/resources";
 import { cityProfiles } from "@/data/city-content";
 import { states } from "@/data/states";
+import { glossaryTerms } from "@/data/glossary";
 
 // Real per-page "last modified" dates instead of a shared build timestamp:
 // this reads each data/page file's actual last commit date from git history,
@@ -197,6 +198,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
   });
 
+  const glossaryLastModified = gitLastModified("src/data/glossary.ts");
+  const glossaryRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${siteConfig.url}/glossary`,
+      lastModified: glossaryLastModified,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    ...glossaryTerms.map((term) => ({
+      url: `${siteConfig.url}/glossary/${term.slug}`,
+      lastModified: glossaryLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
+  ];
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudyTeasers.map(
     (study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
@@ -306,6 +323,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...stateRoutes,
     ...districtRoutes,
     ...districtCityRoutes,
+    ...glossaryRoutes,
     ...caseStudyRoutes,
     ...resourceRoutes,
     ...resourceCategoryRoutes,
