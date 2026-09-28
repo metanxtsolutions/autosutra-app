@@ -17,6 +17,14 @@ import type { Faq } from "@/data/faq";
 //   third-party report.
 // - Keep the same table ids and column order month to month so readers can
 //   compare periods.
+// - Say what was counted. A lead reported by an ad platform is not a
+//   verified lead; title the table "cost per Meta lead" (or Google lead)
+//   unless the figures are phone-verified leads.
+// - Do not claim more than the sample. If the data is one channel or one
+//   region, set `scopeLabel` and `coverage` so the heading says so.
+// - This repository is public. A report added here is public the moment it
+//   is pushed, so client consent comes first. Working drafts with figures
+//   belong in docs/private/, which is git-ignored.
 //
 // A worked template is at the bottom of this file. Copy it into the array,
 // replace every "₹___" and "___" with real figures, and delete the comment.
@@ -41,6 +49,19 @@ export type BenchmarkReport = {
   period: string;
   // Human label, e.g. "October 2026".
   periodLabel: string;
+  // What the report actually covers, used as the page heading in place of
+  // the default "Dealer marketing benchmarks in India". Set it whenever the
+  // sample is narrower than that: one channel, one region, or one lead
+  // type. Example: "Meta Ads lead benchmarks for dealerships in eastern
+  // India". The period is appended automatically.
+  scopeLabel?: string;
+  // Region the figures cover, for the visible summary and the Dataset
+  // schema. Defaults to "India".
+  coverage?: string;
+  // One or two sentences under the heading saying what is measured. Write
+  // it for the data you have: say "Meta lead" or "verified lead" according
+  // to what was counted. Falls back to a neutral default.
+  intro?: string;
   // ISO date the report was published, e.g. "2026-11-05".
   publishedDate: string;
   // Visible one-sentence description of the data behind the numbers:
@@ -65,12 +86,31 @@ export const benchmarkReports: BenchmarkReport[] = [];
 export const latestBenchmarkReport: BenchmarkReport | undefined =
   benchmarkReports[0];
 
+const DEFAULT_SCOPE = "Dealer marketing benchmarks in India";
+
+// Heading, <title>, and schema name all come from here so they cannot
+// drift apart or claim more than the report covers.
+export function benchmarkTitle(report: BenchmarkReport): string {
+  return `${report.scopeLabel ?? DEFAULT_SCOPE}, ${report.periodLabel}`;
+}
+
+export function benchmarkCoverage(report: BenchmarkReport): string {
+  return report.coverage ?? "India";
+}
+
+export function benchmarkIntro(report: BenchmarkReport): string {
+  return (
+    report.intro ??
+    "What dealerships paid for leads and how those leads converted, from campaigns AutoSutra manages. Published as ranges by segment, so you can compare your own numbers with dealerships like yours."
+  );
+}
+
 // Questions that hold regardless of the period's numbers.
 export const benchmarkBaseFaqs: Faq[] = [
   {
     question: "Where do these benchmark figures come from?",
     answer:
-      "From campaigns AutoSutra manages for car, bike, EV, and used-car dealerships across India, aggregated and anonymised for the period stated on the page. No individual dealership can be identified, and no figure is estimated or taken from a third-party report.",
+      "From campaigns AutoSutra manages for dealerships, aggregated for the accounts, region, and period stated at the top of the page. Dealerships are not named, and no figure is estimated or taken from a third-party report.",
   },
   {
     question: "Why are the figures shown as ranges instead of a single average?",
@@ -90,7 +130,7 @@ export const benchmarkBaseFaqs: Faq[] = [
   {
     question: "Can I get benchmarks for my specific city or brand?",
     answer:
-      "The published tables are aggregated by vehicle segment and city tier to keep individual dealerships anonymous. For a comparison specific to your city, brands, and current campaigns, book a consultation and we will run it against your own accounts.",
+      "The published tables are aggregated by vehicle segment so that dealerships are not named. For a comparison specific to your city, brands, and current campaigns, book a consultation and we will run it against your own accounts.",
   },
 ];
 
@@ -101,6 +141,11 @@ export const benchmarkBaseFaqs: Faq[] = [
 //   period: "2026-10",
 //   periodLabel: "October 2026",
 //   publishedDate: "2026-11-05",
+//   // Optional. Omit all three for a national, multi-channel report.
+//   scopeLabel: "Meta Ads lead benchmarks for dealerships in eastern India",
+//   coverage: "Eastern India",
+//   intro:
+//     "What dealerships in eastern India paid per Meta lead, by vehicle segment, from campaigns AutoSutra manages. Leads are counted as Meta reports them, before phone verification.",
 //   sample:
 //     "Based on ___ dealer accounts across ___ cities, covering roughly ₹___ of managed spend on Google and Meta between 1 and 31 October 2026.",
 //   takeaways: [

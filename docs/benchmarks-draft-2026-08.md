@@ -71,6 +71,10 @@ This is the shape that would be pasted into `benchmarkReports` in `src/data/benc
   period: "2026-08",
   periodLabel: "August 2026",
   publishedDate: "2026-__-__",
+  scopeLabel: "Meta Ads lead benchmarks for dealerships in eastern India",
+  coverage: "Eastern India",
+  intro:
+    "What dealerships in eastern India paid per Meta lead, by vehicle segment, from campaigns AutoSutra manages. Leads are counted as Meta reports them, before phone verification.",
   sample:
     "Based on ___ Meta lead campaigns across ___ dealer ad accounts in eastern India, covering ₹___ of Facebook and Instagram spend and ___ leads between 1 and 31 August 2026. Leads are as reported by Meta, before phone verification.",
   takeaways: [
@@ -133,6 +137,6 @@ This is the shape that would be pasted into `benchmarkReports` in `src/data/benc
 }
 ```
 
-## 6. Follow-up code change, if the report is approved
+## 6. Page heading and scope
 
-The page heading is currently fixed as "Dealer marketing benchmarks in India, {period}". With a regional, Meta-only sample it should be driven by the report, for example an optional `scopeLabel` such as "Meta Ads lead benchmarks for dealerships in eastern India". That change is not in this pull request.
+The page heading, intro, coverage line, `<title>`, and Dataset schema are driven by the report through three optional fields: `scopeLabel`, `coverage`, and `intro`. The report object above sets all three, so the page would read "Meta Ads lead benchmarks for dealerships in eastern India, August 2026" rather than claiming a national sample. A report that omits them falls back to "Dealer marketing benchmarks in India".
