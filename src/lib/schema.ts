@@ -6,7 +6,11 @@ import type { Resource } from "@/data/resources";
 import type { PricingTier } from "@/data/pricing";
 import type { CaseStudyTeaser } from "@/data/case-studies";
 import type { GlossaryTerm } from "@/data/glossary";
-import type { BenchmarkReport } from "@/data/benchmarks";
+import {
+  benchmarkCoverage,
+  benchmarkTitle,
+  type BenchmarkReport,
+} from "@/data/benchmarks";
 
 const areaServed = [
   { "@type": "Country", name: "India" },
@@ -284,7 +288,7 @@ export function benchmarkDatasetSchema(report: BenchmarkReport) {
     "@context": "https://schema.org",
     "@type": "Dataset",
     "@id": `${siteConfig.url}/benchmarks#${report.period}`,
-    name: `Dealer marketing benchmarks in India, ${report.periodLabel}`,
+    name: benchmarkTitle(report),
     description: report.sample,
     url: `${siteConfig.url}/benchmarks`,
     inLanguage: "en-IN",
@@ -293,7 +297,14 @@ export function benchmarkDatasetSchema(report: BenchmarkReport) {
     datePublished: report.publishedDate,
     creator: organizationRef,
     publisher: organizationRef,
-    spatialCoverage: { "@type": "Country", name: "India" },
+    spatialCoverage:
+      benchmarkCoverage(report) === "India"
+        ? { "@type": "Country", name: "India" }
+        : {
+            "@type": "Place",
+            name: benchmarkCoverage(report),
+            containedInPlace: { "@type": "Country", name: "India" },
+          },
     variableMeasured: report.tables.map((table) => table.title),
     keywords: [
       "car dealership marketing benchmarks India",

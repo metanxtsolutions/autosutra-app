@@ -23,7 +23,10 @@ import { pageMetadata } from "@/lib/seo";
 import {
   BENCHMARK_UPDATE_CADENCE,
   benchmarkBaseFaqs,
+  benchmarkCoverage,
+  benchmarkIntro,
   benchmarkReports,
+  benchmarkTitle,
   latestBenchmarkReport,
   type BenchmarkReport,
   type BenchmarkTable,
@@ -45,8 +48,8 @@ export function generateMetadata(): Metadata {
     return { robots: { index: false, follow: false } };
   }
   return pageMetadata({
-    title: `Dealer Marketing Benchmarks in India, ${latestBenchmarkReport.periodLabel}`,
-    description: `Cost per verified lead, lead-to-walk-in, and response-time benchmarks for car, bike, EV, and used-car dealerships in India for ${latestBenchmarkReport.periodLabel}, from campaigns AutoSutra manages. Updated ${BENCHMARK_UPDATE_CADENCE}.`,
+    title: benchmarkTitle(latestBenchmarkReport),
+    description: `${benchmarkIntro(latestBenchmarkReport)} Updated ${BENCHMARK_UPDATE_CADENCE}.`,
     path,
     keywords: [
       "car dealership marketing benchmarks India",
@@ -158,7 +161,7 @@ export default function BenchmarksPage() {
 
   const previous = benchmarkReports.slice(1, 4);
   const faqs = [...report.faqs, ...benchmarkBaseFaqs];
-  const title = `Dealer marketing benchmarks in India, ${report.periodLabel}`;
+  const title = benchmarkTitle(report);
   const breadcrumbItems = [
     { name: "Home", path: "/" },
     { name: "Resources", path: "/resources" },
@@ -191,17 +194,14 @@ export default function BenchmarksPage() {
             {title}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
-            What car, bike, EV, and used-car dealerships in India are actually
-            paying per verified lead, and how those leads convert, from the
-            campaigns AutoSutra manages. Published as ranges by segment and
-            city tier, so you can compare your own numbers with dealerships
-            like yours.
+            {benchmarkIntro(report)}
           </p>
           <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/50">
             <span className="flex items-center gap-2">
               <CalendarDays className="size-4" />
               Data period: {report.periodLabel}
             </span>
+            <span>Coverage: {benchmarkCoverage(report)}</span>
             <span>Published {formatDate(report.publishedDate)}</span>
             <span className="flex items-center gap-2">
               <Database className="size-4" />
