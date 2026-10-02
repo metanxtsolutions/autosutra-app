@@ -1,12 +1,20 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { fadeUp, staggerContainer } from "@/lib/motion";
 
+// The entrance animation runs in CSS (tw-animate-css) instead of
+// framer-motion, so the hero text is painted as soon as the stylesheet
+// loads rather than after React hydrates. The paragraph under the heading
+// is the page's Largest Contentful Paint element, and framer-motion held it
+// at opacity 0 until JavaScript ran, which on a throttled mobile connection
+// was most of the gap between first paint and LCP. Timings mirror the old
+// fadeUp and stagger variants: 600ms, a 28px rise, a 150ms stagger across
+// the two heading lines, then 300ms and 400ms delays. Reduced-motion users
+// get the final state with no animation. This also makes the hero a server
+// component, so it ships no client JavaScript of its own.
+const enter =
+  "animate-in fade-in slide-in-from-bottom-7 fill-mode-both animation-duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:animate-none";
 
 export function Hero() {
   return (
@@ -17,52 +25,45 @@ export function Hero() {
       <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] size-[30rem] rounded-full bg-brand-accent/20 blur-[120px]" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 pt-40 pb-28 text-center lg:px-8 lg:pt-48 lg:pb-36">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={fadeUp}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur"
+        <div
+          className={cn(
+            enter,
+            "mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur",
+          )}
         >
           <Sparkles className="size-3.5 text-brand-accent" />
           India&apos;s Fastest Growing Automobile Marketing &amp; Solutions
           Agency
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial="hidden"
-          animate="show"
-          variants={staggerContainer(0.15)}
-          className="max-w-4xl text-balance font-heading text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
-        >
-          <motion.span variants={fadeUp} className="block">
+        <h1 className="max-w-4xl text-balance font-heading text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          <span className={cn(enter, "block")}>
             Fuel your dealership&apos;s
-          </motion.span>
-          <motion.span variants={fadeUp} className="block">
+          </span>
+          <span className={cn(enter, "block delay-150")}>
             <span className="bg-gradient-to-r from-brand-accent to-brand bg-clip-text text-transparent">
               next 1,000 buyers.
             </span>
-          </motion.span>
-        </motion.h1>
+          </span>
+        </h1>
 
-        <motion.p
-          initial="hidden"
-          animate="show"
-          variants={fadeUp}
-          transition={{ delay: 0.3 }}
-          className="mt-8 max-w-2xl text-balance text-lg text-white/65 sm:text-xl"
+        <p
+          className={cn(
+            enter,
+            "mt-8 max-w-2xl text-balance text-lg text-white/65 delay-300 sm:text-xl",
+          )}
         >
           AutoSutra connects car, bike, EV, and used-car dealerships with
           verified buyer leads, performance marketing, and dealer data
           intelligence, engineered for measurable growth, not vanity
           metrics.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={fadeUp}
-          transition={{ delay: 0.4 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+        <div
+          className={cn(
+            enter,
+            "mt-10 flex flex-col items-center gap-4 delay-400 sm:flex-row",
+          )}
         >
           <Link
             href="/book-a-demo"
@@ -84,7 +85,7 @@ export function Hero() {
             <PlayCircle className="size-4" />
             See Pricing
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
