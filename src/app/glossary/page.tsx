@@ -102,7 +102,7 @@ export default function GlossaryPage() {
                       href={`/glossary/${term.slug}`}
                       className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-brand/40"
                     >
-                      <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                      <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                         {term.category}
                       </span>
                       <h3 className="mt-3 font-heading text-lg font-semibold text-ink">
@@ -116,7 +116,7 @@ export default function GlossaryPage() {
                       <p className="mt-2 flex-1 text-sm text-foreground/75">
                         {term.definition}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                         Read the full definition
                         <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                       </span>

@@ -13,7 +13,7 @@ export function TrustedByMarquee() {
           {doubled.map((brand, index) => (
             <span
               key={`${brand.name}-${index}`}
-              className="font-heading text-2xl font-semibold tracking-tight text-foreground/30 transition-colors hover:text-foreground/70"
+              className="font-heading text-2xl font-semibold tracking-tight text-foreground/60 transition-colors hover:text-foreground/90"
             >
               {brand.name}
             </span>

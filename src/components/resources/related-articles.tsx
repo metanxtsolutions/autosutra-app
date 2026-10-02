@@ -33,7 +33,7 @@ export function RelatedArticles({
               <p className="mt-2 flex-1 font-heading text-sm font-semibold text-ink">
                 {resource.title}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand">
+              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand-strong">
                 Read
                 <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
               </span>

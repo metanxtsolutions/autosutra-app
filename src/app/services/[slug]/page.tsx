@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({
       {faqs.length > 0 && (
         <section className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
           <div className="text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
               FAQ
             </span>
             <h2 className="mt-4 text-balance font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
@@ -257,7 +257,7 @@ export default async function ServiceDetailPage({
             className="group mt-10 flex flex-col justify-between gap-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:flex-row sm:items-center"
           >
             <div>
-              <span className="text-xs font-medium uppercase tracking-wide text-brand">
+              <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                 {relatedCaseStudy.category}
               </span>
               <h3 className="mt-3 font-heading text-xl font-semibold text-ink">
@@ -306,7 +306,7 @@ export default async function ServiceDetailPage({
                       </span>
                       <div className="min-w-0 flex-1">
                         {index === 0 && (
-                          <span className="text-[11px] font-semibold tracking-wide text-brand uppercase">
+                          <span className="text-[11px] font-semibold tracking-wide text-brand-strong uppercase">
                             Start here
                           </span>
                         )}
@@ -331,13 +331,13 @@ export default async function ServiceDetailPage({
                       href={`/resources/${resource.slug}`}
                       className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-brand/40"
                     >
-                      <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                      <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                         {resource.category}
                       </span>
                       <p className="mt-3 font-heading font-semibold text-ink">
                         {resource.title}
                       </p>
-                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                         Read more
                         <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                       </span>
@@ -369,7 +369,7 @@ export default async function ServiceDetailPage({
                 <p className="mt-4 font-heading text-sm font-semibold text-ink">
                   {other.name}
                 </p>
-                <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                   Learn more
                   <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                 </span>

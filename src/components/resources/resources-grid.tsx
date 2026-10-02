@@ -114,7 +114,7 @@ export function ResourcesGrid({
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">
                     {resource.excerpt}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand">
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-strong">
                     {categoryCta[resource.category]}
                     <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>

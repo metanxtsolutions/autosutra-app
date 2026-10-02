@@ -147,7 +147,7 @@ export function ServiceExplorer() {
               <p className="mt-1.5 text-sm text-muted-foreground">
                 {service.summary}
               </p>
-              <p className="mt-3 text-xs font-medium text-brand">
+              <p className="mt-3 text-xs font-medium text-brand-strong">
                 {service.idealFor}
               </p>
 
@@ -252,7 +252,7 @@ export function ServiceExplorer() {
       {filtered.length === 0 && (
         <p className="mt-16 text-center text-sm text-muted-foreground">
           No services match &ldquo;{query}&rdquo;. Try a different search, or{" "}
-          <Link href="/contact" className="text-brand underline">
+          <Link href="/contact" className="text-brand-strong underline">
             ask us directly
           </Link>
           .

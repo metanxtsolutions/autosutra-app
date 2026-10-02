@@ -59,7 +59,7 @@ export function CaseStudiesGrid() {
               className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-gradient-to-br from-card to-muted/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <div>
-                <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                   {study.category}
                 </span>
                 <h3 className="mt-4 font-heading text-xl font-semibold text-ink">

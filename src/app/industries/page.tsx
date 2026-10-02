@@ -70,7 +70,7 @@ export default function IndustriesPage() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                   View details
                   <ArrowRight className="size-3.5" />
                 </span>
@@ -82,7 +82,7 @@ export default function IndustriesPage() {
 
       <section className="bg-muted/40 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             Why it matters
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

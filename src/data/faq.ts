@@ -3,6 +3,46 @@ export type Faq = {
   answer: string;
 };
 
+// Pricing page. Every figure and inclusion comes from src/data/pricing.ts,
+// the plan comparison table on /pricing, and the services-hub FAQs.
+export const pricingFaqs: Faq[] = [
+  {
+    question: "What is the difference between the Starter, Growth, and Enterprise plans?",
+    answer:
+      "Starter (₹14,999 per month) covers a monthly verified-lead allocation, Local SEO and Google Business Profile optimisation, basic Facebook and Google campaign setup, WhatsApp lead notifications, and monthly reports. Growth (₹35,499 per month) adds up to 250 verified leads a month, geo-level campaigns across Facebook, Google, and OTT, dealer SaaS tools, a dedicated account manager, and AI-powered behaviour insights. Enterprise (₹95,499 per month) is built for OEMs and multi-city networks: a custom lead package, nationwide network insights, the complete SaaS suite, and priority onboarding and support.",
+  },
+  {
+    question: "Are the plans billed monthly, and is there a lock-in?",
+    answer:
+      "Yes. Starter, Growth, and Enterprise are billed monthly, and there is no long-term lock-in on the standard plans, so you can upgrade as your pipeline grows. Enterprise and custom pan-India programmes can include annual commitments, which are agreed with you up front.",
+  },
+  {
+    question: "How many verified buyer leads does each plan include?",
+    answer:
+      "Growth includes up to 250 phone-verified leads a month. Starter includes a monthly allocation, and Enterprise is a custom package sized to the network. Every lead is phone-verified for intent, budget, and location before it reaches your team.",
+  },
+  {
+    question: "Which plan includes the CRM and a dedicated account manager?",
+    answer:
+      "Dealer SaaS tools for lead tracking and a dedicated account manager are part of Growth and Enterprise. Enterprise adds the complete SaaS suite integration and a dedicated enterprise success team. Starter includes WhatsApp lead notifications and monthly reports without the SaaS tools.",
+  },
+  {
+    question: "Can we start on one plan and change later?",
+    answer:
+      "Yes. Plans are monthly, so you can move between Starter, Growth, and Enterprise as your lead volume and goals change. Most dealers start on Starter or Growth and upgrade once a channel has proved its return.",
+  },
+  {
+    question: "Do you offer custom pricing for multi-city dealer networks or OEMs?",
+    answer:
+      "Yes. For OEM programmes and multi-city networks we build custom bundles and pricing outside the standard plans, starting from Enterprise. Book a consultation and we will scope it with you.",
+  },
+  {
+    question: "How quickly does a plan go live after we sign up?",
+    answer:
+      "Most dealerships are onboarded and generating leads within 7 to 10 business days of signing up. Content and CRM setup can take slightly longer depending on scope.",
+  },
+];
+
 export const faqs: Faq[] = [
   {
     question: "What makes a lead 'verified' at AutoSutra?",

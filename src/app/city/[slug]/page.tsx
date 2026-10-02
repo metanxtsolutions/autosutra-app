@@ -196,7 +196,7 @@ export default async function CityPage({
                     <h3 className="font-heading text-sm font-semibold text-ink">
                       {service.name} in {location.name}
                     </h3>
-                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                       Learn more
                       <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -266,7 +266,7 @@ export default async function CityPage({
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href={`/india/${relatedState.slug}`}
-              className="rounded-full border border-brand/40 bg-brand/5 px-5 py-2 text-sm font-medium text-brand transition-colors hover:border-brand hover:bg-brand/10"
+              className="rounded-full border border-brand/40 bg-brand/5 px-5 py-2 text-sm font-medium text-brand-strong transition-colors hover:border-brand hover:bg-brand/10"
             >
               {relatedState.name} overview
             </Link>

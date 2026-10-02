@@ -16,7 +16,7 @@ export function FeaturedResource({ resource }: { resource: Resource }) {
         className="aspect-[16/9] w-full object-cover lg:aspect-auto lg:h-full"
       />
       <div className="flex flex-col justify-center p-8 sm:p-10">
-        <span className="inline-flex w-fit items-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand">
+        <span className="inline-flex w-fit items-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand-strong">
           Featured {resource.category}
         </span>
         <h2 className="mt-4 text-balance font-heading text-2xl font-semibold text-ink sm:text-3xl">

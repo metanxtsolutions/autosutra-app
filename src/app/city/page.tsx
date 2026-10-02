@@ -58,7 +58,7 @@ export default function CityIndexPage() {
                   {city.region}
                 </p>
               </div>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                 View {city.name}
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </span>
@@ -95,7 +95,7 @@ export default function CityIndexPage() {
                     {state.districts.length} districts
                   </p>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                   View {state.name}
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -104,7 +104,7 @@ export default function CityIndexPage() {
           </div>
           <Link
             href="/india"
-            className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+            className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong"
           >
             View the full India directory
             <ArrowRight className="size-3.5" />

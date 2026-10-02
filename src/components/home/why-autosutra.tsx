@@ -49,7 +49,7 @@ export function WhyAutoSutra() {
     <section className="bg-muted/40 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             Why AutoSutra
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

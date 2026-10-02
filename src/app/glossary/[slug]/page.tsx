@@ -132,7 +132,7 @@ export default async function GlossaryTermPage({
                   href={`/glossary/${related.slug}`}
                   className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
                 >
-                  <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                  <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                     {related.category}
                   </span>
                   <p className="mt-2 font-heading font-semibold text-ink">
@@ -141,7 +141,7 @@ export default async function GlossaryTermPage({
                   <p className="mt-2 line-clamp-3 flex-1 text-sm text-foreground/70">
                     {related.definition}
                   </p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                     Read definition
                     <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -202,13 +202,13 @@ export default async function GlossaryTermPage({
                   href={`/resources/${resource.slug}`}
                   className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
                 >
-                  <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                  <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                     {resource.category}
                   </span>
                   <p className="mt-2 flex-1 font-heading text-sm font-semibold text-ink">
                     {resource.title}
                   </p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                     Read more
                     <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -222,7 +222,7 @@ export default async function GlossaryTermPage({
       <section className="mx-auto max-w-5xl px-6 pb-8 lg:px-8">
         <Link
           href="/glossary"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong"
         >
           <ArrowRight className="size-3.5 rotate-180" />
           Back to the full glossary

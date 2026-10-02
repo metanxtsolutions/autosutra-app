@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/shared/json-ld";
 import { faqPageSchema, pricingSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { WhatsAppLink } from "@/components/shared/whatsapp-link";
-import { faqs } from "@/data/faq";
+import { pricingFaqs } from "@/data/faq";
 import { pricingTiers } from "@/data/pricing";
 
 export const metadata = pageMetadata({
@@ -49,7 +49,7 @@ function Cell({ value }: { value: string | boolean }) {
 export default function PricingPage() {
   return (
     <>
-      <JsonLd data={faqPageSchema(faqs)} />
+      <JsonLd data={faqPageSchema(pricingFaqs)} />
       <JsonLd data={pricingSchema(pricingTiers)} />
       <section className="bg-ink px-6 pt-40 pb-24 text-center text-ink-foreground lg:px-8">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
@@ -66,7 +66,7 @@ export default function PricingPage() {
       </section>
 
       <section className="mx-auto -mt-12 max-w-7xl px-6 lg:px-8">
-        <PricingTable />
+        <PricingTable headingLevel="h2" />
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8">
@@ -114,14 +114,14 @@ export default function PricingPage() {
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Need a custom package for a multi-city dealer network or OEM
           program?{" "}
-          <Link href="/book-a-demo" className="font-medium text-brand underline">
+          <Link href="/book-a-demo" className="font-medium text-brand-strong underline">
             Talk to our team
           </Link>
           .
         </p>
       </section>
 
-      <Faq />
+      <Faq items={pricingFaqs} />
 
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-border bg-muted/40 px-8 py-12 text-center sm:flex-row sm:text-left">

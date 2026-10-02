@@ -15,6 +15,7 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-accent: var(--brand-accent);
+  --color-brand-strong: var(--brand-strong);
   --color-success: var(--success);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -63,6 +64,11 @@
   --brand: #f26222;
   --brand-foreground: #ffffff;
   --brand-accent: #ffb020;
+  /* Brand orange is 3.2:1 on white, below the 4.5:1 WCAG AA minimum for
+     body-size text. Small text (eyebrow labels, "Read more" links, table
+     headers) uses this darker shade, 5.2:1 on white; headings, buttons,
+     and icons keep --brand. */
+  --brand-strong: #c2410c;
   --success: #16a34a;
 
   /* shadcn semantic tokens mapped to the brand palette */

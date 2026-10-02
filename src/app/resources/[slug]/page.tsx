@@ -116,7 +116,7 @@ export default async function ResourceDetailPage({
               })}
             </span>
           </div>
-          <p className="mx-auto mt-2 max-w-md text-xs text-white/35">
+          <p className="mx-auto mt-2 max-w-md text-xs text-white/60">
             {siteConfig.editorialTeam.role}
           </p>
         </div>

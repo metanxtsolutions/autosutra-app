@@ -13,7 +13,7 @@ export function CaseStudyTeaser() {
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             Case Studies
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
@@ -43,7 +43,7 @@ export function CaseStudyTeaser() {
               className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-gradient-to-br from-card to-muted/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <div>
-                <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                   {study.category}
                 </span>
                 <h3 className="mt-4 font-heading text-xl font-semibold text-ink">

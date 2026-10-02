@@ -66,7 +66,7 @@ export function LegalDocument({
               Questions about this document can be directed to{" "}
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="font-medium text-brand underline"
+                className="font-medium text-brand-strong underline"
               >
                 {siteConfig.contact.email}
               </a>

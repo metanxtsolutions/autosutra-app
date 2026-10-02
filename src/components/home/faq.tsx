@@ -9,25 +9,27 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
-import { faqs } from "@/data/faq";
+import { faqs, type Faq as FaqItem } from "@/data/faq";
 
-export function Faq() {
+// Renders the homepage FAQ set by default; pages with their own questions
+// (pricing) pass them in so each page carries its own FAQPage schema.
+export function Faq({ items = faqs }: { items?: FaqItem[] }) {
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return faqs;
-    return faqs.filter(
+    if (!q) return items;
+    return items.filter(
       (faq) =>
         faq.question.toLowerCase().includes(q) ||
         faq.answer.toLowerCase().includes(q),
     );
-  }, [query]);
+  }, [query, items]);
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-24 lg:px-8">
       <div className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
           FAQ
         </span>
         <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
@@ -50,7 +52,7 @@ export function Faq() {
           <p className="py-10 text-center text-sm text-muted-foreground">
             No questions match &ldquo;{query}&rdquo;. Try a different search,
             or{" "}
-            <a href="/contact" className="text-brand underline">
+            <a href="/contact" className="text-brand-strong underline">
               ask us directly
             </a>
             .
