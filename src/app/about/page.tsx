@@ -86,7 +86,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-5xl px-6 py-24 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
               Our Story
             </span>
             <h2 className="mt-4 text-balance font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
@@ -147,7 +147,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-14 text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
               Core Values
             </span>
             <h2 className="mt-4 text-balance font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             Our Journey
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
@@ -229,7 +229,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
         <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             By the numbers
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

@@ -82,7 +82,7 @@ export default function IndiaIndexPage() {
                   {state.districts.length} districts
                 </p>
               </div>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong">
                 View {state.name}
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </span>
@@ -103,7 +103,7 @@ export default function IndiaIndexPage() {
           </p>
           <Link
             href="/city"
-            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong"
           >
             View all cities we serve
             <ArrowRight className="size-3.5" />

@@ -77,7 +77,7 @@ export default async function CaseStudyDetailPage({
             {study.headline}
           </h1>
           <p className="mt-6 text-lg text-white/60">{study.dealership}</p>
-          <p className="mx-auto mt-3 max-w-xl text-xs text-white/40">
+          <p className="mx-auto mt-3 max-w-xl text-xs text-white/60">
             An illustrative scenario based on typical engagement patterns,
             not an individual client&apos;s verified results.
           </p>
@@ -186,7 +186,7 @@ export default async function CaseStudyDetailPage({
                 className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-gradient-to-br from-card to-muted/60 p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div>
-                  <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                  <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                     {other.category}
                   </span>
                   <h3 className="mt-3 font-heading text-lg font-semibold text-ink">

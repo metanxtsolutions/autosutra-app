@@ -19,7 +19,7 @@ export function NewsletterForm() {
         type="email"
         required
         placeholder="you@dealership.com"
-        className="border-white/15 bg-white/5 text-ink-foreground placeholder:text-ink-foreground/40"
+        className="border-white/15 bg-white/5 text-ink-foreground placeholder:text-ink-foreground/60"
       />
       <button
         type="submit"

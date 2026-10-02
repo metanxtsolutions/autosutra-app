@@ -8,7 +8,13 @@ import { buttonVariants } from "@/components/ui/button";
 import { formatInr, pricingTiers } from "@/data/pricing";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
-export function PricingTable() {
+// On /pricing the tier names follow the page's h1 directly, so they are
+// h2 there; on the homepage teaser they sit under a section h2, so h3.
+export function PricingTable({
+  headingLevel: Heading = "h3",
+}: {
+  headingLevel?: "h2" | "h3";
+} = {}) {
   return (
     <motion.div
       initial="hidden"
@@ -34,9 +40,9 @@ export function PricingTable() {
             </span>
           )}
 
-          <h3 className="font-heading text-2xl font-semibold">
+          <Heading className="font-heading text-2xl font-semibold">
             {tier.name}
-          </h3>
+          </Heading>
           <p
             className={cn(
               "mt-2 text-sm",
@@ -62,7 +68,7 @@ export function PricingTable() {
           <p
             className={cn(
               "mt-1 text-xs",
-              tier.featured ? "text-white/40" : "text-muted-foreground/70",
+              tier.featured ? "text-white/60" : "text-muted-foreground",
             )}
           >
             Annual billing available. Contact us for a custom quote.

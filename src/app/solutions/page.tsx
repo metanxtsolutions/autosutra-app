@@ -88,7 +88,7 @@ export default function SolutionsPage() {
                       {solution.name}
                     </Link>
                   </h2>
-                  <p className="mt-2 text-sm font-medium text-brand">
+                  <p className="mt-2 text-sm font-medium text-brand-strong">
                     {solution.outcome}
                   </p>
                   <p className="mt-4 text-muted-foreground">
@@ -96,7 +96,7 @@ export default function SolutionsPage() {
                   </p>
                   <Link
                     href={`/solutions/${solution.slug}`}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-strong"
                   >
                     View details
                     <ArrowRight className="size-3.5" />
@@ -128,7 +128,7 @@ export default function SolutionsPage() {
       <section className="bg-muted/40 py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
               How it comes together
             </span>
             <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

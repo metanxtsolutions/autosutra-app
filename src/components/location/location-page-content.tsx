@@ -179,7 +179,7 @@ export function LocationPageContent({
                     <h3 className="font-heading text-sm font-semibold text-ink">
                       {service.name} in {name}
                     </h3>
-                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                       Learn more
                       <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -221,13 +221,13 @@ export function LocationPageContent({
                 href={`/resources/${resource.slug}`}
                 className="group flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-brand/40"
               >
-                <span className="text-xs font-medium uppercase tracking-wide text-brand">
+                <span className="text-xs font-medium uppercase tracking-wide text-brand-strong">
                   {resource.category}
                 </span>
                 <p className="mt-3 text-sm font-heading font-semibold text-ink">
                   {resource.title}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                   Read more
                   <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -256,7 +256,7 @@ export function LocationPageContent({
                 </div>
                 <Link
                   href={metro.href}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand/40 bg-background px-5 py-2 text-sm font-medium text-brand transition-colors hover:border-brand hover:bg-brand/10"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand/40 bg-background px-5 py-2 text-sm font-medium text-brand-strong transition-colors hover:border-brand hover:bg-brand/10"
                 >
                   View {metro.name}
                   <ArrowRight className="size-3.5" />

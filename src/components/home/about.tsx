@@ -32,7 +32,7 @@ export function About() {
           viewport={viewportOnce}
           variants={fadeUp}
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             About AutoSutra
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

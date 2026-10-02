@@ -26,13 +26,13 @@ export function Testimonials() {
     <section className="bg-muted/40 py-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-strong">
             Testimonials
           </span>
           <h2 className="mt-4 text-balance font-heading text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
             What dealer partners say
           </h2>
-          <p className="mt-3 text-xs text-muted-foreground/70">
+          <p className="mt-3 text-xs text-muted-foreground">
             Illustrative feedback reflecting how we aim to serve dealer
             partners, not verified customer reviews.
           </p>
@@ -86,15 +86,23 @@ export function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <button
                   key={testimonial.name}
+                  type="button"
                   aria-label={`Go to testimonial ${index + 1}`}
+                  aria-current={selected === index ? "true" : undefined}
                   onClick={() => emblaApi?.scrollTo(index)}
-                  className={cn(
-                    "h-1.5 rounded-full transition-all",
-                    selected === index
-                      ? "w-6 bg-brand"
-                      : "w-1.5 bg-border hover:bg-muted-foreground/40",
-                  )}
-                />
+                  // The visible dot stays 6px tall; the button around it
+                  // gives a 24px tap target.
+                  className="group flex h-6 min-w-6 items-center justify-center"
+                >
+                  <span
+                    className={cn(
+                      "block h-1.5 rounded-full transition-all",
+                      selected === index
+                        ? "w-6 bg-brand"
+                        : "w-1.5 bg-border group-hover:bg-muted-foreground/40",
+                    )}
+                  />
+                </button>
               ))}
             </div>
             <button

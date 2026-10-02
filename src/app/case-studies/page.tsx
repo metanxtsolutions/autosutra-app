@@ -30,7 +30,7 @@ export default function CaseStudiesPage() {
             cost-per-lead, and conversion differently for every category of
             dealer.
           </p>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40">
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/60">
             Illustrative scenarios based on typical engagement patterns, not
             individual client results. Ask us for outcomes specific to your
             market.

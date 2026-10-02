@@ -151,7 +151,7 @@ export default async function IndustryDetailPage({
                     <h3 className="font-heading text-sm font-semibold text-ink">
                       {service.name}
                     </h3>
-                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                    <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-brand-strong">
                       Learn more
                       <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                     </span>

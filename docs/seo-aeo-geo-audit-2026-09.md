@@ -252,3 +252,20 @@ Titles, descriptions, canonicals, sitemap `lastmod` logic, analytics, forms, and
 ## Appendix A: LoansPartner.in audit notes
 
 See the separate benchmark notes captured during this audit (site-wide facts, 262-URL sitemap map, per-page head/schema/AEO tables, weaknesses, transferable practices). Key facts: Next.js on Vercel, all content server-rendered, `Organization`+`FinancialService` with `@id` on every page, FAQ blocks on nearly every template, 40-term glossary with `DefinedTerm`, dated interest-rate page, visible published/updated/reviewed lines on guides, but anonymous authorship, no outbound citations, 112 near-duplicate product×city pages, per-city `FinancialService` nodes carrying the HQ address, and schema image URLs that 404.
+
+---
+
+## Addendum: follow-ups completed after the audit (as of 3 October 2026)
+
+| Item from this report | Status |
+|---|---|
+| Service-page FAQs (High #1) | Done. Hand-written FAQs with FAQPage schema on all 13 service pages. |
+| Glossary (High #3) | Done. 44 terms at `/glossary` with DefinedTerm schema. |
+| Homepage comparison table (High #4) | Done. |
+| Dated benchmark page (High #2) | Infrastructure done and gated; publishes only when a report with real figures is added. Heading, intro, and coverage are driven by the report. First Meta-only draft exists privately; client consent pending. |
+| Hero animation gating mobile LCP (§5) | Done. Entrance animation moved from framer-motion to CSS; local Lighthouse mobile LCP 5.6–6.4 s → 3.8–4.1 s. |
+| Accessibility flags (§2) | Done, except the primary orange CTA buttons, which stay brand orange by design. Small brand-coloured text uses a darker shade (`--brand-strong`, 5.2:1), low-opacity captions raised to AA, carousel dots given 24 px tap targets, pricing page heading order corrected. Homepage accessibility score 93 → 96. |
+| Pricing-specific FAQs (Medium #8) | Done. `/pricing` carries its own FAQ set and FAQPage schema instead of repeating the homepage's. |
+| Apex → www double redirect | Open. Vercel domain setting, not code. |
+| Combination pages and ProfessionalService location nodes | Open. Review against Search Console data as planned. |
+| Named authors, real case studies | Open. Need real people and client consent. |

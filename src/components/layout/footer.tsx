@@ -49,7 +49,7 @@ export function Footer() {
               <MapPin className="mt-0.5 size-4 shrink-0" />
               <span>{siteConfig.contact.addressLine}</span>
             </div>
-            <p className="mt-3 max-w-xs text-xs text-ink-foreground/40">
+            <p className="mt-3 max-w-xs text-xs text-ink-foreground/60">
               Serving dealers across{" "}
               {cityProfiles.map((city, index) => (
                 <span key={city.slug}>
