@@ -35,6 +35,48 @@ const nextConfig: NextConfig = {
       // correct, crawlable resolution to the live page.
       { source: "/service-one", destination: "/services", permanent: true },
       { source: "/pricing-plan", destination: "/pricing", permanent: true },
+      // The rest of the WordPress site's real pages, recovered from the
+      // Wayback Machine (archived March to May 2026). Search engines were
+      // still listing /service/auto-lead-generation/ in October 2026 and it
+      // returned 404, so whatever ranking those pages held was being lost
+      // instead of passed on. Each maps to its closest current page; any
+      // other /service/ or /blog/ path falls back to the hub. The theme's
+      // demo content (products, portfolio, unrelated industries, demo posts)
+      // is deliberately left to 404 so it drops out of the index.
+      {
+        source: "/service/auto-lead-generation",
+        destination: "/services/verified-buyer-leads",
+        permanent: true,
+      },
+      {
+        source: "/service/auto-content-creation",
+        destination: "/services/content-creation",
+        permanent: true,
+      },
+      {
+        source: "/service/data-services",
+        destination: "/services/dealer-data-services",
+        permanent: true,
+      },
+      {
+        source: "/service/digital-marketing",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/service/saas-tools",
+        destination: "/services/saas-platform",
+        permanent: true,
+      },
+      { source: "/service/dealer-solutions", destination: "/solutions", permanent: true },
+      { source: "/service/:path*", destination: "/services", permanent: true },
+      { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/our-team", destination: "/about", permanent: true },
+      { source: "/career", destination: "/careers", permanent: true },
+      { source: "/blog", destination: "/resources", permanent: true },
+      { source: "/blog/:path*", destination: "/resources", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/landing", destination: "/", permanent: true },
     ];
 
     return [
